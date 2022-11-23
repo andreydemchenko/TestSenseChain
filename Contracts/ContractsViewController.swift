@@ -17,7 +17,7 @@ class ContractsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.showResult()
+        presenter.saveAndShowResult()
     }
 
     @IBAction

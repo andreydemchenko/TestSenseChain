@@ -22,12 +22,15 @@ class ContractsPresenter {
         self.result = result
     }
     
-    func showResult() {
+    func saveAndShowResult() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(result?.data?.access_token, forKey: "accessToken")
+        userDefaults.set(result?.data?.refresh_token, forKey: "refreshToken")
+        
         view?.presentResult(result)
     }
     
     func tapSignOutBtn() {
-        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         view?.signOut()
     }
     

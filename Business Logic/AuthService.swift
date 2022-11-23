@@ -11,18 +11,20 @@ protocol AuthServiceProtocol {
     
     func login(_ email: String, _ password: String, completion: @escaping (Result<ResponseModel, Error>) -> Void)
     func logout(completion: @escaping (Result<Void, Error>) -> Void)
-    func getToken(refreshToken: String, completion: @escaping (Result<String, Error>) -> Void)
+    func refreshToken(refreshToken: String, completion: @escaping (Result<ResponseModel, Error>) -> Void)
+    func testQuery(completion: @escaping (Result<ResponseModel, Error>) -> Void)
     
 }
 
 class AuthService: AuthServiceProtocol {
     
-    let url = URL(string: "https://sense-chain.devzz.ru/api/auth/session")
+    let urlSession = URL(string: "https://sense-chain.devzz.ru/api/auth/session")
+    let urlTemplates = URL(string: "https://sense-chain.devzz.ru/api/contract/job/templates")
     let urlError = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Invalid url"])
     
     func login(_ email: String, _ password: String, completion: @escaping (Result<ResponseModel, Error>) -> Void) {
         
-        guard let requestUrl = url else { return completion(.failure(urlError)) }
+        guard let requestUrl = urlSession else { return completion(.failure(urlError)) }
         
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "POST"
@@ -58,7 +60,7 @@ class AuthService: AuthServiceProtocol {
     }
     
     func logout(completion: @escaping (Result<Void, Error>) -> Void) {
-        guard let requestUrl = url else { return completion(.failure(urlError)) }
+        guard let requestUrl = urlSession else { return completion(.failure(urlError)) }
         
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "DELETE"
@@ -75,9 +77,9 @@ class AuthService: AuthServiceProtocol {
         task.resume()
     }
     
-    func getToken(refreshToken: String, completion: @escaping (Result<String, Error>) -> Void) {
+    func refreshToken(refreshToken: String, completion: @escaping (Result<ResponseModel, Error>) -> Void) {
         
-        guard let requestUrl = url else { return completion(.failure(urlError)) }
+        guard let requestUrl = urlSession else { return completion(.failure(urlError)) }
         
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "PUT"
@@ -99,8 +101,7 @@ class AuthService: AuthServiceProtocol {
                 if let data {
                     do {
                         let responseModel = try JSONDecoder().decode(ResponseModel.self, from: data)
-                        let refreshToken = responseModel.data?.refresh_token ?? ""
-                        completion(.success(refreshToken))
+                        completion(.success(responseModel))
                     } catch let error {
                         completion(.failure(error))
                     }
@@ -111,6 +112,33 @@ class AuthService: AuthServiceProtocol {
             completion(.failure(error))
         }
         
+    }
+    
+    func testQuery(completion: @escaping (Result<ResponseModel, Error>) -> Void) {
+        guard let requestUrl = urlTemplates else { return completion(.failure(urlError)) }
+        
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = "GET"
+        
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            if let error = error {
+                print("Error took place \(error.localizedDescription)")
+                return completion(.failure(error))
+            }
+            
+            if let data {
+                do {
+                    let responseModel = try JSONDecoder().decode(ResponseModel.self, from: data)
+                    completion(.success(responseModel))
+                } catch let error {
+                    completion(.failure(error))
+                }
+            }
+        }
+        task.resume()
     }
     
 }

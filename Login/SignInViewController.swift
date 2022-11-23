@@ -21,6 +21,7 @@ class SignInViewController: UIViewController {
         presenter = AuthPresenter(view: self, authService: appContext.authentication)
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        passwordTxtField.enablePasswordToggle()
     }
     
     @objc
@@ -60,7 +61,7 @@ extension SignInViewController: AuthViewProtocol {
     func moveToContracts(result: ResponseModel) {
         DispatchQueue.main.async {
             if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
-                scene.openTheDesiredController(isAuthorized: true, result: result, isTokenExpired: false)
+                scene.openTheDesiredController(isAuthorized: true, result: result)
             }
         }
     }

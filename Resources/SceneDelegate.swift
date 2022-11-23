@@ -8,10 +8,10 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
-
-
+    
+    
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
@@ -23,35 +23,61 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let userDefaults = UserDefaults.standard
         
-        if userDefaults.value(forKey: "isUserLoggedIn") == nil {
-            userDefaults.set(false, forKey: "isUserLoggedIn")
+        if userDefaults.value(forKey: "accessToken") == nil {
+            userDefaults.set("", forKey: "accessToken")
             userDefaults.set("", forKey: "refreshToken")
         }
         
-        let isUserLoggedIn = userDefaults.bool(forKey: "isUserLoggedIn")
-        let refreshToken = UserDefaults.standard.string(forKey: "refreshToken") ?? ""
+        let refreshToken = userDefaults.string(forKey: "refreshToken") ?? ""
+        print("token = \(refreshToken)")
         
-        checkRefreshToken(refreshToken: refreshToken, isUserLoggedIn: isUserLoggedIn)
+        checkAccess(token: refreshToken)
     }
     
-    func checkRefreshToken(refreshToken: String, isUserLoggedIn: Bool) {
-        var isTokenExpired = true
-        
-        appContext.authentication.getToken(refreshToken: refreshToken) { [weak self] res in
+    func checkAccess(token: String) {
+        appContext.authentication.testQuery { [weak self] res in
             switch res {
-            case let .success(token):
-                isTokenExpired = refreshToken != token
-                DispatchQueue.main.async {
-                    self?.openTheDesiredController(isAuthorized: isUserLoggedIn, result: nil, isTokenExpired: isTokenExpired)
+            case let .success(model):
+                if model.data != nil {
+                    DispatchQueue.main.async {
+                        self?.openTheDesiredController(isAuthorized: true, result: model)
+                    }
+                } else {
+                    self?.refreshToken(refreshToken: token)
                 }
             case let .failure(error):
                 print(error.localizedDescription)
+                DispatchQueue.main.async {
+                    self?.openTheDesiredController(isAuthorized: false, result: nil)
+                }
             }
         }
     }
     
-    func openTheDesiredController(isAuthorized: Bool, result: ResponseModel?, isTokenExpired: Bool = true) {
-        if isAuthorized && !isTokenExpired {
+    func refreshToken(refreshToken: String) {
+        appContext.authentication.refreshToken(refreshToken: refreshToken) { [weak self] res in
+            switch res {
+            case let .success(model):
+                if model.data != nil {
+                    DispatchQueue.main.async {
+                        self?.openTheDesiredController(isAuthorized: true, result: model)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self?.openTheDesiredController(isAuthorized: false, result: nil)
+                    }
+                }
+            case let .failure(error):
+                print(error.localizedDescription)
+                DispatchQueue.main.async {
+                    self?.openTheDesiredController(isAuthorized: false, result: nil)
+                }
+            }
+        }
+    }
+    
+    func openTheDesiredController(isAuthorized: Bool, result: ResponseModel?) {
+        if isAuthorized {
             let storyboard = UIStoryboard(name: "Contracts", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "ContractsVC") as? ContractsViewController
             guard let vc else { return }

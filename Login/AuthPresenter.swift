@@ -43,12 +43,13 @@ class AuthPresenter {
                         self?.view.moveToContracts(result: model)
                         let userDefaults = UserDefaults.standard
                         userDefaults.set(true, forKey: "isUserLoggedIn")
+                        userDefaults.set(model.data?.access_token, forKey: "accessToken")
                         userDefaults.set(model.data?.refresh_token, forKey: "refreshToken")
                     } else if let error = model.error {
-                        self?.view.error = "code: \(error.code), text: \(error.text)"
+                        self?.view.error = error.text
                     }
-                case let .failure(error):
-                    self?.view.error = error.localizedDescription
+                case .failure(_):
+                    self?.view.error = "An error occurred"
                 }
             }
         }

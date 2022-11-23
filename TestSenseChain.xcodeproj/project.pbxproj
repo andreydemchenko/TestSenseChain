@@ -26,6 +26,7 @@
 		8C2664B0292E1108000780F6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2664A0292E1108000780F6 /* AuthService.swift */; };
 		8C2664B3292E3403000780F6 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2664B2292E3403000780F6 /* SpinnerViewController.swift */; };
 		8CFC204A292E466400ADE663 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2049292E466400ADE663 /* Validation.swift */; };
+		8CFC204C292E631D00ADE663 /* PasswordToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC204B292E631D00ADE663 /* PasswordToggle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		8C2664A0292E1108000780F6 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		8C2664B2292E3403000780F6 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		8CFC2049292E466400ADE663 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		8CFC204B292E631D00ADE663 /* PasswordToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordToggle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				8C2664B2292E3403000780F6 /* SpinnerViewController.swift */,
+				8CFC204B292E631D00ADE663 /* PasswordToggle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CFC204C292E631D00ADE663 /* PasswordToggle.swift in Sources */,
 				8C2664AC292E1108000780F6 /* AuthPresenter.swift in Sources */,
 				8C2664A8292E1108000780F6 /* String+Ext.swift in Sources */,
 				8C2664A7292E1108000780F6 /* SceneDelegate.swift in Sources */,
