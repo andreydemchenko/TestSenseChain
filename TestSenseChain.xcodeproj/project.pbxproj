@@ -24,6 +24,8 @@
 		8C2664AE292E1108000780F6 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C26649D292E1108000780F6 /* ResponseModel.swift */; };
 		8C2664AF292E1108000780F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C26649E292E1108000780F6 /* User.swift */; };
 		8C2664B0292E1108000780F6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2664A0292E1108000780F6 /* AuthService.swift */; };
+		8C2664B3292E3403000780F6 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2664B2292E3403000780F6 /* SpinnerViewController.swift */; };
+		8CFC204A292E466400ADE663 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2049292E466400ADE663 /* Validation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		8C26649D292E1108000780F6 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		8C26649E292E1108000780F6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8C2664A0292E1108000780F6 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		8C2664B2292E3403000780F6 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		8CFC2049292E466400ADE663 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 		8C0BA94E292CCC98004F8368 = {
 			isa = PBXGroup;
 			children = (
+				8C2664B1292E33DD000780F6 /* Views */,
 				8C266479292E10D3000780F6 /* Assets.xcassets */,
 				8C266487292E1107000780F6 /* Base.lproj */,
 				8C26649F292E1108000780F6 /* Business Logic */,
@@ -119,6 +124,7 @@
 			children = (
 				8C266493292E1108000780F6 /* Extensions */,
 				8C266495292E1108000780F6 /* AppContext.swift */,
+				8CFC2049292E466400ADE663 /* Validation.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -156,6 +162,14 @@
 				8C2664A0292E1108000780F6 /* AuthService.swift */,
 			);
 			path = "Business Logic";
+			sourceTree = "<group>";
+		};
+		8C2664B1292E33DD000780F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C2664B2292E3403000780F6 /* SpinnerViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,8 +249,10 @@
 				8C2664AC292E1108000780F6 /* AuthPresenter.swift in Sources */,
 				8C2664A8292E1108000780F6 /* String+Ext.swift in Sources */,
 				8C2664A7292E1108000780F6 /* SceneDelegate.swift in Sources */,
+				8C2664B3292E3403000780F6 /* SpinnerViewController.swift in Sources */,
 				8C2664B0292E1108000780F6 /* AuthService.swift in Sources */,
 				8C2664A5292E1108000780F6 /* AppDelegate.swift in Sources */,
+				8CFC204A292E466400ADE663 /* Validation.swift in Sources */,
 				8C2664A9292E1108000780F6 /* AppContext.swift in Sources */,
 				8C2664AD292E1108000780F6 /* SignInViewController.swift in Sources */,
 				8C2664A3292E1108000780F6 /* ContractsPresenter.swift in Sources */,

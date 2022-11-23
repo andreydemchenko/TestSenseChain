@@ -27,6 +27,7 @@ class ContractsPresenter {
     }
     
     func tapSignOutBtn() {
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         view?.signOut()
     }
     

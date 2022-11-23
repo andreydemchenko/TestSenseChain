@@ -30,7 +30,6 @@ class SignInViewController: UIViewController {
     
     @IBAction
     private func signInClick(_ sender: Any) {
-        print("tap")
         presenter.tapSignInBtn()
     }
     
@@ -61,8 +60,23 @@ extension SignInViewController: AuthViewProtocol {
     func moveToContracts(result: ResponseModel) {
         DispatchQueue.main.async {
             if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
-                scene.openTheDesiredController(isAuthorized: true, result: result)
+                scene.openTheDesiredController(isAuthorized: true, result: result, isTokenExpired: false)
             }
+        }
+    }
+    
+    func createSpinnerView() {
+        let child = SpinnerViewController()
+
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            child.willMove(toParent: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParent()
         }
     }
     

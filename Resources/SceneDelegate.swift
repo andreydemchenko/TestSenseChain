@@ -20,18 +20,43 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead)
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-     
-        openTheDesiredController(isAuthorized: false, result: nil)
+        
+        let userDefaults = UserDefaults.standard
+        
+        if userDefaults.value(forKey: "isUserLoggedIn") == nil {
+            userDefaults.set(false, forKey: "isUserLoggedIn")
+            userDefaults.set("", forKey: "refreshToken")
+        }
+        
+        let isUserLoggedIn = userDefaults.bool(forKey: "isUserLoggedIn")
+        let refreshToken = UserDefaults.standard.string(forKey: "refreshToken") ?? ""
+        
+        checkRefreshToken(refreshToken: refreshToken, isUserLoggedIn: isUserLoggedIn)
     }
     
-    func openTheDesiredController(isAuthorized: Bool, result: ResponseModel?) {
-        if isAuthorized {
+    func checkRefreshToken(refreshToken: String, isUserLoggedIn: Bool) {
+        var isTokenExpired = true
+        
+        appContext.authentication.getToken(refreshToken: refreshToken) { [weak self] res in
+            switch res {
+            case let .success(token):
+                isTokenExpired = refreshToken != token
+                DispatchQueue.main.async {
+                    self?.openTheDesiredController(isAuthorized: isUserLoggedIn, result: nil, isTokenExpired: isTokenExpired)
+                }
+            case let .failure(error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func openTheDesiredController(isAuthorized: Bool, result: ResponseModel?, isTokenExpired: Bool = true) {
+        if isAuthorized && !isTokenExpired {
             let storyboard = UIStoryboard(name: "Contracts", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "ContractsVC") as? ContractsViewController
-            if let vc {
-                vc.presenter = ContractsPresenter(view: vc, result: result)
-            }
-            let navController = UINavigationController(rootViewController: vc ?? ContractsViewController())
+            guard let vc else { return }
+            vc.presenter = ContractsPresenter(view: vc, result: result)
+            let navController = UINavigationController(rootViewController: vc)
             window?.rootViewController = navController
             window?.makeKeyAndVisible()
         } else {

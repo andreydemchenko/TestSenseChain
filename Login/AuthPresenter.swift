@@ -13,6 +13,7 @@ protocol AuthViewProtocol: AnyObject {
     var error: String { get set }
     
     func moveToContracts(result: ResponseModel)
+    func createSpinnerView()
 }
 
 class AuthPresenter {
@@ -29,16 +30,20 @@ class AuthPresenter {
         let email = view.email
         let password = view.password
         
-        self.view.error = ""
-        
-        let fieldsAreCorrect = validateEmailAndPassword(email, password)
+        let validate = validateEmailAndPassword(email, password)
+        let fieldsAreCorrect = validate.isValide
+        self.view.error = validate.error
     
         if fieldsAreCorrect {
+            view.createSpinnerView()
             self.authService.login(email, password) { [weak self] result in
                 switch result {
                 case let .success(model):
                     if model.data != nil {
                         self?.view.moveToContracts(result: model)
+                        let userDefaults = UserDefaults.standard
+                        userDefaults.set(true, forKey: "isUserLoggedIn")
+                        userDefaults.set(model.data?.refresh_token, forKey: "refreshToken")
                     } else if let error = model.error {
                         self?.view.error = "code: \(error.code), text: \(error.text)"
                     }
@@ -47,30 +52,6 @@ class AuthPresenter {
                 }
             }
         }
-    }
-    
-    private func validateEmailAndPassword(_ email: String, _ password: String) -> Bool {
-        if email.isEmpty && password.isEmpty {
-            self.view.error = "Enter Email and Password!"
-        } else {
-            if email.isEmpty {
-                self.view.error = "Enter Email!"
-            }
-            if password.isEmpty {
-                self.view.error = "Enter Password!"
-            } else {
-                if !email.isValidEmail {
-                    self.view.error = "Invalide Email!"
-                }
-                if password.count < 4 {
-                    self.view.error = "Password should have at least 4 characters!"
-                } else if email.isValidEmail && password.count >= 4 {
-                    self.view.error = ""
-                    return true
-                }
-            }
-        }
-        return false
     }
     
 }

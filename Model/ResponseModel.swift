@@ -15,7 +15,7 @@ struct ResponseModel: Codable {
 struct DataResponseModel: Codable {
     var access_token: String
     var refresh_token: String
-    var role_id: Int
+    var role_id: Int?
 }
 
 struct ErrorResponseModel: Codable {
