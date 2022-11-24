@@ -14,31 +14,17 @@ class ContractsViewController: UIViewController {
     var presenter: ContractsPresenter!
     
     private let authService = appContext.authentication
+    private let child = SpinnerViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.saveAndShowResult()
+        presenter.showResult()
     }
 
     @IBAction
     private func signOutClick(_ sender: Any) {
-        createSpinnerView()
+        self.createSpinnerView(child)
         presenter.tapSignOutBtn()
-    }
-    
-    private func createSpinnerView() {
-        let child = SpinnerViewController()
-
-        addChild(child)
-        child.view.frame = view.frame
-        view.addSubview(child.view)
-        child.didMove(toParent: self)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            child.willMove(toParent: nil)
-            child.view.removeFromSuperview()
-            child.removeFromParent()
-        }
     }
     
 }
@@ -58,12 +44,19 @@ extension ContractsViewController: ContractsProtocol {
                 DispatchQueue.main.async {
                     if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
                         scene.openTheDesiredController(isAuthorized: false, result: nil)
+                        scene.saveData(model: nil)
                         self?.resultTxtView.text = nil
+                    }
+                    if let self {
+                        self.removeSpinnerView(self.child)
                     }
                 }
             case let .failure(error):
                 DispatchQueue.main.async {
                     self?.resultTxtView.text = error.localizedDescription
+                }
+                if let self {
+                    self.removeSpinnerView(self.child)
                 }
             }
         }

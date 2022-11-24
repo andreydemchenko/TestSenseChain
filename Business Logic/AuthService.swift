@@ -12,7 +12,7 @@ protocol AuthServiceProtocol {
     func login(_ email: String, _ password: String, completion: @escaping (Result<ResponseModel, Error>) -> Void)
     func logout(completion: @escaping (Result<Void, Error>) -> Void)
     func refreshToken(refreshToken: String, completion: @escaping (Result<ResponseModel, Error>) -> Void)
-    func testQuery(completion: @escaping (Result<ResponseModel, Error>) -> Void)
+    func testQuery(accessToken: String, completion: @escaping (Result<GetTemplatesModel, Error>) -> Void)
     
 }
 
@@ -111,15 +111,15 @@ class AuthService: AuthServiceProtocol {
         } catch let error {
             completion(.failure(error))
         }
-        
     }
     
-    func testQuery(completion: @escaping (Result<ResponseModel, Error>) -> Void) {
+    func testQuery(accessToken: String, completion: @escaping (Result<GetTemplatesModel, Error>) -> Void) {
         guard let requestUrl = urlTemplates else { return completion(.failure(urlError)) }
         
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "GET"
         
+        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -131,7 +131,7 @@ class AuthService: AuthServiceProtocol {
             
             if let data {
                 do {
-                    let responseModel = try JSONDecoder().decode(ResponseModel.self, from: data)
+                    let responseModel = try JSONDecoder().decode(GetTemplatesModel.self, from: data)
                     completion(.success(responseModel))
                 } catch let error {
                     completion(.failure(error))

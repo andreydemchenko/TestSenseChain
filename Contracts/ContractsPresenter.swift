@@ -22,11 +22,7 @@ class ContractsPresenter {
         self.result = result
     }
     
-    func saveAndShowResult() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(result?.data?.access_token, forKey: "accessToken")
-        userDefaults.set(result?.data?.refresh_token, forKey: "refreshToken")
-        
+    func showResult() {
         view?.presentResult(result)
     }
     

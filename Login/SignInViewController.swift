@@ -15,6 +15,7 @@ class SignInViewController: UIViewController {
     @IBOutlet private weak var signInBtn: UIButton!
     
     var presenter: AuthPresenter!
+    private let child = SpinnerViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,7 @@ class SignInViewController: UIViewController {
     
     @IBAction
     private func signInClick(_ sender: Any) {
+        self.createSpinnerView(child)
         presenter.tapSignInBtn()
     }
     
@@ -46,9 +48,9 @@ extension SignInViewController: AuthViewProtocol {
         return passwordTxtField.text ?? ""
     }
     
-    var error: String {
+    var error: String? {
         get {
-            return ""
+            return nil
         }
         set {
             DispatchQueue.main.async {
@@ -62,22 +64,37 @@ extension SignInViewController: AuthViewProtocol {
         DispatchQueue.main.async {
             if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
                 scene.openTheDesiredController(isAuthorized: true, result: result)
+                scene.saveData(model: result)
             }
         }
     }
     
-    func createSpinnerView() {
-        let child = SpinnerViewController()
+    func removeLoader() {
+        self.removeSpinnerView(self.child)
+    }
+    
+}
 
+extension UIViewController {
+    
+    func createSpinnerView(_ child: UIViewController, frame: CGRect? = nil) {
         addChild(child)
-        child.view.frame = view.frame
+        if frame != nil {
+            if let frame = frame {
+                child.view.frame = frame
+            }
+        } else {
+            child.view.frame = self.view.frame
+        }
         view.addSubview(child.view)
         child.didMove(toParent: self)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            child.willMove(toParent: nil)
+    }
+    
+    func removeSpinnerView(_ child: UIViewController) {
+        DispatchQueue.main.async {
             child.view.removeFromSuperview()
-            child.removeFromParent()
+            self.willMove(toParent: nil)
+            self.removeFromParent()
         }
     }
     
