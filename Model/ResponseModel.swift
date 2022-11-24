@@ -22,3 +22,5 @@ struct ErrorResponseModel: Codable {
     var code: Int
     var text: String
 }
+
+struct NoReply: Codable {}

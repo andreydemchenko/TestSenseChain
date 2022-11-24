@@ -26,6 +26,7 @@
 		8C2664B0292E1108000780F6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2664A0292E1108000780F6 /* AuthService.swift */; };
 		8C2664B3292E3403000780F6 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2664B2292E3403000780F6 /* SpinnerViewController.swift */; };
 		8C9F8760292F69F4001BED1D /* GetTemplatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F875F292F69F4001BED1D /* GetTemplatesModel.swift */; };
+		8C9F8762292F801C001BED1D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F8761292F801C001BED1D /* NetworkManager.swift */; };
 		8CFC204A292E466400ADE663 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2049292E466400ADE663 /* Validation.swift */; };
 		8CFC204C292E631D00ADE663 /* PasswordToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC204B292E631D00ADE663 /* PasswordToggle.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,7 @@
 		8C2664A0292E1108000780F6 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		8C2664B2292E3403000780F6 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		8C9F875F292F69F4001BED1D /* GetTemplatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTemplatesModel.swift; sourceTree = "<group>"; };
+		8C9F8761292F801C001BED1D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8CFC2049292E466400ADE663 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		8CFC204B292E631D00ADE663 /* PasswordToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordToggle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				8C2664A0292E1108000780F6 /* AuthService.swift */,
+				8C9F8761292F801C001BED1D /* NetworkManager.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				8C2664A5292E1108000780F6 /* AppDelegate.swift in Sources */,
 				8CFC204A292E466400ADE663 /* Validation.swift in Sources */,
 				8C2664A9292E1108000780F6 /* AppContext.swift in Sources */,
+				8C9F8762292F801C001BED1D /* NetworkManager.swift in Sources */,
 				8C2664AD292E1108000780F6 /* SignInViewController.swift in Sources */,
 				8C2664A3292E1108000780F6 /* ContractsPresenter.swift in Sources */,
 				8C2664A2292E1108000780F6 /* ContractsViewController.swift in Sources */,

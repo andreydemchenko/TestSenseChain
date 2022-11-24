@@ -68,53 +68,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B3399C9F-5C95-4CEE-8A82-9E13BA45BC6E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Business Logic/AuthService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "testQuery(accessToken:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B3399C9F-5C95-4CEE-8A82-9E13BA45BC6E - 6780a1e9ac23301b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TestSenseChain.AuthService.testQuery(completion: (Swift.Result&lt;TestSenseChain.ResponseModel, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "TestSenseChain"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Business%20Logic/AuthService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "132"
-                  endingLineNumber = "132"
-                  offsetFromSymbolStart = "224">
-               </Location>
-               <Location
-                  uuid = "B3399C9F-5C95-4CEE-8A82-9E13BA45BC6E - 6780a1e9ac23301b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TestSenseChain.AuthService.testQuery(completion: (Swift.Result&lt;TestSenseChain.ResponseModel, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "TestSenseChain"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Business%20Logic/AuthService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "132"
-                  endingLineNumber = "132"
-                  offsetFromSymbolStart = "1008">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

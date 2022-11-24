@@ -18,6 +18,8 @@ protocol AuthServiceProtocol {
 
 class AuthService: AuthServiceProtocol {
     
+    private let manager = NetworkManager()
+    
     let urlSession = URL(string: "https://sense-chain.devzz.ru/api/auth/session")
     let urlTemplates = URL(string: "https://sense-chain.devzz.ru/api/contract/job/templates")
     let urlError = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Invalid url"])
@@ -38,22 +40,14 @@ class AuthService: AuthServiceProtocol {
             
             request.httpBody = jsonData
             
-            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                
-                if let error = error {
-                    print("Error took place \(error)")
-                    return completion(.failure(error))
-                }
-                if let data {
-                    do {
-                        let responseModel = try JSONDecoder().decode(ResponseModel.self, from: data)
-                        completion(.success(responseModel))
-                    } catch let error {
-                        completion(.failure(error))
-                    }
+            manager.query(request: request, modelType: ResponseModel.self) { res in
+                switch res {
+                case let .success(model):
+                    completion(.success(model))
+                case let .failure(error):
+                    completion(.failure(error))
                 }
             }
-            task.resume()
         } catch let error {
             completion(.failure(error))
         }
@@ -67,14 +61,14 @@ class AuthService: AuthServiceProtocol {
         
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print("Error took place \(error)")
-                return completion(.failure(error))
+        manager.query(request: request, modelType: NoReply.self) { res in
+            switch res {
+            case .success:
+                completion(.success(()))
+            case let .failure(error):
+                completion(.failure(error))
             }
-            completion(.success(()))
         }
-        task.resume()
     }
     
     func refreshToken(refreshToken: String, completion: @escaping (Result<ResponseModel, Error>) -> Void) {
@@ -87,29 +81,13 @@ class AuthService: AuthServiceProtocol {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        do {
-            let jsonData = try JSONEncoder().encode(refreshToken)
-            
-            request.httpBody = jsonData
-            
-            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                
-                if let error = error {
-                    print("Error took place \(error)")
-                    return completion(.failure(error))
-                }
-                if let data {
-                    do {
-                        let responseModel = try JSONDecoder().decode(ResponseModel.self, from: data)
-                        completion(.success(responseModel))
-                    } catch let error {
-                        completion(.failure(error))
-                    }
-                }
+        manager.query(request: request, modelType: ResponseModel.self) { res in
+            switch res {
+            case let .success(model):
+                completion(.success(model))
+            case let .failure(error):
+                completion(.failure(error))
             }
-            task.resume()
-        } catch let error {
-            completion(.failure(error))
         }
     }
     
@@ -122,23 +100,14 @@ class AuthService: AuthServiceProtocol {
         request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
-            if let error = error {
-                print("Error took place \(error.localizedDescription)")
-                return completion(.failure(error))
-            }
-            
-            if let data {
-                do {
-                    let responseModel = try JSONDecoder().decode(GetTemplatesModel.self, from: data)
-                    completion(.success(responseModel))
-                } catch let error {
-                    completion(.failure(error))
-                }
+        manager.query(request: request, modelType: GetTemplatesModel.self) { res in
+            switch res {
+            case let .success(model):
+                completion(.success(model))
+            case let .failure(error):
+                completion(.failure(error))
             }
         }
-        task.resume()
     }
     
 }
