@@ -40,7 +40,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             case let .success(model):
                 if model.data != nil {
                     DispatchQueue.main.async {
-                        let result = ResponseModel(data: DataResponseModel(access_token: accessToken, refresh_token: refreshToken))
+                        let result = ResponseAuthModel(data: DataResponseAuthModel(access_token: accessToken, refresh_token: refreshToken))
                         self?.openTheDesiredController(isAuthorized: true, result: result)
                     }
                 } else {
@@ -78,12 +78,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-    func openTheDesiredController(isAuthorized: Bool, result: ResponseModel?) {
+    func openTheDesiredController(isAuthorized: Bool, result: ResponseAuthModel?) {
         if isAuthorized {
-            let storyboard = UIStoryboard(name: "Contracts", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "ContractsVC") as? ContractsViewController
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainVC") as?
+            MainTabBarController
             guard let vc else { return }
-            vc.presenter = ContractsPresenter(view: vc, result: result)
+            //vc.presenter = ContractsPresenter(view: vc, result: result)
             let navController = UINavigationController(rootViewController: vc)
             window?.rootViewController = navController
             window?.makeKeyAndVisible()
@@ -96,7 +97,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-    func saveData(model: ResponseModel?) {
+    func saveData(model: ResponseAuthModel?) {
         let userDefaults = UserDefaults.standard
         userDefaults.set(true, forKey: "isUserLoggedIn")
         userDefaults.set(model?.data?.access_token, forKey: "accessToken")

@@ -9,9 +9,9 @@ import Foundation
 
 protocol AuthServiceProtocol {
     
-    func login(_ email: String, _ password: String, completion: @escaping (Result<ResponseModel, Error>) -> Void)
+    func login(_ email: String, _ password: String, completion: @escaping (Result<ResponseAuthModel, Error>) -> Void)
     func logout(completion: @escaping (Result<Void, Error>) -> Void)
-    func refreshToken(refreshToken: String, completion: @escaping (Result<ResponseModel, Error>) -> Void)
+    func refreshToken(refreshToken: String, completion: @escaping (Result<ResponseAuthModel, Error>) -> Void)
     func testQuery(accessToken: String, completion: @escaping (Result<GetTemplatesModel, Error>) -> Void)
     
 }
@@ -24,7 +24,7 @@ class AuthService: AuthServiceProtocol {
     let urlTemplates = URL(string: "https://sense-chain.devzz.ru/api/contract/job/templates")
     let urlError = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Invalid url"])
     
-    func login(_ email: String, _ password: String, completion: @escaping (Result<ResponseModel, Error>) -> Void) {
+    func login(_ email: String, _ password: String, completion: @escaping (Result<ResponseAuthModel, Error>) -> Void) {
         
         guard let requestUrl = urlSession else { return completion(.failure(urlError)) }
         
@@ -40,7 +40,7 @@ class AuthService: AuthServiceProtocol {
             
             request.httpBody = jsonData
             
-            manager.query(request: request, modelType: ResponseModel.self) { res in
+            manager.query(request: request, modelType: ResponseAuthModel.self) { res in
                 switch res {
                 case let .success(model):
                     completion(.success(model))
@@ -71,7 +71,7 @@ class AuthService: AuthServiceProtocol {
         }
     }
     
-    func refreshToken(refreshToken: String, completion: @escaping (Result<ResponseModel, Error>) -> Void) {
+    func refreshToken(refreshToken: String, completion: @escaping (Result<ResponseAuthModel, Error>) -> Void) {
         
         guard let requestUrl = urlSession else { return completion(.failure(urlError)) }
         
@@ -81,7 +81,7 @@ class AuthService: AuthServiceProtocol {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        manager.query(request: request, modelType: ResponseModel.self) { res in
+        manager.query(request: request, modelType: ResponseAuthModel.self) { res in
             switch res {
             case let .success(model):
                 completion(.success(model))

@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct ResponseModel: Codable {
-    var data: DataResponseModel?
+struct ResponseAuthModel: Codable {
+    var data: DataResponseAuthModel?
     var error: ErrorResponseModel?
 }
 
-struct DataResponseModel: Codable {
+struct DataResponseAuthModel: Codable {
     var access_token: String
     var refresh_token: String
     var role_id: Int?

@@ -12,7 +12,7 @@ protocol AuthViewProtocol: AnyObject {
     var password: String { get }
     var error: String? { get set }
     
-    func moveToContracts(result: ResponseModel)
+    func moveToContracts(result: ResponseAuthModel)
     func removeLoader()
 }
 

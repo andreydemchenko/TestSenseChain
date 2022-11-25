@@ -21,12 +21,26 @@
 		8C2664AB292E1108000780F6 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C266498292E1108000780F6 /* SignIn.storyboard */; };
 		8C2664AC292E1108000780F6 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C26649A292E1108000780F6 /* AuthPresenter.swift */; };
 		8C2664AD292E1108000780F6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C26649B292E1108000780F6 /* SignInViewController.swift */; };
-		8C2664AE292E1108000780F6 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C26649D292E1108000780F6 /* ResponseModel.swift */; };
+		8C2664AE292E1108000780F6 /* ResponseAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C26649D292E1108000780F6 /* ResponseAuthModel.swift */; };
 		8C2664AF292E1108000780F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C26649E292E1108000780F6 /* User.swift */; };
 		8C2664B0292E1108000780F6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2664A0292E1108000780F6 /* AuthService.swift */; };
 		8C2664B3292E3403000780F6 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2664B2292E3403000780F6 /* SpinnerViewController.swift */; };
 		8C9F8760292F69F4001BED1D /* GetTemplatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F875F292F69F4001BED1D /* GetTemplatesModel.swift */; };
 		8C9F8762292F801C001BED1D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F8761292F801C001BED1D /* NetworkManager.swift */; };
+		8C9F8765292F92BE001BED1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C9F8764292F92BE001BED1D /* Main.storyboard */; };
+		8C9F8767292F931B001BED1D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F8766292F931B001BED1D /* MainTabBarController.swift */; };
+		8C9F876A292F9BFC001BED1D /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F8769292F9BFC001BED1D /* WalletViewController.swift */; };
+		8C9F876C292F9C08001BED1D /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C9F876B292F9C08001BED1D /* Wallet.storyboard */; };
+		8C9F876E292FB892001BED1D /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F876D292FB892001BED1D /* MainService.swift */; };
+		8C9F8770292FB936001BED1D /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F876F292FB936001BED1D /* WalletModel.swift */; };
+		8C9F8772292FBA9D001BED1D /* WalletPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F8771292FBA9D001BED1D /* WalletPresenter.swift */; };
+		8CE9EAA82930AB680031DF91 /* BalanceAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAA62930AB680031DF91 /* BalanceAccountTableViewCell.swift */; };
+		8CE9EAA92930AB680031DF91 /* BalanceAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9EAA72930AB680031DF91 /* BalanceAccountTableViewCell.xib */; };
+		8CE9EAAC2930ABC90031DF91 /* BottomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAAA2930ABC90031DF91 /* BottomTableViewCell.swift */; };
+		8CE9EAAD2930ABC90031DF91 /* BottomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9EAAB2930ABC90031DF91 /* BottomTableViewCell.xib */; };
+		8CE9EAAF2930E9530031DF91 /* ContractsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAAE2930E9530031DF91 /* ContractsModel.swift */; };
+		8CE9EAB2293108730031DF91 /* ContractJobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAB0293108730031DF91 /* ContractJobTableViewCell.swift */; };
+		8CE9EAB3293108730031DF91 /* ContractJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9EAB1293108730031DF91 /* ContractJobTableViewCell.xib */; };
 		8CFC204A292E466400ADE663 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2049292E466400ADE663 /* Validation.swift */; };
 		8CFC204C292E631D00ADE663 /* PasswordToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC204B292E631D00ADE663 /* PasswordToggle.swift */; };
 /* End PBXBuildFile section */
@@ -49,12 +63,26 @@
 		8C266499292E1108000780F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignIn.storyboard; sourceTree = "<group>"; };
 		8C26649A292E1108000780F6 /* AuthPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		8C26649B292E1108000780F6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		8C26649D292E1108000780F6 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		8C26649D292E1108000780F6 /* ResponseAuthModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseAuthModel.swift; sourceTree = "<group>"; };
 		8C26649E292E1108000780F6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8C2664A0292E1108000780F6 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		8C2664B2292E3403000780F6 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		8C9F875F292F69F4001BED1D /* GetTemplatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTemplatesModel.swift; sourceTree = "<group>"; };
 		8C9F8761292F801C001BED1D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8C9F8764292F92BE001BED1D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8C9F8766292F931B001BED1D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		8C9F8769292F9BFC001BED1D /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		8C9F876B292F9C08001BED1D /* Wallet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
+		8C9F876D292FB892001BED1D /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
+		8C9F876F292FB936001BED1D /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
+		8C9F8771292FBA9D001BED1D /* WalletPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPresenter.swift; sourceTree = "<group>"; };
+		8CE9EAA62930AB680031DF91 /* BalanceAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceAccountTableViewCell.swift; sourceTree = "<group>"; };
+		8CE9EAA72930AB680031DF91 /* BalanceAccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceAccountTableViewCell.xib; sourceTree = "<group>"; };
+		8CE9EAAA2930ABC90031DF91 /* BottomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTableViewCell.swift; sourceTree = "<group>"; };
+		8CE9EAAB2930ABC90031DF91 /* BottomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomTableViewCell.xib; sourceTree = "<group>"; };
+		8CE9EAAE2930E9530031DF91 /* ContractsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsModel.swift; sourceTree = "<group>"; };
+		8CE9EAB0293108730031DF91 /* ContractJobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractJobTableViewCell.swift; sourceTree = "<group>"; };
+		8CE9EAB1293108730031DF91 /* ContractJobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContractJobTableViewCell.xib; sourceTree = "<group>"; };
 		8CFC2049292E466400ADE663 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		8CFC204B292E631D00ADE663 /* PasswordToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordToggle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,11 +101,11 @@
 		8C0BA94E292CCC98004F8368 = {
 			isa = PBXGroup;
 			children = (
+				8C9F8763292F9182001BED1D /* Main */,
 				8C2664B1292E33DD000780F6 /* Views */,
 				8C266479292E10D3000780F6 /* Assets.xcassets */,
 				8C266487292E1107000780F6 /* Base.lproj */,
 				8C26649F292E1108000780F6 /* Business Logic */,
-				8C26648A292E1107000780F6 /* Contracts */,
 				8C266497292E1108000780F6 /* Login */,
 				8C26649C292E1108000780F6 /* Model */,
 				8C26648E292E1108000780F6 /* Resources */,
@@ -111,6 +139,8 @@
 				8C26648B292E1107000780F6 /* ContractsViewController.swift */,
 				8C26648C292E1107000780F6 /* ContractsPresenter.swift */,
 				8C26648D292E1107000780F6 /* Contracts.storyboard */,
+				8CE9EAB0293108730031DF91 /* ContractJobTableViewCell.swift */,
+				8CE9EAB1293108730031DF91 /* ContractJobTableViewCell.xib */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -156,9 +186,11 @@
 		8C26649C292E1108000780F6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8C26649D292E1108000780F6 /* ResponseModel.swift */,
+				8C26649D292E1108000780F6 /* ResponseAuthModel.swift */,
 				8C26649E292E1108000780F6 /* User.swift */,
 				8C9F875F292F69F4001BED1D /* GetTemplatesModel.swift */,
+				8C9F876F292FB936001BED1D /* WalletModel.swift */,
+				8CE9EAAE2930E9530031DF91 /* ContractsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +200,7 @@
 			children = (
 				8C2664A0292E1108000780F6 /* AuthService.swift */,
 				8C9F8761292F801C001BED1D /* NetworkManager.swift */,
+				8C9F876D292FB892001BED1D /* MainService.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -179,6 +212,31 @@
 				8CFC204B292E631D00ADE663 /* PasswordToggle.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8C9F8763292F9182001BED1D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8C9F8768292F9BE7001BED1D /* Wallet */,
+				8C26648A292E1107000780F6 /* Contracts */,
+				8C9F8764292F92BE001BED1D /* Main.storyboard */,
+				8C9F8766292F931B001BED1D /* MainTabBarController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8C9F8768292F9BE7001BED1D /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				8C9F8769292F9BFC001BED1D /* WalletViewController.swift */,
+				8C9F876B292F9C08001BED1D /* Wallet.storyboard */,
+				8C9F8771292FBA9D001BED1D /* WalletPresenter.swift */,
+				8CE9EAA62930AB680031DF91 /* BalanceAccountTableViewCell.swift */,
+				8CE9EAA72930AB680031DF91 /* BalanceAccountTableViewCell.xib */,
+				8CE9EAAA2930ABC90031DF91 /* BottomTableViewCell.swift */,
+				8CE9EAAB2930ABC90031DF91 /* BottomTableViewCell.xib */,
+			);
+			path = Wallet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,9 +299,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C2664A4292E1108000780F6 /* Contracts.storyboard in Resources */,
+				8C9F876C292F9C08001BED1D /* Wallet.storyboard in Resources */,
 				8C2664A1292E1108000780F6 /* LaunchScreen.storyboard in Resources */,
 				8C26647D292E10D3000780F6 /* README.md in Resources */,
+				8C9F8765292F92BE001BED1D /* Main.storyboard in Resources */,
 				8C2664AB292E1108000780F6 /* SignIn.storyboard in Resources */,
+				8CE9EAA92930AB680031DF91 /* BalanceAccountTableViewCell.xib in Resources */,
+				8CE9EAB3293108730031DF91 /* ContractJobTableViewCell.xib in Resources */,
+				8CE9EAAD2930ABC90031DF91 /* BottomTableViewCell.xib in Resources */,
 				8C266483292E10D3000780F6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,20 +319,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CFC204C292E631D00ADE663 /* PasswordToggle.swift in Sources */,
+				8C9F8770292FB936001BED1D /* WalletModel.swift in Sources */,
 				8C2664AC292E1108000780F6 /* AuthPresenter.swift in Sources */,
 				8C9F8760292F69F4001BED1D /* GetTemplatesModel.swift in Sources */,
 				8C2664A8292E1108000780F6 /* String+Ext.swift in Sources */,
 				8C2664A7292E1108000780F6 /* SceneDelegate.swift in Sources */,
+				8C9F876A292F9BFC001BED1D /* WalletViewController.swift in Sources */,
+				8C9F876E292FB892001BED1D /* MainService.swift in Sources */,
 				8C2664B3292E3403000780F6 /* SpinnerViewController.swift in Sources */,
+				8CE9EAB2293108730031DF91 /* ContractJobTableViewCell.swift in Sources */,
 				8C2664B0292E1108000780F6 /* AuthService.swift in Sources */,
+				8CE9EAAF2930E9530031DF91 /* ContractsModel.swift in Sources */,
 				8C2664A5292E1108000780F6 /* AppDelegate.swift in Sources */,
 				8CFC204A292E466400ADE663 /* Validation.swift in Sources */,
+				8CE9EAAC2930ABC90031DF91 /* BottomTableViewCell.swift in Sources */,
 				8C2664A9292E1108000780F6 /* AppContext.swift in Sources */,
+				8CE9EAA82930AB680031DF91 /* BalanceAccountTableViewCell.swift in Sources */,
 				8C9F8762292F801C001BED1D /* NetworkManager.swift in Sources */,
 				8C2664AD292E1108000780F6 /* SignInViewController.swift in Sources */,
 				8C2664A3292E1108000780F6 /* ContractsPresenter.swift in Sources */,
 				8C2664A2292E1108000780F6 /* ContractsViewController.swift in Sources */,
-				8C2664AE292E1108000780F6 /* ResponseModel.swift in Sources */,
+				8C9F8772292FBA9D001BED1D /* WalletPresenter.swift in Sources */,
+				8C2664AE292E1108000780F6 /* ResponseAuthModel.swift in Sources */,
+				8C9F8767292F931B001BED1D /* MainTabBarController.swift in Sources */,
 				8C26647F292E10D3000780F6 /* ViewController.swift in Sources */,
 				8C2664AF292E1108000780F6 /* User.swift in Sources */,
 			);
