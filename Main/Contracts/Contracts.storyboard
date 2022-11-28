@@ -35,7 +35,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yvO-IY-zjK">
-                                <rect key="frame" x="0.0" y="8" width="390" height="757"/>
+                                <rect key="frame" x="0.0" y="12" width="390" height="753"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.094117634000000006" green="0.094117634000000006" blue="0.094117634000000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.094117634000000006" green="0.094117634000000006" blue="0.094117634000000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,8 +59,8 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FIE-mL-hwz" secondAttribute="trailing" constant="120" id="Exx-Wi-pJZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="FIE-mL-hwz" secondAttribute="bottom" id="KPe-a0-n8v"/>
                             <constraint firstItem="FIE-mL-hwz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="120" id="XCy-j0-1Uv"/>
-                            <constraint firstItem="yvO-IY-zjK" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="8" id="ke7-GD-fMX"/>
                             <constraint firstItem="yvO-IY-zjK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pwh-GJ-ZxE"/>
+                            <constraint firstAttribute="top" secondItem="yvO-IY-zjK" secondAttribute="top" constant="-12" id="qvL-mq-Stb"/>
                         </constraints>
                     </view>
                     <connections>

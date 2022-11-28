@@ -88,8 +88,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="default_contracts_item" width="33" height="42"/>
-        <image name="default_wallet_item" width="44" height="40"/>
+        <image name="default_contracts_item" width="16.5" height="21"/>
+        <image name="default_wallet_item" width="22" height="20"/>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -28,7 +28,7 @@ class WalletPresenter {
     func getData() {
         let group = DispatchGroup()
         group.enter()
-        let accessToken = UserDefaults.standard.string(forKey: "accessToken") ?? ""
+        let accessToken = appContext.keychain.readAccessToken()
         service.getWalletData(accessToken: accessToken) { [weak self] res in
             switch res {
             case let .success(model):

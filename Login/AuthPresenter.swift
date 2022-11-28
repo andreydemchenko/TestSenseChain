@@ -12,7 +12,7 @@ protocol AuthViewProtocol: AnyObject {
     var password: String { get }
     var error: String? { get set }
     
-    func moveToContracts(result: ResponseAuthModel)
+    func moveToMain(result: ResponseAuthModel)
     func removeLoader()
 }
 
@@ -39,7 +39,7 @@ class AuthPresenter {
                 switch result {
                 case let .success(model):
                     if model.data != nil {
-                        self?.view.moveToContracts(result: model)
+                        self?.view.moveToMain(result: model)
                     } else if let error = model.error {
                         self?.view.error = error.text
                     }

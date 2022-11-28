@@ -40,6 +40,7 @@
 		8CCEC5D22934AABD00E898A5 /* WalletHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5D12934AABD00E898A5 /* WalletHeaderView.swift */; };
 		8CCEC5D42934B5B100E898A5 /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5D32934B5B100E898A5 /* Double+Ext.swift */; };
 		8CCEC5D62934C86600E898A5 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5D52934C86600E898A5 /* Date+Ext.swift */; };
+		8CCEC5D82934EA0A00E898A5 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5D72934EA0A00E898A5 /* KeychainWrapper.swift */; };
 		8CE9EAA82930AB680031DF91 /* BalanceAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAA62930AB680031DF91 /* BalanceAccountTableViewCell.swift */; };
 		8CE9EAA92930AB680031DF91 /* BalanceAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9EAA72930AB680031DF91 /* BalanceAccountTableViewCell.xib */; };
 		8CE9EAAC2930ABC90031DF91 /* BottomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAAA2930ABC90031DF91 /* BottomTableViewCell.swift */; };
@@ -88,6 +89,7 @@
 		8CCEC5D12934AABD00E898A5 /* WalletHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHeaderView.swift; sourceTree = "<group>"; };
 		8CCEC5D32934B5B100E898A5 /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
 		8CCEC5D52934C86600E898A5 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		8CCEC5D72934EA0A00E898A5 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		8CE9EAA62930AB680031DF91 /* BalanceAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceAccountTableViewCell.swift; sourceTree = "<group>"; };
 		8CE9EAA72930AB680031DF91 /* BalanceAccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceAccountTableViewCell.xib; sourceTree = "<group>"; };
 		8CE9EAAA2930ABC90031DF91 /* BottomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTableViewCell.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				8C2664A0292E1108000780F6 /* AuthService.swift */,
 				8C9F8761292F801C001BED1D /* NetworkManager.swift */,
 				8C9F876D292FB892001BED1D /* MainService.swift */,
+				8CCEC5D72934EA0A00E898A5 /* KeychainWrapper.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				8CE9EAAF2930E9530031DF91 /* ContractsModel.swift in Sources */,
 				8C2664A5292E1108000780F6 /* AppDelegate.swift in Sources */,
 				8CFC204A292E466400ADE663 /* Validation.swift in Sources */,
+				8CCEC5D82934EA0A00E898A5 /* KeychainWrapper.swift in Sources */,
 				8CE9EAAC2930ABC90031DF91 /* BottomTableViewCell.swift in Sources */,
 				8C2664A9292E1108000780F6 /* AppContext.swift in Sources */,
 				8CCEC5C82934972F00E898A5 /* ContractsHeaderView.swift in Sources */,

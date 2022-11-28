@@ -14,16 +14,16 @@
             <rect key="frame" x="0.0" y="0.0" width="380" height="75"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Job contracts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bk-af-usC">
-                    <rect key="frame" x="110" y="0.0" width="160" height="26.333333333333336"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsN-pR-AhD">
                     <rect key="frame" x="18" y="38.333333333333336" width="344" height="28.666666666666664"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.70579451319999997" green="0.70535856490000004" blue="0.73443406820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Job contracts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bk-af-usC">
+                    <rect key="frame" x="110" y="3.9999999999999982" width="160" height="26.333333333333329"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -31,8 +31,8 @@
             <color key="backgroundColor" red="0.094117634000000006" green="0.094117634000000006" blue="0.094117634000000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HsN-pR-AhD" secondAttribute="trailing" constant="18" id="AfI-AG-Wcn"/>
-                <constraint firstItem="1bk-af-usC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="L10-Cb-TiB"/>
-                <constraint firstItem="HsN-pR-AhD" firstAttribute="top" secondItem="1bk-af-usC" secondAttribute="bottom" constant="12" id="Onf-yy-Niw"/>
+                <constraint firstItem="1bk-af-usC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="L10-Cb-TiB"/>
+                <constraint firstItem="HsN-pR-AhD" firstAttribute="top" secondItem="1bk-af-usC" secondAttribute="bottom" constant="8" id="Onf-yy-Niw"/>
                 <constraint firstItem="HsN-pR-AhD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="ith-rp-twB"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="HsN-pR-AhD" secondAttribute="bottom" constant="8" id="swa-dR-mnM"/>
                 <constraint firstAttribute="trailing" secondItem="1bk-af-usC" secondAttribute="trailing" constant="110" id="vy3-ky-Yed"/>

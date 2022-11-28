@@ -24,7 +24,8 @@ class ContractsPresenter {
     }
     
     func getContracts() {
-        let accessToken = UserDefaults.standard.string(forKey: "accessToken") ?? ""
+        let accessToken = appContext.keychain.readAccessToken()
+        print("accesstoken = \(accessToken)")
         service.getJobContracts(accessToken: accessToken) { [weak self] res in
             switch res {
             case let .success(data):

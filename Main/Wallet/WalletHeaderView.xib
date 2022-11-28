@@ -25,13 +25,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6a55c567624683e...64d9a16b1b4a61c94e" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgp-pw-Wna">
-                    <rect key="frame" x="77" y="26" width="250" height="39"/>
+                    <rect key="frame" x="77" y="26.000000000000004" width="250" height="35.333333333333343"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <color key="textColor" red="0.55680012700000003" green="0.55648958680000005" blue="0.57725906370000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total balance in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITx-7S-mqm">
-                    <rect key="frame" x="26" y="83" width="95" height="21.666666666666671"/>
+                    <rect key="frame" x="26" y="79.333333333333329" width="95" height="25.333333333333329"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.55680012700000003" green="0.55648958680000005" blue="0.57725906370000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -46,14 +46,17 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3D-FU-9XU">
-                    <rect key="frame" x="199" y="78" width="30" height="29.666666666666671"/>
+                    <rect key="frame" x="197" y="83" width="36" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="ls2-va-iIB"/>
+                    </constraints>
                     <color key="tintColor" systemColor="systemOrangeColor"/>
                     <buttonConfiguration key="configuration" style="plain" image="wallet_reloader">
                         <color key="baseForegroundColor" red="0.97761756180000003" green="0.49473541980000002" blue="0.051190428439999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </buttonConfiguration>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="1%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFl-5g-nM9">
-                    <rect key="frame" x="330" y="106.66666666666667" width="26.333333333333314" height="24.000000000000014"/>
+                    <rect key="frame" x="330" y="103" width="26.333333333333314" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" systemColor="systemGreenColor"/>
                     <nil key="highlightedColor"/>
@@ -71,7 +74,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARY-pJ-dX5">
-                    <rect key="frame" x="310" y="83" width="54" height="15.666666666666671"/>
+                    <rect key="frame" x="310" y="79.333333333333329" width="54" height="15.666666666666671"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.55680012700000003" green="0.55648958680000005" blue="0.57725906370000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -81,8 +84,8 @@
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ITx-7S-mqm" firstAttribute="top" secondItem="Cgp-pw-Wna" secondAttribute="bottom" constant="18" id="0HL-L9-W7N"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="p3D-FU-9XU" secondAttribute="bottom" constant="62.333333333333371" id="2kO-bz-91M"/>
                 <constraint firstItem="0l0-i2-wbg" firstAttribute="leading" secondItem="ITx-7S-mqm" secondAttribute="trailing" constant="4" id="86M-vc-rIg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="p3D-FU-9XU" secondAttribute="bottom" constant="67" id="9Sa-t7-J8H"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ARY-pJ-dX5" secondAttribute="trailing" constant="16" id="9oL-4Q-Hnh"/>
                 <constraint firstItem="3G3-xA-oeH" firstAttribute="top" secondItem="0l0-i2-wbg" secondAttribute="bottom" constant="28" id="BdQ-M8-m8y"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LFl-5g-nM9" secondAttribute="trailing" constant="23.666666666666686" id="BrT-tc-yYB"/>
@@ -90,18 +93,16 @@
                 <constraint firstItem="scX-Vu-Xzt" firstAttribute="top" secondItem="ITx-7S-mqm" secondAttribute="bottom" constant="4" id="G0w-g7-xUR"/>
                 <constraint firstItem="ARY-pJ-dX5" firstAttribute="top" secondItem="Cgp-pw-Wna" secondAttribute="bottom" constant="18" id="HEL-Uj-TMF"/>
                 <constraint firstItem="3G3-xA-oeH" firstAttribute="leading" secondItem="scX-Vu-Xzt" secondAttribute="trailing" constant="4" id="JCn-NM-vIi"/>
+                <constraint firstItem="p3D-FU-9XU" firstAttribute="top" secondItem="Cgp-pw-Wna" secondAttribute="bottom" constant="21.666666666666657" id="KBo-tz-j2I"/>
                 <constraint firstItem="5Sh-D5-6t5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KQQ-Qf-tZf"/>
-                <constraint firstItem="ARY-pJ-dX5" firstAttribute="leading" secondItem="p3D-FU-9XU" secondAttribute="trailing" constant="81" id="KRg-Uk-hdq"/>
-                <constraint firstItem="p3D-FU-9XU" firstAttribute="centerY" secondItem="0l0-i2-wbg" secondAttribute="centerY" id="Pg3-xr-oOL"/>
                 <constraint firstItem="scX-Vu-Xzt" firstAttribute="leading" secondItem="ITx-7S-mqm" secondAttribute="leading" id="UoN-xB-7dt"/>
                 <constraint firstItem="scX-Vu-Xzt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="26" id="UzM-GM-BQ3"/>
                 <constraint firstItem="Cgp-pw-Wna" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="77" id="Vqn-LY-g2n"/>
                 <constraint firstItem="0l0-i2-wbg" firstAttribute="baseline" secondItem="ITx-7S-mqm" secondAttribute="baseline" constant="-4.0000000000000426" id="Z7X-Im-zZB"/>
-                <constraint firstItem="p3D-FU-9XU" firstAttribute="leading" secondItem="0l0-i2-wbg" secondAttribute="trailing" constant="2" id="bsW-Un-rEc"/>
                 <constraint firstItem="LFl-5g-nM9" firstAttribute="top" secondItem="ARY-pJ-dX5" secondAttribute="bottom" constant="8" symbolic="YES" id="gAT-TU-2Eh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Cgp-pw-Wna" secondAttribute="trailing" constant="53" id="h1F-Fr-I9L"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="scX-Vu-Xzt" secondAttribute="bottom" constant="17" id="hIp-Kz-MRb"/>
-                <constraint firstItem="p3D-FU-9XU" firstAttribute="top" secondItem="Cgp-pw-Wna" secondAttribute="bottom" constant="12.999999999999957" id="lR6-nJ-uXT"/>
+                <constraint firstItem="p3D-FU-9XU" firstAttribute="leading" secondItem="0l0-i2-wbg" secondAttribute="trailing" id="lcT-Wz-dHb"/>
                 <constraint firstItem="5Sh-D5-6t5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="x1P-hF-KSG"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3G3-xA-oeH" secondAttribute="bottom" constant="20.666666666666657" id="xLq-5A-jhw"/>
             </constraints>

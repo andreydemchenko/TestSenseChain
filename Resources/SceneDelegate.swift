@@ -20,16 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead)
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        
-        let userDefaults = UserDefaults.standard
-        
-        if userDefaults.value(forKey: "accessToken") == nil {
-            userDefaults.set("", forKey: "accessToken")
-            userDefaults.set("", forKey: "refreshToken")
-        }
-        
-        let accessToken = userDefaults.string(forKey: "accessToken") ?? ""
-        let refreshToken = userDefaults.string(forKey: "refreshToken") ?? ""
+
+        let accessToken = appContext.keychain.readAccessToken()
+        let refreshToken = appContext.keychain.readRefreshToken()
         
         checkAccess(accessToken: accessToken, refreshToken: refreshToken)
     }
@@ -60,7 +53,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             switch res {
             case let .success(model):
                 if model.data != nil {
-                    self?.saveData(model: model)
+                    self?.saveData(model: model, isUpdate: true)
                     DispatchQueue.main.async {
                         self?.openTheDesiredController(isAuthorized: true, result: model)
                     }
@@ -84,7 +77,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let vc = storyboard.instantiateViewController(withIdentifier: "MainVC") as?
             MainTabBarController
             guard let vc else { return }
-            //vc.presenter = ContractsPresenter(view: vc, result: result)
             let navController = UINavigationController(rootViewController: vc)
             window?.rootViewController = navController
             window?.makeKeyAndVisible()
@@ -97,11 +89,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-    func saveData(model: ResponseAuthModel?) {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(true, forKey: "isUserLoggedIn")
-        userDefaults.set(model?.data?.access_token, forKey: "accessToken")
-        userDefaults.set(model?.data?.refresh_token, forKey: "refreshToken")
+    func saveData(model: ResponseAuthModel?, isUpdate: Bool) {
+        let keychain = appContext.keychain
+        if let data = model?.data {
+            keychain.setAccessToken(token: data.access_token, isUpdate: isUpdate)
+            keychain.setRefreshToken(token: data.refresh_token, isUpdate: isUpdate)
+        } else {
+            keychain.deleteData()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

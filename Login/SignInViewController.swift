@@ -60,11 +60,11 @@ extension SignInViewController: AuthViewProtocol {
         }
     }
     
-    func moveToContracts(result: ResponseAuthModel) {
+    func moveToMain(result: ResponseAuthModel) {
         DispatchQueue.main.async {
             if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
                 scene.openTheDesiredController(isAuthorized: true, result: result)
-                scene.saveData(model: result)
+                scene.saveData(model: result, isUpdate: false)
             }
         }
     }

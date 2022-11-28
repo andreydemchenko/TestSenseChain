@@ -63,7 +63,7 @@ extension ContractsViewController: ContractsProtocol {
                 DispatchQueue.main.async {
                     if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
                         scene.openTheDesiredController(isAuthorized: false, result: nil)
-                        scene.saveData(model: nil)
+                        scene.saveData(model: nil, isUpdate: false)
                     }
                     if let self {
                         self.removeSpinnerView(self.child)
