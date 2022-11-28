@@ -17,6 +17,7 @@ class ContractsViewController: UIViewController {
     private let child = SpinnerViewController()
     
     private var contracts = [ContractJobModel]()
+    private var contractsCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class ContractsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ContractJobTableViewCell", bundle: nil), forCellReuseIdentifier: "ContractJobCell")
+        tableView.register(UINib(nibName: "ContractsHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "ContractsHeaderView")
         
         presenter.getContracts()
     }
@@ -41,6 +43,11 @@ class ContractsViewController: UIViewController {
 }
 
 extension ContractsViewController: ContractsProtocol {
+    
+    func getContractsAmount(count: Int) {
+        contractsCount = count
+    }
+    
     
     func presentResult(_ result: [ContractJobModel]) {
        contracts = result
@@ -86,6 +93,16 @@ extension ContractsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.setViews(contract: contracts[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ContractsHeaderView") as! ContractsHeaderView
+        headerView.setContractsAmountText(count: contractsCount)
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 75
     }
     
 }

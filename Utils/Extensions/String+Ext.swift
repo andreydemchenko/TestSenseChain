@@ -16,4 +16,14 @@ extension String {
         return emailPred.evaluate(with: self)
     }
     
+    func toDate(withFormat format: String = "yyyy-MM-dd'T'HH:mm:ss.SSSZ") -> Date? {
+         let dateFormatter = DateFormatter()
+         dateFormatter.calendar = Calendar(identifier: .gregorian)
+         dateFormatter.dateFormat = format
+         let date = dateFormatter.date(from: self)
+
+         return date
+
+     }
+    
 }

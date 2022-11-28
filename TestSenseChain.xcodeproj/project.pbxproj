@@ -34,6 +34,12 @@
 		8C9F876E292FB892001BED1D /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F876D292FB892001BED1D /* MainService.swift */; };
 		8C9F8770292FB936001BED1D /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F876F292FB936001BED1D /* WalletModel.swift */; };
 		8C9F8772292FBA9D001BED1D /* WalletPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F8771292FBA9D001BED1D /* WalletPresenter.swift */; };
+		8CCEC5C82934972F00E898A5 /* ContractsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5C72934972F00E898A5 /* ContractsHeaderView.swift */; };
+		8CCEC5CA2934974900E898A5 /* ContractsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCEC5C92934974900E898A5 /* ContractsHeaderView.xib */; };
+		8CCEC5D02934AAAD00E898A5 /* WalletHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCEC5CF2934AAAD00E898A5 /* WalletHeaderView.xib */; };
+		8CCEC5D22934AABD00E898A5 /* WalletHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5D12934AABD00E898A5 /* WalletHeaderView.swift */; };
+		8CCEC5D42934B5B100E898A5 /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5D32934B5B100E898A5 /* Double+Ext.swift */; };
+		8CCEC5D62934C86600E898A5 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5D52934C86600E898A5 /* Date+Ext.swift */; };
 		8CE9EAA82930AB680031DF91 /* BalanceAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAA62930AB680031DF91 /* BalanceAccountTableViewCell.swift */; };
 		8CE9EAA92930AB680031DF91 /* BalanceAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9EAA72930AB680031DF91 /* BalanceAccountTableViewCell.xib */; };
 		8CE9EAAC2930ABC90031DF91 /* BottomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAAA2930ABC90031DF91 /* BottomTableViewCell.swift */; };
@@ -76,6 +82,12 @@
 		8C9F876D292FB892001BED1D /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		8C9F876F292FB936001BED1D /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
 		8C9F8771292FBA9D001BED1D /* WalletPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPresenter.swift; sourceTree = "<group>"; };
+		8CCEC5C72934972F00E898A5 /* ContractsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsHeaderView.swift; sourceTree = "<group>"; };
+		8CCEC5C92934974900E898A5 /* ContractsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContractsHeaderView.xib; sourceTree = "<group>"; };
+		8CCEC5CF2934AAAD00E898A5 /* WalletHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletHeaderView.xib; sourceTree = "<group>"; };
+		8CCEC5D12934AABD00E898A5 /* WalletHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHeaderView.swift; sourceTree = "<group>"; };
+		8CCEC5D32934B5B100E898A5 /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
+		8CCEC5D52934C86600E898A5 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		8CE9EAA62930AB680031DF91 /* BalanceAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceAccountTableViewCell.swift; sourceTree = "<group>"; };
 		8CE9EAA72930AB680031DF91 /* BalanceAccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceAccountTableViewCell.xib; sourceTree = "<group>"; };
 		8CE9EAAA2930ABC90031DF91 /* BottomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTableViewCell.swift; sourceTree = "<group>"; };
@@ -141,6 +153,8 @@
 				8C26648D292E1107000780F6 /* Contracts.storyboard */,
 				8CE9EAB0293108730031DF91 /* ContractJobTableViewCell.swift */,
 				8CE9EAB1293108730031DF91 /* ContractJobTableViewCell.xib */,
+				8CCEC5C72934972F00E898A5 /* ContractsHeaderView.swift */,
+				8CCEC5C92934974900E898A5 /* ContractsHeaderView.xib */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -169,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				8C266494292E1108000780F6 /* String+Ext.swift */,
+				8CCEC5D32934B5B100E898A5 /* Double+Ext.swift */,
+				8CCEC5D52934C86600E898A5 /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -235,6 +251,8 @@
 				8CE9EAA72930AB680031DF91 /* BalanceAccountTableViewCell.xib */,
 				8CE9EAAA2930ABC90031DF91 /* BottomTableViewCell.swift */,
 				8CE9EAAB2930ABC90031DF91 /* BottomTableViewCell.xib */,
+				8CCEC5CF2934AAAD00E898A5 /* WalletHeaderView.xib */,
+				8CCEC5D12934AABD00E898A5 /* WalletHeaderView.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -304,9 +322,11 @@
 				8C26647D292E10D3000780F6 /* README.md in Resources */,
 				8C9F8765292F92BE001BED1D /* Main.storyboard in Resources */,
 				8C2664AB292E1108000780F6 /* SignIn.storyboard in Resources */,
+				8CCEC5CA2934974900E898A5 /* ContractsHeaderView.xib in Resources */,
 				8CE9EAA92930AB680031DF91 /* BalanceAccountTableViewCell.xib in Resources */,
 				8CE9EAB3293108730031DF91 /* ContractJobTableViewCell.xib in Resources */,
 				8CE9EAAD2930ABC90031DF91 /* BottomTableViewCell.xib in Resources */,
+				8CCEC5D02934AAAD00E898A5 /* WalletHeaderView.xib in Resources */,
 				8C266483292E10D3000780F6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +347,7 @@
 				8C9F876A292F9BFC001BED1D /* WalletViewController.swift in Sources */,
 				8C9F876E292FB892001BED1D /* MainService.swift in Sources */,
 				8C2664B3292E3403000780F6 /* SpinnerViewController.swift in Sources */,
+				8CCEC5D62934C86600E898A5 /* Date+Ext.swift in Sources */,
 				8CE9EAB2293108730031DF91 /* ContractJobTableViewCell.swift in Sources */,
 				8C2664B0292E1108000780F6 /* AuthService.swift in Sources */,
 				8CE9EAAF2930E9530031DF91 /* ContractsModel.swift in Sources */,
@@ -334,16 +355,19 @@
 				8CFC204A292E466400ADE663 /* Validation.swift in Sources */,
 				8CE9EAAC2930ABC90031DF91 /* BottomTableViewCell.swift in Sources */,
 				8C2664A9292E1108000780F6 /* AppContext.swift in Sources */,
+				8CCEC5C82934972F00E898A5 /* ContractsHeaderView.swift in Sources */,
 				8CE9EAA82930AB680031DF91 /* BalanceAccountTableViewCell.swift in Sources */,
 				8C9F8762292F801C001BED1D /* NetworkManager.swift in Sources */,
 				8C2664AD292E1108000780F6 /* SignInViewController.swift in Sources */,
 				8C2664A3292E1108000780F6 /* ContractsPresenter.swift in Sources */,
 				8C2664A2292E1108000780F6 /* ContractsViewController.swift in Sources */,
+				8CCEC5D22934AABD00E898A5 /* WalletHeaderView.swift in Sources */,
 				8C9F8772292FBA9D001BED1D /* WalletPresenter.swift in Sources */,
 				8C2664AE292E1108000780F6 /* ResponseAuthModel.swift in Sources */,
 				8C9F8767292F931B001BED1D /* MainTabBarController.swift in Sources */,
 				8C26647F292E10D3000780F6 /* ViewController.swift in Sources */,
 				8C2664AF292E1108000780F6 /* User.swift in Sources */,
+				8CCEC5D42934B5B100E898A5 /* Double+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

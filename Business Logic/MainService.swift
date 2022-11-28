@@ -16,7 +16,7 @@ protocol MainServiceProtocol: AnyObject {
 class MainService: MainServiceProtocol {
     
     let urlWallet = URL(string: "https://sense-chain.devzz.ru/api/wallet")
-    let urlJobContracts = URL(string: "https://sense-chain.devzz.ru/api/user/contracts/job/closed/employer/offset/0")
+    let urlJobContracts = URL(string: "https://sense-chain.devzz.ru/api/user/contracts/job/closed/employee/offset/0")
     let urlError = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Invalid url"])
     
     private let manager = NetworkManager()

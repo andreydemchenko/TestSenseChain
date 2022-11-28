@@ -15,21 +15,18 @@ class BalanceAccountTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     func setViews(model: WalletModelCell) {
         nameLbl?.text = model.text
         imageBalance?.image = model.image
         if let balance = model.balance {
-            balanceLbl?.text = "\(balance) "
+            balanceLbl?.text = balance.removeZerosFromEnd()
         }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

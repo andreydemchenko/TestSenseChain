@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "Image.png",
+      "filename" : "arrow.triangle.2.circlepath-2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "arrow.triangle.2.circlepath-2 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

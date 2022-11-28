@@ -29,11 +29,13 @@ class ContractJobTableViewCell: UITableViewCell {
     
     func setViews(contract: ContractJobModel) {
         nameLbl.text = contract.name
-        createdAtLbl.text = contract.created_at
-        balanceLbl.text = "\(contract.amount ?? 0)"
-        hoursLbl.text = "\(contract.hours ?? 0)"
-        employerLbl.text = "\(contract.hours ?? 0)"
-        datesLbl.text = "\(contract.start_date) - \(contract.until_end)"
+        createdAtLbl.text = contract.created_at?.toDate()?.timeAgoDisplay()
+        balanceLbl.text = contract.amount?.removeZerosFromEnd()
+        hoursLbl.text = contract.hours?.removeZerosFromEnd()
+        employerLbl.text = contract.employer_user_username
+        if let startDate = contract.start_date, let endDate = contract.until_end {
+            datesLbl.text = "\(startDate) - \(endDate)"
+        }
         descriptionLbl.text = contract.description
         categoryLbl.text = contract.field_of_job
     }

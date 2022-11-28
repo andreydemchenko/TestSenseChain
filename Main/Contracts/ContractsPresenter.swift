@@ -9,6 +9,7 @@ import Foundation
 
 protocol ContractsProtocol: AnyObject {
     func presentResult(_ result: [ContractJobModel])
+    func getContractsAmount(count: Int)
     func signOut()
 }
 
@@ -27,8 +28,9 @@ class ContractsPresenter {
         service.getJobContracts(accessToken: accessToken) { [weak self] res in
             switch res {
             case let .success(data):
+                self?.view?.getContractsAmount(count: data.data?.total ?? 0)
                 if let contracts = data.data?.contracts {
-                    self?.showResult(result: contracts)
+                    self?.view?.presentResult(contracts)
                 } else {
                     print("Something went wrong!")
                 }
@@ -36,10 +38,6 @@ class ContractsPresenter {
                 print(error.localizedDescription)
             }
         }
-    }
-    
-    func showResult(result: [ContractJobModel]) {
-        view?.presentResult(result)
     }
     
     func tapSignOutBtn() {

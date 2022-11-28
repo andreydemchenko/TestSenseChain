@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "Image.png",
+      "filename" : "frozen_28.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Image.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

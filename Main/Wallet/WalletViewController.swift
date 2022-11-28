@@ -9,12 +9,11 @@ import UIKit
 
 class WalletViewController: UIViewController {
     
-    @IBOutlet private weak var balance: UILabel!
-    @IBOutlet private weak var discount: UILabel!   
     @IBOutlet private weak var tableView: UITableView!
     
     var presenter: WalletPresenter!
     private var balances: [SectionWallet] = []
+    private var dataWallet: DataWalletModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +26,8 @@ class WalletViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "BalanceAccountTableViewCell", bundle: nil), forCellReuseIdentifier: "WalletBalanceCell")
         tableView.register(UINib(nibName: "BottomTableViewCell", bundle: nil), forCellReuseIdentifier: "WalletBottomCell")
-    }
-    
-    @IBAction
-    private func reloadBalanceClick(_ sender: Any) {
-        presenter.tapReloadBalance()
+        tableView.register(UINib(nibName: "WalletHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "WalletHeaderView")
+
     }
 
 }
@@ -40,8 +36,7 @@ extension WalletViewController: WalletProtocol {
     
     func presentWalletData(model: DataWalletModel, data: [SectionWallet]) {
         balances = data
-        balance.text = "\(model.checking_balance ?? 10)"
-        discount.text = "\(model.discount ?? 10)%"
+        dataWallet = model
         tableView.reloadData()
     }
     
@@ -73,8 +68,20 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 10.0
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "WalletHeaderView") as! WalletHeaderView
+            headerView.setViews(balance: dataWallet?.checking_balance, discount: dataWallet?.discount)
+            return headerView
+        }
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 170
+        }
+        return 0
     }
     
 }
