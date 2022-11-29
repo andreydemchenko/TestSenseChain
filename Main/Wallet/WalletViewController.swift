@@ -17,7 +17,7 @@ class WalletViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if presenter == nil {
             presenter = WalletPresenter(view: self, service: appContext.mainService)
         }
@@ -27,7 +27,23 @@ class WalletViewController: UIViewController {
         tableView.register(UINib(nibName: "BalanceAccountTableViewCell", bundle: nil), forCellReuseIdentifier: "WalletBalanceCell")
         tableView.register(UINib(nibName: "BottomTableViewCell", bundle: nil), forCellReuseIdentifier: "WalletBottomCell")
         tableView.register(UINib(nibName: "WalletHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "WalletHeaderView")
-
+        
+        let titleNameLbl = UILabel()
+        titleNameLbl.text = "Wallet"
+        titleNameLbl.textColor = .white
+        titleNameLbl.font = .boldSystemFont(ofSize: 20)
+        let titleWalletLbl = UILabel()
+        titleWalletLbl.text = "6a55c567624683e...64d9a16b1b4a61c94e"
+        titleWalletLbl.textColor = .gray
+        titleWalletLbl.font = .systemFont(ofSize: 12)
+        
+        let vStack = UIStackView(arrangedSubviews: [titleNameLbl, titleWalletLbl])
+        vStack.axis = .vertical
+        vStack.alignment = .center
+        vStack.spacing = 8
+        vStack.sizeToFit()
+        
+        navigationItem.titleView = vStack
     }
 
 }
@@ -70,7 +86,9 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "WalletHeaderView") as! WalletHeaderView
+            guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "WalletHeaderView") as? WalletHeaderView else {
+                return nil
+            }
             headerView.setViews(balance: dataWallet?.checking_balance, discount: dataWallet?.discount)
             return headerView
         }
@@ -79,7 +97,7 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
-            return 170
+            return 140
         }
         return 0
     }

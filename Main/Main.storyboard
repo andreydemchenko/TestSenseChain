@@ -32,13 +32,19 @@
         <!--Wallet-->
         <scene sceneID="icC-Io-3II">
             <objects>
-                <navigationController navigationBarHidden="YES" id="fxF-sy-Rgk" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fxF-sy-Rgk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Wallet" image="default_wallet_item" id="LRT-6N-nid">
                         <color key="badgeColor" systemColor="systemOrangeColor"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="4"/>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vJL-HK-her">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="vJL-HK-her">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="CdM-eu-bho" kind="relationship" relationship="rootViewController" id="PX4-pz-rbu"/>

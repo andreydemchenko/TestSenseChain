@@ -96,7 +96,9 @@ extension ContractsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ContractsHeaderView") as! ContractsHeaderView
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ContractsHeaderView") as? ContractsHeaderView else {
+            return nil
+        }
         headerView.setContractsAmountText(count: contractsCount)
         return headerView
     }

@@ -47,9 +47,9 @@
 		8CE9EAAD2930ABC90031DF91 /* BottomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9EAAB2930ABC90031DF91 /* BottomTableViewCell.xib */; };
 		8CE9EAAF2930E9530031DF91 /* ContractsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAAE2930E9530031DF91 /* ContractsModel.swift */; };
 		8CE9EAB2293108730031DF91 /* ContractJobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAB0293108730031DF91 /* ContractJobTableViewCell.swift */; };
-		8CE9EAB3293108730031DF91 /* ContractJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9EAB1293108730031DF91 /* ContractJobTableViewCell.xib */; };
 		8CFC204A292E466400ADE663 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2049292E466400ADE663 /* Validation.swift */; };
 		8CFC204C292E631D00ADE663 /* PasswordToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC204B292E631D00ADE663 /* PasswordToggle.swift */; };
+		8CFCAAB82936001600A922F1 /* ContractJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CFCAAB72936001600A922F1 /* ContractJobTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,9 +96,9 @@
 		8CE9EAAB2930ABC90031DF91 /* BottomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomTableViewCell.xib; sourceTree = "<group>"; };
 		8CE9EAAE2930E9530031DF91 /* ContractsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsModel.swift; sourceTree = "<group>"; };
 		8CE9EAB0293108730031DF91 /* ContractJobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractJobTableViewCell.swift; sourceTree = "<group>"; };
-		8CE9EAB1293108730031DF91 /* ContractJobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContractJobTableViewCell.xib; sourceTree = "<group>"; };
 		8CFC2049292E466400ADE663 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		8CFC204B292E631D00ADE663 /* PasswordToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordToggle.swift; sourceTree = "<group>"; };
+		8CFCAAB72936001600A922F1 /* ContractJobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContractJobTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +154,7 @@
 				8C26648C292E1107000780F6 /* ContractsPresenter.swift */,
 				8C26648D292E1107000780F6 /* Contracts.storyboard */,
 				8CE9EAB0293108730031DF91 /* ContractJobTableViewCell.swift */,
-				8CE9EAB1293108730031DF91 /* ContractJobTableViewCell.xib */,
+				8CFCAAB72936001600A922F1 /* ContractJobTableViewCell.xib */,
 				8CCEC5C72934972F00E898A5 /* ContractsHeaderView.swift */,
 				8CCEC5C92934974900E898A5 /* ContractsHeaderView.xib */,
 			);
@@ -319,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CFCAAB82936001600A922F1 /* ContractJobTableViewCell.xib in Resources */,
 				8C2664A4292E1108000780F6 /* Contracts.storyboard in Resources */,
 				8C9F876C292F9C08001BED1D /* Wallet.storyboard in Resources */,
 				8C2664A1292E1108000780F6 /* LaunchScreen.storyboard in Resources */,
@@ -327,7 +328,6 @@
 				8C2664AB292E1108000780F6 /* SignIn.storyboard in Resources */,
 				8CCEC5CA2934974900E898A5 /* ContractsHeaderView.xib in Resources */,
 				8CE9EAA92930AB680031DF91 /* BalanceAccountTableViewCell.xib in Resources */,
-				8CE9EAB3293108730031DF91 /* ContractJobTableViewCell.xib in Resources */,
 				8CE9EAAD2930ABC90031DF91 /* BottomTableViewCell.xib in Resources */,
 				8CCEC5D02934AAAD00E898A5 /* WalletHeaderView.xib in Resources */,
 				8C266483292E10D3000780F6 /* Assets.xcassets in Resources */,

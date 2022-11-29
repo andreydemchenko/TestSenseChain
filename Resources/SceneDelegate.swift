@@ -58,12 +58,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         self?.openTheDesiredController(isAuthorized: true, result: model)
                     }
                 } else {
+                    self?.saveData(model: nil, isUpdate: true)
                     DispatchQueue.main.async {
                         self?.openTheDesiredController(isAuthorized: false, result: nil)
                     }
                 }
             case let .failure(error):
                 print(error.localizedDescription)
+                self?.saveData(model: nil, isUpdate: true)
                 DispatchQueue.main.async {
                     self?.openTheDesiredController(isAuthorized: false, result: nil)
                 }
@@ -77,8 +79,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let vc = storyboard.instantiateViewController(withIdentifier: "MainVC") as?
             MainTabBarController
             guard let vc else { return }
-            let navController = UINavigationController(rootViewController: vc)
-            window?.rootViewController = navController
+            window?.rootViewController = vc
             window?.makeKeyAndVisible()
         } else {
             let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
