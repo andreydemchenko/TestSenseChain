@@ -11,9 +11,9 @@
 		8C26647F292E10D3000780F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C266475292E10D3000780F6 /* ViewController.swift */; };
 		8C266483292E10D3000780F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C266479292E10D3000780F6 /* Assets.xcassets */; };
 		8C2664A1292E1108000780F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C266488292E1107000780F6 /* LaunchScreen.storyboard */; };
-		8C2664A2292E1108000780F6 /* ContractsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C26648B292E1107000780F6 /* ContractsViewController.swift */; };
-		8C2664A3292E1108000780F6 /* ContractsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C26648C292E1107000780F6 /* ContractsPresenter.swift */; };
-		8C2664A4292E1108000780F6 /* Contracts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C26648D292E1107000780F6 /* Contracts.storyboard */; };
+		8C2664A2292E1108000780F6 /* JobContractsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C26648B292E1107000780F6 /* JobContractsViewController.swift */; };
+		8C2664A3292E1108000780F6 /* JobContractsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C26648C292E1107000780F6 /* JobContractsPresenter.swift */; };
+		8C2664A4292E1108000780F6 /* JobContracts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C26648D292E1107000780F6 /* JobContracts.storyboard */; };
 		8C2664A5292E1108000780F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C26648F292E1108000780F6 /* AppDelegate.swift */; };
 		8C2664A7292E1108000780F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C266491292E1108000780F6 /* SceneDelegate.swift */; };
 		8C2664A8292E1108000780F6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C266494292E1108000780F6 /* String+Ext.swift */; };
@@ -34,19 +34,43 @@
 		8C9F876E292FB892001BED1D /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F876D292FB892001BED1D /* MainService.swift */; };
 		8C9F8770292FB936001BED1D /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F876F292FB936001BED1D /* WalletModel.swift */; };
 		8C9F8772292FBA9D001BED1D /* WalletPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F8771292FBA9D001BED1D /* WalletPresenter.swift */; };
-		8CCEC5C82934972F00E898A5 /* ContractsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5C72934972F00E898A5 /* ContractsHeaderView.swift */; };
-		8CCEC5CA2934974900E898A5 /* ContractsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCEC5C92934974900E898A5 /* ContractsHeaderView.xib */; };
+		8CA1CCAA293A407D0060834F /* UploadedFileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA1CCA9293A407D0060834F /* UploadedFileView.xib */; };
+		8CA1CCAC293A435A0060834F /* UploadedFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA1CCAB293A435A0060834F /* UploadedFileView.swift */; };
+		8CA1CCAF293A465D0060834F /* UploadedFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA1CCAE293A465D0060834F /* UploadedFileModel.swift */; };
+		8CCEC5C82934972F00E898A5 /* JobContractsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5C72934972F00E898A5 /* JobContractsHeaderView.swift */; };
+		8CCEC5CA2934974900E898A5 /* JobContractsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCEC5C92934974900E898A5 /* JobContractsHeaderView.xib */; };
 		8CCEC5D02934AAAD00E898A5 /* WalletHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCEC5CF2934AAAD00E898A5 /* WalletHeaderView.xib */; };
 		8CCEC5D22934AABD00E898A5 /* WalletHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5D12934AABD00E898A5 /* WalletHeaderView.swift */; };
 		8CCEC5D42934B5B100E898A5 /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5D32934B5B100E898A5 /* Double+Ext.swift */; };
 		8CCEC5D62934C86600E898A5 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5D52934C86600E898A5 /* Date+Ext.swift */; };
 		8CCEC5D82934EA0A00E898A5 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5D72934EA0A00E898A5 /* KeychainWrapper.swift */; };
+		8CD7966B29388D92007E65DC /* RectangularDashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7966A29388D92007E65DC /* RectangularDashedView.swift */; };
+		8CD7966E293893C4007E65DC /* BusinessTypeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7966C293893C4007E65DC /* BusinessTypeSelectionViewController.swift */; };
+		8CD7966F293893C4007E65DC /* BusinessTypeSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD7966D293893C4007E65DC /* BusinessTypeSelectionViewController.xib */; };
+		8CD7967229389817007E65DC /* BusinessTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7967029389817007E65DC /* BusinessTypeTableViewCell.swift */; };
+		8CD7967329389817007E65DC /* BusinessTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD7967129389817007E65DC /* BusinessTypeTableViewCell.xib */; };
+		8CD796762938AB3F007E65DC /* BusinessTypeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD796752938AB3F007E65DC /* BusinessTypeSelection.swift */; };
+		8CD796782938C543007E65DC /* DatePickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD796772938C543007E65DC /* DatePickerLabel.swift */; };
+		8CD7967C2938CE08007E65DC /* InputJobHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7967A2938CE08007E65DC /* InputJobHoursViewController.swift */; };
+		8CD7967D2938CE08007E65DC /* InputJobHoursViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD7967B2938CE08007E65DC /* InputJobHoursViewController.xib */; };
+		8CD7967F2938D0B3007E65DC /* TextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7967E2938D0B3007E65DC /* TextField+Ext.swift */; };
+		8CD796842938F946007E65DC /* InputPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD796822938F946007E65DC /* InputPriceViewController.swift */; };
+		8CD796852938F946007E65DC /* InputPriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD796832938F946007E65DC /* InputPriceViewController.xib */; };
 		8CE9EAA82930AB680031DF91 /* BalanceAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAA62930AB680031DF91 /* BalanceAccountTableViewCell.swift */; };
 		8CE9EAA92930AB680031DF91 /* BalanceAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9EAA72930AB680031DF91 /* BalanceAccountTableViewCell.xib */; };
 		8CE9EAAC2930ABC90031DF91 /* BottomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAAA2930ABC90031DF91 /* BottomTableViewCell.swift */; };
 		8CE9EAAD2930ABC90031DF91 /* BottomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9EAAB2930ABC90031DF91 /* BottomTableViewCell.xib */; };
 		8CE9EAAF2930E9530031DF91 /* ContractsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAAE2930E9530031DF91 /* ContractsModel.swift */; };
 		8CE9EAB2293108730031DF91 /* ContractJobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAB0293108730031DF91 /* ContractJobTableViewCell.swift */; };
+		8CEE2DFD2939EA18008EAE7D /* BalanceAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CEE2DFC2939EA18008EAE7D /* BalanceAccountView.xib */; };
+		8CEE2DFF2939EB12008EAE7D /* BalanceAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE2DFE2939EB12008EAE7D /* BalanceAccountView.swift */; };
+		8CEE2E012939EDB3008EAE7D /* InputPricePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE2E002939EDB3008EAE7D /* InputPricePresenter.swift */; };
+		8CFB5B3F29374D91009E3C71 /* Contracts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFB5B3E29374D91009E3C71 /* Contracts.storyboard */; };
+		8CFB5B4129374E87009E3C71 /* ContractsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB5B4029374E87009E3C71 /* ContractsViewController.swift */; };
+		8CFB5B4329374F0F009E3C71 /* ContractsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB5B4229374F0F009E3C71 /* ContractsPresenter.swift */; };
+		8CFB5B48293756E7009E3C71 /* PostJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB5B47293756E7009E3C71 /* PostJobViewController.swift */; };
+		8CFB5B4A293756FC009E3C71 /* PostJob.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFB5B49293756FC009E3C71 /* PostJob.storyboard */; };
+		8CFB5B4C2937573D009E3C71 /* PostJobPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB5B4B2937573D009E3C71 /* PostJobPresenter.swift */; };
 		8CFC204A292E466400ADE663 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2049292E466400ADE663 /* Validation.swift */; };
 		8CFC204C292E631D00ADE663 /* PasswordToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC204B292E631D00ADE663 /* PasswordToggle.swift */; };
 		8CFCAAB82936001600A922F1 /* ContractJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CFCAAB72936001600A922F1 /* ContractJobTableViewCell.xib */; };
@@ -59,9 +83,9 @@
 		8C266475292E10D3000780F6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8C266479292E10D3000780F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C266489292E1107000780F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8C26648B292E1107000780F6 /* ContractsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractsViewController.swift; sourceTree = "<group>"; };
-		8C26648C292E1107000780F6 /* ContractsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractsPresenter.swift; sourceTree = "<group>"; };
-		8C26648D292E1107000780F6 /* Contracts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contracts.storyboard; sourceTree = "<group>"; };
+		8C26648B292E1107000780F6 /* JobContractsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobContractsViewController.swift; sourceTree = "<group>"; };
+		8C26648C292E1107000780F6 /* JobContractsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobContractsPresenter.swift; sourceTree = "<group>"; };
+		8C26648D292E1107000780F6 /* JobContracts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JobContracts.storyboard; sourceTree = "<group>"; };
 		8C26648F292E1108000780F6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C266490292E1108000780F6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C266491292E1108000780F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,19 +107,43 @@
 		8C9F876D292FB892001BED1D /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		8C9F876F292FB936001BED1D /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
 		8C9F8771292FBA9D001BED1D /* WalletPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPresenter.swift; sourceTree = "<group>"; };
-		8CCEC5C72934972F00E898A5 /* ContractsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsHeaderView.swift; sourceTree = "<group>"; };
-		8CCEC5C92934974900E898A5 /* ContractsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContractsHeaderView.xib; sourceTree = "<group>"; };
+		8CA1CCA9293A407D0060834F /* UploadedFileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadedFileView.xib; sourceTree = "<group>"; };
+		8CA1CCAB293A435A0060834F /* UploadedFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedFileView.swift; sourceTree = "<group>"; };
+		8CA1CCAE293A465D0060834F /* UploadedFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedFileModel.swift; sourceTree = "<group>"; };
+		8CCEC5C72934972F00E898A5 /* JobContractsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobContractsHeaderView.swift; sourceTree = "<group>"; };
+		8CCEC5C92934974900E898A5 /* JobContractsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobContractsHeaderView.xib; sourceTree = "<group>"; };
 		8CCEC5CF2934AAAD00E898A5 /* WalletHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletHeaderView.xib; sourceTree = "<group>"; };
 		8CCEC5D12934AABD00E898A5 /* WalletHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHeaderView.swift; sourceTree = "<group>"; };
 		8CCEC5D32934B5B100E898A5 /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
 		8CCEC5D52934C86600E898A5 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		8CCEC5D72934EA0A00E898A5 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		8CD7966A29388D92007E65DC /* RectangularDashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangularDashedView.swift; sourceTree = "<group>"; };
+		8CD7966C293893C4007E65DC /* BusinessTypeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTypeSelectionViewController.swift; sourceTree = "<group>"; };
+		8CD7966D293893C4007E65DC /* BusinessTypeSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessTypeSelectionViewController.xib; sourceTree = "<group>"; };
+		8CD7967029389817007E65DC /* BusinessTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTypeTableViewCell.swift; sourceTree = "<group>"; };
+		8CD7967129389817007E65DC /* BusinessTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessTypeTableViewCell.xib; sourceTree = "<group>"; };
+		8CD796752938AB3F007E65DC /* BusinessTypeSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTypeSelection.swift; sourceTree = "<group>"; };
+		8CD796772938C543007E65DC /* DatePickerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerLabel.swift; sourceTree = "<group>"; };
+		8CD7967A2938CE08007E65DC /* InputJobHoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputJobHoursViewController.swift; sourceTree = "<group>"; };
+		8CD7967B2938CE08007E65DC /* InputJobHoursViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputJobHoursViewController.xib; sourceTree = "<group>"; };
+		8CD7967E2938D0B3007E65DC /* TextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Ext.swift"; sourceTree = "<group>"; };
+		8CD796822938F946007E65DC /* InputPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPriceViewController.swift; sourceTree = "<group>"; };
+		8CD796832938F946007E65DC /* InputPriceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputPriceViewController.xib; sourceTree = "<group>"; };
 		8CE9EAA62930AB680031DF91 /* BalanceAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceAccountTableViewCell.swift; sourceTree = "<group>"; };
 		8CE9EAA72930AB680031DF91 /* BalanceAccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceAccountTableViewCell.xib; sourceTree = "<group>"; };
 		8CE9EAAA2930ABC90031DF91 /* BottomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTableViewCell.swift; sourceTree = "<group>"; };
 		8CE9EAAB2930ABC90031DF91 /* BottomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomTableViewCell.xib; sourceTree = "<group>"; };
 		8CE9EAAE2930E9530031DF91 /* ContractsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsModel.swift; sourceTree = "<group>"; };
 		8CE9EAB0293108730031DF91 /* ContractJobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractJobTableViewCell.swift; sourceTree = "<group>"; };
+		8CEE2DFC2939EA18008EAE7D /* BalanceAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceAccountView.xib; sourceTree = "<group>"; };
+		8CEE2DFE2939EB12008EAE7D /* BalanceAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceAccountView.swift; sourceTree = "<group>"; };
+		8CEE2E002939EDB3008EAE7D /* InputPricePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPricePresenter.swift; sourceTree = "<group>"; };
+		8CFB5B3E29374D91009E3C71 /* Contracts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contracts.storyboard; sourceTree = "<group>"; };
+		8CFB5B4029374E87009E3C71 /* ContractsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsViewController.swift; sourceTree = "<group>"; };
+		8CFB5B4229374F0F009E3C71 /* ContractsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsPresenter.swift; sourceTree = "<group>"; };
+		8CFB5B47293756E7009E3C71 /* PostJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostJobViewController.swift; sourceTree = "<group>"; };
+		8CFB5B49293756FC009E3C71 /* PostJob.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostJob.storyboard; sourceTree = "<group>"; };
+		8CFB5B4B2937573D009E3C71 /* PostJobPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostJobPresenter.swift; sourceTree = "<group>"; };
 		8CFC2049292E466400ADE663 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		8CFC204B292E631D00ADE663 /* PasswordToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordToggle.swift; sourceTree = "<group>"; };
 		8CFCAAB72936001600A922F1 /* ContractJobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContractJobTableViewCell.xib; sourceTree = "<group>"; };
@@ -150,13 +198,9 @@
 		8C26648A292E1107000780F6 /* Contracts */ = {
 			isa = PBXGroup;
 			children = (
-				8C26648B292E1107000780F6 /* ContractsViewController.swift */,
-				8C26648C292E1107000780F6 /* ContractsPresenter.swift */,
-				8C26648D292E1107000780F6 /* Contracts.storyboard */,
-				8CE9EAB0293108730031DF91 /* ContractJobTableViewCell.swift */,
-				8CFCAAB72936001600A922F1 /* ContractJobTableViewCell.xib */,
-				8CCEC5C72934972F00E898A5 /* ContractsHeaderView.swift */,
-				8CCEC5C92934974900E898A5 /* ContractsHeaderView.xib */,
+				8CFB5B46293756CE009E3C71 /* PostJob */,
+				8CFB5B45293756B0009E3C71 /* ContractsMain */,
+				8CFB5B442937569E009E3C71 /* JobContracts */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -187,6 +231,7 @@
 				8C266494292E1108000780F6 /* String+Ext.swift */,
 				8CCEC5D32934B5B100E898A5 /* Double+Ext.swift */,
 				8CCEC5D52934C86600E898A5 /* Date+Ext.swift */,
+				8CD7967E2938D0B3007E65DC /* TextField+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -209,6 +254,7 @@
 				8C9F875F292F69F4001BED1D /* GetTemplatesModel.swift */,
 				8C9F876F292FB936001BED1D /* WalletModel.swift */,
 				8CE9EAAE2930E9530031DF91 /* ContractsModel.swift */,
+				8CD796752938AB3F007E65DC /* BusinessTypeSelection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,6 +275,8 @@
 			children = (
 				8C2664B2292E3403000780F6 /* SpinnerViewController.swift */,
 				8CFC204B292E631D00ADE663 /* PasswordToggle.swift */,
+				8CD7966A29388D92007E65DC /* RectangularDashedView.swift */,
+				8CD796772938C543007E65DC /* DatePickerLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,6 +306,102 @@
 				8CCEC5D12934AABD00E898A5 /* WalletHeaderView.swift */,
 			);
 			path = Wallet;
+			sourceTree = "<group>";
+		};
+		8CA1CCA8293A405C0060834F /* UploadedFile */ = {
+			isa = PBXGroup;
+			children = (
+				8CA1CCAD293A46490060834F /* Model */,
+				8CA1CCA9293A407D0060834F /* UploadedFileView.xib */,
+				8CA1CCAB293A435A0060834F /* UploadedFileView.swift */,
+			);
+			path = UploadedFile;
+			sourceTree = "<group>";
+		};
+		8CA1CCAD293A46490060834F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8CA1CCAE293A465D0060834F /* UploadedFileModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8CD796742938A067007E65DC /* BusinessTypeSelection */ = {
+			isa = PBXGroup;
+			children = (
+				8CD7966C293893C4007E65DC /* BusinessTypeSelectionViewController.swift */,
+				8CD7966D293893C4007E65DC /* BusinessTypeSelectionViewController.xib */,
+				8CD7967029389817007E65DC /* BusinessTypeTableViewCell.swift */,
+				8CD7967129389817007E65DC /* BusinessTypeTableViewCell.xib */,
+			);
+			path = BusinessTypeSelection;
+			sourceTree = "<group>";
+		};
+		8CD796792938CDE2007E65DC /* JobHours */ = {
+			isa = PBXGroup;
+			children = (
+				8CD7967A2938CE08007E65DC /* InputJobHoursViewController.swift */,
+				8CD7967B2938CE08007E65DC /* InputJobHoursViewController.xib */,
+			);
+			path = JobHours;
+			sourceTree = "<group>";
+		};
+		8CD796802938F8FB007E65DC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8CFB5B47293756E7009E3C71 /* PostJobViewController.swift */,
+				8CFB5B49293756FC009E3C71 /* PostJob.storyboard */,
+				8CFB5B4B2937573D009E3C71 /* PostJobPresenter.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8CD796812938F928007E65DC /* Price */ = {
+			isa = PBXGroup;
+			children = (
+				8CD796822938F946007E65DC /* InputPriceViewController.swift */,
+				8CD796832938F946007E65DC /* InputPriceViewController.xib */,
+				8CEE2E002939EDB3008EAE7D /* InputPricePresenter.swift */,
+				8CEE2DFC2939EA18008EAE7D /* BalanceAccountView.xib */,
+				8CEE2DFE2939EB12008EAE7D /* BalanceAccountView.swift */,
+			);
+			path = Price;
+			sourceTree = "<group>";
+		};
+		8CFB5B442937569E009E3C71 /* JobContracts */ = {
+			isa = PBXGroup;
+			children = (
+				8C26648B292E1107000780F6 /* JobContractsViewController.swift */,
+				8C26648C292E1107000780F6 /* JobContractsPresenter.swift */,
+				8C26648D292E1107000780F6 /* JobContracts.storyboard */,
+				8CE9EAB0293108730031DF91 /* ContractJobTableViewCell.swift */,
+				8CFCAAB72936001600A922F1 /* ContractJobTableViewCell.xib */,
+				8CCEC5C72934972F00E898A5 /* JobContractsHeaderView.swift */,
+				8CCEC5C92934974900E898A5 /* JobContractsHeaderView.xib */,
+			);
+			path = JobContracts;
+			sourceTree = "<group>";
+		};
+		8CFB5B45293756B0009E3C71 /* ContractsMain */ = {
+			isa = PBXGroup;
+			children = (
+				8CFB5B3E29374D91009E3C71 /* Contracts.storyboard */,
+				8CFB5B4029374E87009E3C71 /* ContractsViewController.swift */,
+				8CFB5B4229374F0F009E3C71 /* ContractsPresenter.swift */,
+			);
+			path = ContractsMain;
+			sourceTree = "<group>";
+		};
+		8CFB5B46293756CE009E3C71 /* PostJob */ = {
+			isa = PBXGroup;
+			children = (
+				8CA1CCA8293A405C0060834F /* UploadedFile */,
+				8CD796812938F928007E65DC /* Price */,
+				8CD796792938CDE2007E65DC /* JobHours */,
+				8CD796802938F8FB007E65DC /* Main */,
+				8CD796742938A067007E65DC /* BusinessTypeSelection */,
+			);
+			path = PostJob;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,17 +464,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CFCAAB82936001600A922F1 /* ContractJobTableViewCell.xib in Resources */,
-				8C2664A4292E1108000780F6 /* Contracts.storyboard in Resources */,
+				8C2664A4292E1108000780F6 /* JobContracts.storyboard in Resources */,
+				8CFB5B4A293756FC009E3C71 /* PostJob.storyboard in Resources */,
 				8C9F876C292F9C08001BED1D /* Wallet.storyboard in Resources */,
 				8C2664A1292E1108000780F6 /* LaunchScreen.storyboard in Resources */,
 				8C26647D292E10D3000780F6 /* README.md in Resources */,
+				8CEE2DFD2939EA18008EAE7D /* BalanceAccountView.xib in Resources */,
 				8C9F8765292F92BE001BED1D /* Main.storyboard in Resources */,
 				8C2664AB292E1108000780F6 /* SignIn.storyboard in Resources */,
-				8CCEC5CA2934974900E898A5 /* ContractsHeaderView.xib in Resources */,
+				8CD7966F293893C4007E65DC /* BusinessTypeSelectionViewController.xib in Resources */,
+				8CD796852938F946007E65DC /* InputPriceViewController.xib in Resources */,
+				8CCEC5CA2934974900E898A5 /* JobContractsHeaderView.xib in Resources */,
 				8CE9EAA92930AB680031DF91 /* BalanceAccountTableViewCell.xib in Resources */,
+				8CFB5B3F29374D91009E3C71 /* Contracts.storyboard in Resources */,
 				8CE9EAAD2930ABC90031DF91 /* BottomTableViewCell.xib in Resources */,
 				8CCEC5D02934AAAD00E898A5 /* WalletHeaderView.xib in Resources */,
+				8CD7967D2938CE08007E65DC /* InputJobHoursViewController.xib in Resources */,
 				8C266483292E10D3000780F6 /* Assets.xcassets in Resources */,
+				8CA1CCAA293A407D0060834F /* UploadedFileView.xib in Resources */,
+				8CD7967329389817007E65DC /* BusinessTypeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,34 +496,50 @@
 				8CFC204C292E631D00ADE663 /* PasswordToggle.swift in Sources */,
 				8C9F8770292FB936001BED1D /* WalletModel.swift in Sources */,
 				8C2664AC292E1108000780F6 /* AuthPresenter.swift in Sources */,
+				8CFB5B4329374F0F009E3C71 /* ContractsPresenter.swift in Sources */,
+				8CD796782938C543007E65DC /* DatePickerLabel.swift in Sources */,
 				8C9F8760292F69F4001BED1D /* GetTemplatesModel.swift in Sources */,
 				8C2664A8292E1108000780F6 /* String+Ext.swift in Sources */,
 				8C2664A7292E1108000780F6 /* SceneDelegate.swift in Sources */,
 				8C9F876A292F9BFC001BED1D /* WalletViewController.swift in Sources */,
+				8CFB5B4C2937573D009E3C71 /* PostJobPresenter.swift in Sources */,
 				8C9F876E292FB892001BED1D /* MainService.swift in Sources */,
+				8CFB5B4129374E87009E3C71 /* ContractsViewController.swift in Sources */,
+				8CD7966B29388D92007E65DC /* RectangularDashedView.swift in Sources */,
 				8C2664B3292E3403000780F6 /* SpinnerViewController.swift in Sources */,
 				8CCEC5D62934C86600E898A5 /* Date+Ext.swift in Sources */,
 				8CE9EAB2293108730031DF91 /* ContractJobTableViewCell.swift in Sources */,
 				8C2664B0292E1108000780F6 /* AuthService.swift in Sources */,
+				8CEE2DFF2939EB12008EAE7D /* BalanceAccountView.swift in Sources */,
+				8CA1CCAC293A435A0060834F /* UploadedFileView.swift in Sources */,
 				8CE9EAAF2930E9530031DF91 /* ContractsModel.swift in Sources */,
+				8CD7967C2938CE08007E65DC /* InputJobHoursViewController.swift in Sources */,
 				8C2664A5292E1108000780F6 /* AppDelegate.swift in Sources */,
 				8CFC204A292E466400ADE663 /* Validation.swift in Sources */,
 				8CCEC5D82934EA0A00E898A5 /* KeychainWrapper.swift in Sources */,
 				8CE9EAAC2930ABC90031DF91 /* BottomTableViewCell.swift in Sources */,
 				8C2664A9292E1108000780F6 /* AppContext.swift in Sources */,
-				8CCEC5C82934972F00E898A5 /* ContractsHeaderView.swift in Sources */,
+				8CCEC5C82934972F00E898A5 /* JobContractsHeaderView.swift in Sources */,
 				8CE9EAA82930AB680031DF91 /* BalanceAccountTableViewCell.swift in Sources */,
 				8C9F8762292F801C001BED1D /* NetworkManager.swift in Sources */,
 				8C2664AD292E1108000780F6 /* SignInViewController.swift in Sources */,
-				8C2664A3292E1108000780F6 /* ContractsPresenter.swift in Sources */,
-				8C2664A2292E1108000780F6 /* ContractsViewController.swift in Sources */,
+				8C2664A3292E1108000780F6 /* JobContractsPresenter.swift in Sources */,
+				8CD7967229389817007E65DC /* BusinessTypeTableViewCell.swift in Sources */,
+				8CD7966E293893C4007E65DC /* BusinessTypeSelectionViewController.swift in Sources */,
+				8CD796842938F946007E65DC /* InputPriceViewController.swift in Sources */,
+				8C2664A2292E1108000780F6 /* JobContractsViewController.swift in Sources */,
+				8CEE2E012939EDB3008EAE7D /* InputPricePresenter.swift in Sources */,
+				8CFB5B48293756E7009E3C71 /* PostJobViewController.swift in Sources */,
+				8CD7967F2938D0B3007E65DC /* TextField+Ext.swift in Sources */,
 				8CCEC5D22934AABD00E898A5 /* WalletHeaderView.swift in Sources */,
 				8C9F8772292FBA9D001BED1D /* WalletPresenter.swift in Sources */,
+				8CD796762938AB3F007E65DC /* BusinessTypeSelection.swift in Sources */,
 				8C2664AE292E1108000780F6 /* ResponseAuthModel.swift in Sources */,
 				8C9F8767292F931B001BED1D /* MainTabBarController.swift in Sources */,
 				8C26647F292E10D3000780F6 /* ViewController.swift in Sources */,
 				8C2664AF292E1108000780F6 /* User.swift in Sources */,
 				8CCEC5D42934B5B100E898A5 /* Double+Ext.swift in Sources */,
+				8CA1CCAF293A465D0060834F /* UploadedFileModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +690,7 @@
 				DEVELOPMENT_TEAM = D7AYZAGTTZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow to upload photo and video";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = SignIn;
@@ -554,6 +723,7 @@
 				DEVELOPMENT_TEAM = D7AYZAGTTZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow to upload photo and video";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = SignIn;

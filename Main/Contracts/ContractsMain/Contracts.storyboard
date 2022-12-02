@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contracts View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ContractsVC" id="Y6W-OH-hqX" customClass="ContractsViewController" customModule="TestSenseChain" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eON-CU-Sab">
+                                <rect key="frame" x="110" y="127" width="170" height="35"/>
+                                <color key="tintColor" red="0.97761756180000003" green="0.49473541980000002" blue="0.051190428439999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Find job contracts"/>
+                                <connections>
+                                    <action selector="findJobContractsBtnClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zcL-gX-mae"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjS-zo-kt9">
+                                <rect key="frame" x="110" y="202" width="170" height="35"/>
+                                <color key="tintColor" red="0.97761756180000003" green="0.49473541980000002" blue="0.051190428439999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Post job"/>
+                                <connections>
+                                    <action selector="postJobBtnClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VPz-4P-aJM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97A-Yh-gz2">
+                                <rect key="frame" x="110" y="735" width="170" height="35"/>
+                                <color key="tintColor" red="0.97761756180000003" green="0.49473541980000002" blue="0.051190428439999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOutClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZrB-wG-4KR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="97A-Yh-gz2" secondAttribute="trailing" constant="110" id="0Eo-Oy-dtV"/>
+                            <constraint firstItem="97A-Yh-gz2" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="-40" id="2wV-3J-FX5"/>
+                            <constraint firstItem="97A-Yh-gz2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="110" id="3GP-K1-ev1"/>
+                            <constraint firstItem="yjS-zo-kt9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="110" id="IdD-Zv-Zq7"/>
+                            <constraint firstItem="yjS-zo-kt9" firstAttribute="top" secondItem="eON-CU-Sab" secondAttribute="bottom" constant="40" id="JQ1-00-awc"/>
+                            <constraint firstItem="eON-CU-Sab" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="80" id="Kow-fZ-shm"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eON-CU-Sab" secondAttribute="trailing" constant="110" id="PdK-Rb-zNP"/>
+                            <constraint firstItem="eON-CU-Sab" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="110" id="Sup-58-AVh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yjS-zo-kt9" secondAttribute="trailing" constant="110" id="TFl-OC-nU5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-34"/>
+        </scene>
+    </scenes>
+</document>

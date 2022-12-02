@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="UploadedFileView" id="iN0-l3-epB" customClass="UploadedFileView" customModule="TestSenseChain" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="125"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ViI-Zu-zHP">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="125"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="f2s-Wi-9Pv">
+                            <rect key="frame" x="8" y="55" width="32" height="62"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_ico" translatesAutoresizingMaskIntoConstraints="NO" id="k2g-RH-KQx">
+                                    <rect key="frame" x="8" y="16" width="24" height="34"/>
+                                </imageView>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="16" left="8" bottom="12" right="0.0"/>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kta-rD-4Sd">
+                            <rect key="frame" x="60.000000000000014" y="55" width="230.33333333333337" height="62"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="img_photo_1234.jpg" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfj-YB-Oo0">
+                                    <rect key="frame" x="0.0" y="12" width="222.33333333333334" height="22"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="142 kB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLv-UC-JCx">
+                                    <rect key="frame" x="0.0" y="34" width="222.33333333333334" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="12" left="0.0" bottom="10" right="8"/>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oGu-hL-NSg">
+                            <rect key="frame" x="310.33333333333331" y="55" width="71.666666666666686" height="62"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="kUd-aJ-QI9">
+                                    <rect key="frame" x="11.999999999999996" y="28" width="59.666666666666657" height="12"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="remove_ico"/>
+                                    <connections>
+                                        <action selector="removeClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="83D-dA-2x0"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="28" left="12" bottom="22" right="0.0"/>
+                        </stackView>
+                    </subviews>
+                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ViI-Zu-zHP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KJ0-WX-J0x"/>
+                <constraint firstItem="ViI-Zu-zHP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Vo1-4y-RfS"/>
+                <constraint firstAttribute="bottom" secondItem="ViI-Zu-zHP" secondAttribute="bottom" id="fFe-fE-gxF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ViI-Zu-zHP" secondAttribute="trailing" id="s1L-ua-AE7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageSizeLbl" destination="aLv-UC-JCx" id="fjG-S2-Tou"/>
+                <outlet property="imageView" destination="k2g-RH-KQx" id="gwX-Qy-kk2"/>
+                <outlet property="nameLbl" destination="bfj-YB-Oo0" id="O5t-Dx-Zs9"/>
+                <outlet property="removeBtn" destination="kUd-aJ-QI9" id="DRv-yK-MCD"/>
+                <outlet property="stackView" destination="ViI-Zu-zHP" id="28m-zP-hkh"/>
+            </connections>
+            <point key="canvasLocation" x="20" y="-272.63033175355451"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="image_ico" width="20" height="16"/>
+        <image name="remove_ico" width="16" height="16"/>
+    </resources>
+</document>

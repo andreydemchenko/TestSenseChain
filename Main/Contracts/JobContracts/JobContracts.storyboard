@@ -8,34 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Contracts View Controller-->
+        <!--Job Contracts View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="ContractsVC" id="Y6W-OH-hqX" customClass="ContractsViewController" customModule="TestSenseChain" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JobContractsVC" id="Y6W-OH-hqX" customClass="JobContractsViewController" customModule="TestSenseChain" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIE-mL-hwz">
-                                <rect key="frame" x="120" y="773" width="150" height="37"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Sign Out">
-                                            <attributes>
-                                                <font key="NSFont" size="20" name="Helvetica"/>
-                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="signOutClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cgb-1h-xHf"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yvO-IY-zjK">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="765"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="797"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.094117634000000006" green="0.094117634000000006" blue="0.094117634000000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.094117634000000006" green="0.094117634000000006" blue="0.094117634000000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,17 +39,14 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FIE-mL-hwz" firstAttribute="top" secondItem="yvO-IY-zjK" secondAttribute="bottom" constant="8" symbolic="YES" id="1xu-gm-Ybs"/>
+                            <constraint firstAttribute="bottom" secondItem="yvO-IY-zjK" secondAttribute="bottom" id="7ie-i4-ZXT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yvO-IY-zjK" secondAttribute="trailing" id="8V6-sF-L41"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FIE-mL-hwz" secondAttribute="trailing" constant="120" id="Exx-Wi-pJZ"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="FIE-mL-hwz" secondAttribute="bottom" id="KPe-a0-n8v"/>
-                            <constraint firstItem="FIE-mL-hwz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="120" id="XCy-j0-1Uv"/>
                             <constraint firstItem="yvO-IY-zjK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pwh-GJ-ZxE"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="yvO-IY-zjK" secondAttribute="top" constant="47" id="qvL-mq-Stb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="yvO-IY-zjK" secondAttribute="top" id="qvL-mq-Stb"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="yvO-IY-zjK" id="GrR-Ua-gE7"/>
+                        <outlet property="contractsTableView" destination="yvO-IY-zjK" id="ZmK-N4-zbc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

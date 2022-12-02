@@ -66,7 +66,6 @@ class WalletPresenter {
                 self.view?.presentWalletData(model: data, data: self.dataSource)
             }
         }
-        
     }
     
     func tapReloadBalance() {

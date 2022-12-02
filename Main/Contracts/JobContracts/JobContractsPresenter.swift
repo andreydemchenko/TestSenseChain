@@ -1,5 +1,5 @@
 //
-//  ContractsPresenter.swift
+//  JobContractsPresenter.swift
 //  TestSenseChain
 //
 //  Created by zuzex-62 on 22.11.2022.
@@ -7,25 +7,23 @@
 
 import Foundation
 
-protocol ContractsProtocol: AnyObject {
+protocol JobContractsProtocol: AnyObject {
     func presentResult(_ result: [ContractJobModel])
     func getContractsAmount(count: Int)
-    func signOut()
 }
 
-class ContractsPresenter {
+class JobContractsPresenter {
     
-    weak var view: ContractsProtocol?
+    weak var view: JobContractsProtocol?
     let service: MainServiceProtocol
     
-    init(view: ContractsProtocol, service: MainServiceProtocol) {
+    init(view: JobContractsProtocol, service: MainServiceProtocol) {
         self.view = view
         self.service = service
     }
     
     func getContracts() {
         let accessToken = appContext.keychain.readAccessToken()
-        print("accesstoken = \(accessToken)")
         service.getJobContracts(accessToken: accessToken) { [weak self] res in
             switch res {
             case let .success(data):
@@ -39,10 +37,6 @@ class ContractsPresenter {
                 print(error.localizedDescription)
             }
         }
-    }
-    
-    func tapSignOutBtn() {
-        view?.signOut()
     }
     
 }

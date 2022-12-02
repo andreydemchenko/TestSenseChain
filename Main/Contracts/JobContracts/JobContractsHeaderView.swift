@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContractsHeaderView: UITableViewHeaderFooterView {
+class JobContractsHeaderView: UITableViewHeaderFooterView {
 
     @IBOutlet private weak var jobContractsLbl: UILabel!
     @IBOutlet private weak var contractsCountLbl: UILabel!
