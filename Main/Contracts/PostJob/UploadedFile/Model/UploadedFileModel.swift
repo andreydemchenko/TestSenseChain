@@ -12,4 +12,5 @@ struct UploadedFileModel {
     var icoImage: UIImage
     var fileName: String
     var fileSize: String
+    var url: URL
 }

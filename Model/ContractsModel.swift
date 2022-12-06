@@ -41,3 +41,15 @@ struct ContractJobModel: Codable {
     var until_end: Double?
     var updated_at: String?
 }
+
+struct CreateContractJobModel {
+    var name: String
+    var businessType: BusinesTypeSelection
+    var description: String
+    var startDate: Date
+    var deadline: Date
+    var documents: [UploadedFileModel]
+    var files: [UploadedFileModel]
+    var jobHours: Double
+    var price: Double
+}
