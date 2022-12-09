@@ -297,54 +297,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A6FE0444-0211-4C48-83C1-C898824936B8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Main/Contracts/PostJob/BusinessTypeSelection/BusinessTypeSelectionViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "returnToContract(indexPath:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A6FE0444-0211-4C48-83C1-C898824936B8 - 1994596869f74c25"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TestSenseChain.BusinessTypeSelectionViewController.returnToContract(name: Swift.String) -&gt; ()"
-                  moduleName = "TestSenseChain"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Main/Contracts/PostJob/BusinessTypeSelection/BusinessTypeSelectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "356">
-               </Location>
-               <Location
-                  uuid = "A6FE0444-0211-4C48-83C1-C898824936B8 - 1994596869f74c25"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TestSenseChain.BusinessTypeSelectionViewController.returnToContract(name: Swift.String) -&gt; ()"
-                  moduleName = "TestSenseChain"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Main/Contracts/PostJob/BusinessTypeSelection/BusinessTypeSelectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "428">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1C07B116-D47C-4F2F-BE94-5B05F8F243E0"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -352,8 +304,8 @@
             filePath = "Main/Contracts/PostJob/Price/InputPriceViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "showWalletData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -368,8 +320,8 @@
             filePath = "Main/Contracts/PostJob/Price/InputPriceViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "priceField"
             landmarkType = "24">
          </BreakpointContent>
@@ -384,8 +336,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "403"
-            endingLineNumber = "403"
+            startingLineNumber = "514"
+            endingLineNumber = "514"
             landmarkName = "picker(_:didFinishPicking:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -400,8 +352,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "413"
-            endingLineNumber = "413"
+            startingLineNumber = "524"
+            endingLineNumber = "524"
             landmarkName = "picker(_:didFinishPicking:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -416,8 +368,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "429"
-            endingLineNumber = "429"
+            startingLineNumber = "543"
+            endingLineNumber = "543"
             landmarkName = "picker(_:didFinishPicking:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -432,8 +384,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "431"
-            endingLineNumber = "431"
+            startingLineNumber = "545"
+            endingLineNumber = "545"
             landmarkName = "picker(_:didFinishPicking:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -448,8 +400,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "453"
-            endingLineNumber = "453"
+            startingLineNumber = "569"
+            endingLineNumber = "569"
             landmarkName = "picker(_:didFinishPicking:)"
             landmarkType = "7">
             <Locations>
@@ -496,8 +448,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "454"
-            endingLineNumber = "454"
+            startingLineNumber = "570"
+            endingLineNumber = "570"
             landmarkName = "picker(_:didFinishPicking:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -512,9 +464,217 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "317"
-            endingLineNumber = "317"
+            startingLineNumber = "397"
+            endingLineNumber = "397"
             landmarkName = "move(to:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0FC48E1B-B46F-4303-98FF-A3D80C989AB2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Views/UITextViewWithPlaceholder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "init(frame:textContainer:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5336632-DB91-4EBE-89B1-0CF2E711213C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "416"
+            endingLineNumber = "416"
+            landmarkName = "textViewDidChange(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F5336632-DB91-4EBE-89B1-0CF2E711213C - 7a010b25ccb3a102"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestSenseChain.PostJobViewController.textViewDidChange(__C.UITextView) -&gt; ()"
+                  moduleName = "TestSenseChain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Main/Contracts/PostJob/Main/PostJobViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "342"
+                  endingLineNumber = "342"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "F5336632-DB91-4EBE-89B1-0CF2E711213C - 7a010b25ccb3a102"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestSenseChain.PostJobViewController.textViewDidChange(__C.UITextView) -&gt; ()"
+                  moduleName = "TestSenseChain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Main/Contracts/PostJob/Main/PostJobViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "342"
+                  endingLineNumber = "342"
+                  offsetFromSymbolStart = "192">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E7E4A3B-1905-426A-9270-3104BC9A0235"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Views/UITextViewWithPlaceholder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "init(frame:textContainer:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F468A7FB-99BE-4A61-994E-69958D75F46C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Views/UITextViewWithPlaceholder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "init?(coder:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F468A7FB-99BE-4A61-994E-69958D75F46C - ed9cfce1095fcd37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestSenseChain.UITextViewWithPlaceholder.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;TestSenseChain.UITextViewWithPlaceholder&gt;"
+                  moduleName = "TestSenseChain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Views/UITextViewWithPlaceholder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "F468A7FB-99BE-4A61-994E-69958D75F46C - d665dabe55a9c65d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestSenseChain.UITextViewWithPlaceholder.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;TestSenseChain.UITextViewWithPlaceholder&gt;"
+                  moduleName = "TestSenseChain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Views/UITextViewWithPlaceholder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90FC411F-5FA4-43A6-84A0-32523F18C211"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Views/UITextViewWithPlaceholder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "init(frame:textContainer:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "90FC411F-5FA4-43A6-84A0-32523F18C211 - e07b272484ea898f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestSenseChain.UITextViewWithPlaceholder.__allocating_init(frame: __C.CGRect, textContainer: Swift.Optional&lt;__C.NSTextContainer&gt;) -&gt; TestSenseChain.UITextViewWithPlaceholder"
+                  moduleName = "TestSenseChain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Views/UITextViewWithPlaceholder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "90FC411F-5FA4-43A6-84A0-32523F18C211 - 918227c48e239066"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestSenseChain.UITextViewWithPlaceholder.init(frame: __C.CGRect, textContainer: Swift.Optional&lt;__C.NSTextContainer&gt;) -&gt; TestSenseChain.UITextViewWithPlaceholder"
+                  moduleName = "TestSenseChain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Views/UITextViewWithPlaceholder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "172">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5863783-5C4D-4E4D-9B98-B3FC1438821D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "setDatePickers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C3A70F96-72C2-4568-A3D4-111DA8D60018"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Main/Contracts/PostJob/Price/InputPriceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "setupSlideScrollView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

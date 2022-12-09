@@ -13,10 +13,10 @@ struct GetTemplatesModel: Codable {
 }
 
 struct DataGetTemplatesModel: Codable {
-    var templates: [TemplatesModel]
+    var templates: [TemplatesModel]?
 }
 
 struct TemplatesModel: Codable {
-    var hash: String
-    var name: String
+    var hash: String?
+    var name: String?
 }

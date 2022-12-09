@@ -15,7 +15,7 @@ class JobContractsViewController: UIViewController {
     private let authService = appContext.authentication
     private let child = SpinnerViewController()
     
-    private var contracts = [ContractJobModel]()
+    private var contracts = [GetContractsJobItem]()
     private var contractsCount = 0
     
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ extension JobContractsViewController: JobContractsProtocol {
     }
     
     
-    func presentResult(_ result: [ContractJobModel]) {
+    func presentResult(_ result: [GetContractsJobItem]) {
         contracts = result
         DispatchQueue.main.async {
             self.contractsTableView.reloadData()

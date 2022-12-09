@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BusinessTypeSelectionProtocol: AnyObject {
-    func itemClick(indexPath: IndexPath)
+    func itemClick(type: String, indexPath: IndexPath)
 }
 
 class BusinessTypeSelectionViewController: UIViewController {
@@ -16,33 +16,30 @@ class BusinessTypeSelectionViewController: UIViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
     
+    var presenter: BusinessTypeSelectionPresenter?
     var selectedIndex: IndexPath?
     
     weak var selectionDelegate: BusinessTypeSelectionProtocol?
     
-    private var dataSource = BusinesTypeSelection.allCases.map { $0.rawValue }
+    private var dataSource: [String] = []
     
-    private var filteredData: [String]!
+    private var filteredData: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Business Type"
+        
+        if presenter == nil {
+            presenter = BusinessTypeSelectionPresenter(view: self, service: appContext.mainService)
+        }
+        presenter?.getData()
 
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "BusinessTypeTableViewCell", bundle: nil), forCellReuseIdentifier: "BusinessTypeCell")
         searchBar.delegate = self
         filteredData = dataSource
-    }
-    
-    private func returnToContract(indexPath: IndexPath) {
-        if let delegateObget = selectionDelegate {
-            delegateObget.itemClick(indexPath: indexPath)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.navigationController?.popViewController(animated: true)
-            }
-        }
     }
 
 }
@@ -65,7 +62,7 @@ extension BusinessTypeSelectionViewController: UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath
         tableView.reloadData()
-        returnToContract(indexPath: indexPath)
+        presenter?.itemClicked(type: filteredData[indexPath.row], indexPath: indexPath)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -76,4 +73,24 @@ extension BusinessTypeSelectionViewController: UITableViewDelegate, UITableViewD
         tableView.reloadData()
     }
     
+}
+
+extension BusinessTypeSelectionViewController: BusinessTypeSelectionMainProtocol {
+    
+    func presentData(types: [String]) {
+        DispatchQueue.main.async {
+            self.dataSource = types
+            self.filteredData = types
+            self.tableView.reloadData()
+        }
+    }
+    
+    func sendBusinessType(type: String, indexPath: IndexPath) {
+        if let delegateObget = selectionDelegate {
+            delegateObget.itemClick(type: type, indexPath: indexPath)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
 }

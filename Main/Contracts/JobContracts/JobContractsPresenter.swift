@@ -8,7 +8,7 @@
 import Foundation
 
 protocol JobContractsProtocol: AnyObject {
-    func presentResult(_ result: [ContractJobModel])
+    func presentResult(_ result: [GetContractsJobItem])
     func getContractsAmount(count: Int)
 }
 
@@ -31,7 +31,11 @@ class JobContractsPresenter {
                 if let contracts = data.data?.contracts {
                     self?.view?.presentResult(contracts)
                 } else {
-                    print("Something went wrong!")
+                    if let error = data.error {
+                        print("Error: \(error.text)")
+                    } else {
+                        print("Something went wrong!")
+                    }
                 }
             case let .failure(error):
                 print(error.localizedDescription)

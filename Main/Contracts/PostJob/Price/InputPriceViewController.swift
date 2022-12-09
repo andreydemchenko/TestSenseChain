@@ -8,7 +8,7 @@
 import UIKit
 
 protocol InputPriceToMainProtocol: AnyObject {
-    func sendPrice(price: Double?)
+    func sendPrice(price: Double?, comission: Double?, pageNumber: Int?)
 }
 
 class InputPriceViewController: UIViewController {
@@ -21,12 +21,16 @@ class InputPriceViewController: UIViewController {
     @IBOutlet private weak var wholePriceLbl: UILabel!
     @IBOutlet private weak var wholePriceView: UIView!
     @IBOutlet private weak var slideView: UIView!
+    @IBOutlet private weak var errorLbl: UILabel!
     
-    var price: String?
+    var price: Double?
+    var comission: Double?
+    var pageNumber: Int = 0
     var presenter: InputPricePresenter!
     private var balances: [WalletModelCell] = []
     private var slides: [BalanceAccountView] = []
     private var wholePriceFrame = CGPoint(x: 0, y: 0)
+    private var balance: Double = 0
     
     weak var inputPriceDelegate: InputPriceToMainProtocol?
     
@@ -47,8 +51,10 @@ class InputPriceViewController: UIViewController {
         
         priceTxtField.placeholder = "Price"
         priceTxtField.attributedPlaceholder = priceTxtField.changePlaceholderToStandart
-        if let price {
-            priceTxtField.text = price
+        if let price, let comission  {
+            priceTxtField.text = "\(price)"
+            comissionLbl.text = "\(comission) sc comission"
+            wholePriceLbl.text = "\(price + comission) sc"
         }
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -70,20 +76,6 @@ class InputPriceViewController: UIViewController {
         setupSlideScrollView()
     }
     
-    private func setupSlideScrollView() {
-        pageControl.numberOfPages = slides.count
-        pageControl.currentPage = 0
-        view.bringSubviewToFront(pageControl)
-        
-        scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(slides.count), height: scrollView.frame.height)
-        scrollView.isPagingEnabled = true
-        
-        for i in 0 ..< slides.count {
-            slides[i].frame = CGRect(x: slideView.frame.width * CGFloat(i), y: 0, width: slideView.frame.width, height: slideView.frame.height)
-            scrollView.addSubview(slides[i])
-        }
-    }
-    
     private func createSlides() {
         for item in balances {
             let slide = Bundle.main.loadNibNamed("BalanceAccountView", owner: self, options: nil)?.first as? BalanceAccountView
@@ -94,9 +86,29 @@ class InputPriceViewController: UIViewController {
         }
     }
     
+    private func setupSlideScrollView() {
+        
+        balance = balances[pageNumber].balance ?? 0
+        pageControl.currentPage = pageNumber
+        pageControl.numberOfPages = slides.count
+        view.bringSubviewToFront(pageControl)
+        
+        scrollView.frame.size = CGSize(width: slideView.frame.width, height: slideView.frame.height)
+        scrollView.isPagingEnabled = true
+        
+        for i in 0 ..< slides.count {
+            slides[i].frame = CGRect(x: slideView.frame.width * CGFloat(i), y: 0, width: slideView.frame.width, height: slideView.frame.height)
+            scrollView.addSubview(slides[i])
+        }
+        let x = CGFloat(pageNumber) * slideView.frame.size.width
+        scrollView.setContentOffset(CGPoint(x: x, y: 0), animated: false)
+    }
+    
     @IBAction
     private func changePage(_ sender: Any) {
-        let x = CGFloat(pageControl.currentPage) * scrollView.frame.size.width
+        pageNumber = pageControl.currentPage
+        balance = balances[pageNumber].balance ?? 0
+        let x = CGFloat(pageNumber) * slideView.frame.size.width
         scrollView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
     }
     
@@ -133,27 +145,56 @@ class InputPriceViewController: UIViewController {
 }
 
 extension InputPriceViewController: InputPriceProtocol {
-    
+ 
     var priceField: String? {
-        return priceTxtField.text
-    }
-    
-    var comission: String? {
         get {
-           return ""
+            return priceTxtField.text
         }
         set {
-            comissionLbl.text = newValue
+            priceTxtField.text = newValue
+            if let newValue {
+                if let selectedRange = priceTxtField.selectedTextRange {
+                    let cursorPosition = priceTxtField.offset(from: priceTxtField.beginningOfDocument, to: selectedRange.start)
+                    if cursorPosition != newValue.count - 1, let position = priceTxtField.position(from: priceTxtField.beginningOfDocument, offset: newValue.count - 2) {
+                        priceTxtField.selectedTextRange = priceTxtField.textRange(from: position, to: position)
+                    }
+                }
+            }
+    
+        }
+    }
+    
+    var comissionField: String? {
+        get {
+            return comissionLbl.text
+        }
+        set {
+            if let newValue {
+                comissionLbl.text = "\(newValue) sc comission"
+            }
         }
     }
     
     var wholePrice: String {
         get {
-            return ""
+            return wholePriceLbl.text ?? "0 sc"
         }
         set {
-            wholePriceLbl.text = newValue
+            wholePriceLbl.text = "\(newValue) sc"
         }
+    }
+    
+    var errorField: String? {
+        get {
+            errorLbl.text
+        }
+        set {
+            errorLbl.text = newValue
+        }
+    }
+    
+    var balanceValue: Double {
+        balance
     }
     
     func presentWalletData(data: [WalletModelCell]) {
@@ -161,9 +202,9 @@ extension InputPriceViewController: InputPriceProtocol {
         showWalletData()
     }
     
-    func goToPostContract(price: Double?) {
+    func goToPostContract(price: Double?, comission: Double?) {
         if let delegateObget = inputPriceDelegate {
-            delegateObget.sendPrice(price: price)
+            delegateObget.sendPrice(price: price, comission: comission, pageNumber: pageNumber)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.navigationController?.popViewController(animated: true)
             }
@@ -175,8 +216,10 @@ extension InputPriceViewController: InputPriceProtocol {
 extension InputPriceViewController: UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
-        pageControl.currentPage = Int(pageNumber)
+        let pageNumber = Int(round(scrollView.contentOffset.x / scrollView.frame.size.width))
+        pageControl.currentPage = pageNumber
+        balance = balances[pageNumber].balance ?? 0
+        print("balance == \(balance)")
     }
     
 }

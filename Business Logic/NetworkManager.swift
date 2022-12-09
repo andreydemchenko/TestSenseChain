@@ -25,6 +25,10 @@ class NetworkManager {
                     completion(.failure(error))
                 }
             }
+            else if let response {
+                let error = NSError(domain: "", code: 404, userInfo: [ NSLocalizedDescriptionKey: "Response error: \(response)"])
+                completion(.failure(error))
+            }
         }
         task.resume()
     }

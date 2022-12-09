@@ -5,12 +5,14 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputPriceViewController" customModule="TestSenseChain" customModuleProvider="target">
             <connections>
                 <outlet property="comissionLbl" destination="1zG-tk-B49" id="SrM-QE-hUr"/>
+                <outlet property="errorLbl" destination="cYw-Ux-Qn0" id="6h0-HF-HQP"/>
                 <outlet property="pageControl" destination="Tyu-h4-NcM" id="pSM-Ku-JG2"/>
                 <outlet property="priceTxtField" destination="ahG-Qq-qid" id="RAw-zT-JPt"/>
                 <outlet property="scPriceLabel" destination="ESe-6U-xFW" id="9lU-CD-Z0V"/>
@@ -52,8 +54,8 @@
                                 <constraint firstItem="fZ2-Oo-CqW" firstAttribute="leading" secondItem="Ktx-b9-TiI" secondAttribute="leading" id="oIR-fA-sPq"/>
                                 <constraint firstItem="fZ2-Oo-CqW" firstAttribute="top" secondItem="Ktx-b9-TiI" secondAttribute="top" id="yh5-sF-0U7"/>
                             </constraints>
-                            <viewLayoutGuide key="contentLayoutGuide" id="WsG-Ae-DRK"/>
-                            <viewLayoutGuide key="frameLayoutGuide" id="U4S-uy-9s7"/>
+                            <viewLayoutGuide key="contentLayoutGuide" id="TWB-z8-JPQ"/>
+                            <viewLayoutGuide key="frameLayoutGuide" id="LqY-4v-ckt"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                     <integer key="value" value="10"/>
@@ -106,7 +108,7 @@
                                     <color key="backgroundColor" red="0.1215433702" green="0.1214180812" blue="0.12972444299999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     <connections>
                                         <action selector="priceTxtFieldChanged:" destination="-1" eventType="editingChanged" id="duf-oV-A9T"/>
                                         <action selector="touchedPriceTxtField:" destination="-1" eventType="touchDown" id="Dmg-TB-b3n"/>
@@ -135,6 +137,12 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYw-Ux-Qn0">
+                            <rect key="frame" x="40" y="291" width="310" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" systemColor="systemPinkColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -154,7 +162,10 @@
                         <constraint firstItem="1zG-tk-B49" firstAttribute="leading" secondItem="OXW-U3-pxJ" secondAttribute="leading" constant="40" id="bXK-z5-uKH"/>
                         <constraint firstAttribute="trailing" secondItem="Tyu-h4-NcM" secondAttribute="trailing" constant="130" id="bbZ-mN-hGG"/>
                         <constraint firstItem="Tyu-h4-NcM" firstAttribute="top" secondItem="OXW-U3-pxJ" secondAttribute="top" constant="132" id="hCy-ms-san"/>
+                        <constraint firstItem="cYw-Ux-Qn0" firstAttribute="top" secondItem="1zG-tk-B49" secondAttribute="bottom" constant="4" id="pfA-wH-Ngz"/>
+                        <constraint firstAttribute="trailing" secondItem="cYw-Ux-Qn0" secondAttribute="trailing" constant="40" id="qcE-QE-b6D"/>
                         <constraint firstItem="GuD-u7-Umq" firstAttribute="leading" secondItem="OXW-U3-pxJ" secondAttribute="leading" constant="30" id="rAf-eX-ler"/>
+                        <constraint firstItem="cYw-Ux-Qn0" firstAttribute="leading" secondItem="OXW-U3-pxJ" secondAttribute="leading" constant="40" id="sog-hb-fyG"/>
                         <constraint firstAttribute="trailing" secondItem="GuD-u7-Umq" secondAttribute="trailing" constant="30" id="syt-wR-ruR"/>
                         <constraint firstAttribute="trailing" secondItem="Ktx-b9-TiI" secondAttribute="trailing" constant="30" id="yYS-fl-rBd"/>
                     </constraints>
@@ -171,4 +182,9 @@
             <point key="canvasLocation" x="55.38461538461538" y="-11.374407582938389"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

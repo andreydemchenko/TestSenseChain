@@ -15,4 +15,11 @@ extension Date {
         return formatter.localizedString(for: self, relativeTo: Date())
     }
     
+    var formattedDateString: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        return dateFormatter.string(from: self)
+    }
+    
 }

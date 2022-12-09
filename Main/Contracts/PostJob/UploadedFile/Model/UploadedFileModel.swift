@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 struct UploadedFileModel {
+    var id: String = UUID().uuidString
+    var data: Data
     var icoImage: UIImage
     var fileName: String
     var fileSize: String

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72A0DD8FFE7813E8751BA40D /* Pods_TestSenseChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1548F539E1F9379351BE95CE /* Pods_TestSenseChain.framework */; };
 		8C26647D292E10D3000780F6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8C266473292E10D3000780F6 /* README.md */; };
 		8C26647F292E10D3000780F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C266475292E10D3000780F6 /* ViewController.swift */; };
 		8C266483292E10D3000780F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C266479292E10D3000780F6 /* Assets.xcassets */; };
@@ -38,8 +39,13 @@
 		8CA1CCAC293A435A0060834F /* UploadedFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA1CCAB293A435A0060834F /* UploadedFileView.swift */; };
 		8CA1CCAF293A465D0060834F /* UploadedFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA1CCAE293A465D0060834F /* UploadedFileModel.swift */; };
 		8CAC3536293F8A1600348A7A /* ReviewPostJobPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC3535293F8A1600348A7A /* ReviewPostJobPresenter.swift */; };
+		8CAC353A2941FCD500348A7A /* AttachmentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC35392941FCD500348A7A /* AttachmentModels.swift */; };
+		8CAC353E2942203500348A7A /* MultipartFormDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC353D2942203500348A7A /* MultipartFormDataRequest.swift */; };
 		8CB6ACEE293F52E30060C2FB /* ReviewPostJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB6ACEC293F52E30060C2FB /* ReviewPostJobViewController.swift */; };
 		8CB6ACEF293F52E30060C2FB /* ReviewPostJobViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CB6ACED293F52E30060C2FB /* ReviewPostJobViewController.xib */; };
+		8CCDEE792943251B0029421C /* BusinessTypeSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDEE782943251B0029421C /* BusinessTypeSelectionPresenter.swift */; };
+		8CCDEE7D29434CF40029421C /* ContractCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDEE7B29434CF40029421C /* ContractCreatedViewController.swift */; };
+		8CCDEE7E29434CF40029421C /* ContractCreatedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCDEE7C29434CF40029421C /* ContractCreatedViewController.xib */; };
 		8CCEC5C82934972F00E898A5 /* JobContractsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC5C72934972F00E898A5 /* JobContractsHeaderView.swift */; };
 		8CCEC5CA2934974900E898A5 /* JobContractsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCEC5C92934974900E898A5 /* JobContractsHeaderView.xib */; };
 		8CCEC5D02934AAAD00E898A5 /* WalletHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCEC5CF2934AAAD00E898A5 /* WalletHeaderView.xib */; };
@@ -52,7 +58,6 @@
 		8CD7966F293893C4007E65DC /* BusinessTypeSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD7966D293893C4007E65DC /* BusinessTypeSelectionViewController.xib */; };
 		8CD7967229389817007E65DC /* BusinessTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7967029389817007E65DC /* BusinessTypeTableViewCell.swift */; };
 		8CD7967329389817007E65DC /* BusinessTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD7967129389817007E65DC /* BusinessTypeTableViewCell.xib */; };
-		8CD796762938AB3F007E65DC /* BusinessTypeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD796752938AB3F007E65DC /* BusinessTypeSelection.swift */; };
 		8CD796782938C543007E65DC /* DatePickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD796772938C543007E65DC /* DatePickerLabel.swift */; };
 		8CD7967C2938CE08007E65DC /* InputJobHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7967A2938CE08007E65DC /* InputJobHoursViewController.swift */; };
 		8CD7967D2938CE08007E65DC /* InputJobHoursViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD7967B2938CE08007E65DC /* InputJobHoursViewController.xib */; };
@@ -83,6 +88,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1548F539E1F9379351BE95CE /* Pods_TestSenseChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestSenseChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C763606624C3602A94D2795 /* Pods-TestSenseChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSenseChain.debug.xcconfig"; path = "Target Support Files/Pods-TestSenseChain/Pods-TestSenseChain.debug.xcconfig"; sourceTree = "<group>"; };
 		8C0BA957292CCC98004F8368 /* TestSenseChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSenseChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C266472292E10D2000780F6 /* TestSenseChain-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestSenseChain-Bridging-Header.h"; sourceTree = "<group>"; };
 		8C266473292E10D3000780F6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -117,8 +124,13 @@
 		8CA1CCAB293A435A0060834F /* UploadedFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedFileView.swift; sourceTree = "<group>"; };
 		8CA1CCAE293A465D0060834F /* UploadedFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedFileModel.swift; sourceTree = "<group>"; };
 		8CAC3535293F8A1600348A7A /* ReviewPostJobPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPostJobPresenter.swift; sourceTree = "<group>"; };
+		8CAC35392941FCD500348A7A /* AttachmentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentModels.swift; sourceTree = "<group>"; };
+		8CAC353D2942203500348A7A /* MultipartFormDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartFormDataRequest.swift; sourceTree = "<group>"; };
 		8CB6ACEC293F52E30060C2FB /* ReviewPostJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPostJobViewController.swift; sourceTree = "<group>"; };
 		8CB6ACED293F52E30060C2FB /* ReviewPostJobViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewPostJobViewController.xib; sourceTree = "<group>"; };
+		8CCDEE782943251B0029421C /* BusinessTypeSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTypeSelectionPresenter.swift; sourceTree = "<group>"; };
+		8CCDEE7B29434CF40029421C /* ContractCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractCreatedViewController.swift; sourceTree = "<group>"; };
+		8CCDEE7C29434CF40029421C /* ContractCreatedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContractCreatedViewController.xib; sourceTree = "<group>"; };
 		8CCEC5C72934972F00E898A5 /* JobContractsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobContractsHeaderView.swift; sourceTree = "<group>"; };
 		8CCEC5C92934974900E898A5 /* JobContractsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobContractsHeaderView.xib; sourceTree = "<group>"; };
 		8CCEC5CF2934AAAD00E898A5 /* WalletHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletHeaderView.xib; sourceTree = "<group>"; };
@@ -131,7 +143,6 @@
 		8CD7966D293893C4007E65DC /* BusinessTypeSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessTypeSelectionViewController.xib; sourceTree = "<group>"; };
 		8CD7967029389817007E65DC /* BusinessTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTypeTableViewCell.swift; sourceTree = "<group>"; };
 		8CD7967129389817007E65DC /* BusinessTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessTypeTableViewCell.xib; sourceTree = "<group>"; };
-		8CD796752938AB3F007E65DC /* BusinessTypeSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTypeSelection.swift; sourceTree = "<group>"; };
 		8CD796772938C543007E65DC /* DatePickerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerLabel.swift; sourceTree = "<group>"; };
 		8CD7967A2938CE08007E65DC /* InputJobHoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputJobHoursViewController.swift; sourceTree = "<group>"; };
 		8CD7967B2938CE08007E65DC /* InputJobHoursViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputJobHoursViewController.xib; sourceTree = "<group>"; };
@@ -160,6 +171,7 @@
 		8CFC2049292E466400ADE663 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		8CFC204B292E631D00ADE663 /* PasswordToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordToggle.swift; sourceTree = "<group>"; };
 		8CFCAAB72936001600A922F1 /* ContractJobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContractJobTableViewCell.xib; sourceTree = "<group>"; };
+		A39E99B344F3622BFEEC5613 /* Pods-TestSenseChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSenseChain.release.xcconfig"; path = "Target Support Files/Pods-TestSenseChain/Pods-TestSenseChain.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72A0DD8FFE7813E8751BA40D /* Pods_TestSenseChain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +203,8 @@
 				8C266475292E10D3000780F6 /* ViewController.swift */,
 				8C0BA958292CCC98004F8368 /* Products */,
 				8C266472292E10D2000780F6 /* TestSenseChain-Bridging-Header.h */,
+				C3A699B68E53AAF5AEF5D78E /* Pods */,
+				DC8DEA2412CE06664B9AAE4D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,6 +251,7 @@
 				8C266495292E1108000780F6 /* AppContext.swift */,
 				8CFC2049292E466400ADE663 /* Validation.swift */,
 				8CE72001293E3C3F00DA5DA4 /* Utils.swift */,
+				8CAC353D2942203500348A7A /* MultipartFormDataRequest.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -270,7 +286,7 @@
 				8C9F875F292F69F4001BED1D /* GetTemplatesModel.swift */,
 				8C9F876F292FB936001BED1D /* WalletModel.swift */,
 				8CE9EAAE2930E9530031DF91 /* ContractsModel.swift */,
-				8CD796752938AB3F007E65DC /* BusinessTypeSelection.swift */,
+				8CAC35392941FCD500348A7A /* AttachmentModels.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,6 +369,15 @@
 			path = ReviewPostJob;
 			sourceTree = "<group>";
 		};
+		8CCDEE7A29434C530029421C /* ContractCreated */ = {
+			isa = PBXGroup;
+			children = (
+				8CCDEE7B29434CF40029421C /* ContractCreatedViewController.swift */,
+				8CCDEE7C29434CF40029421C /* ContractCreatedViewController.xib */,
+			);
+			path = ContractCreated;
+			sourceTree = "<group>";
+		};
 		8CD796742938A067007E65DC /* BusinessTypeSelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +385,7 @@
 				8CD7966D293893C4007E65DC /* BusinessTypeSelectionViewController.xib */,
 				8CD7967029389817007E65DC /* BusinessTypeTableViewCell.swift */,
 				8CD7967129389817007E65DC /* BusinessTypeTableViewCell.xib */,
+				8CCDEE782943251B0029421C /* BusinessTypeSelectionPresenter.swift */,
 			);
 			path = BusinessTypeSelection;
 			sourceTree = "<group>";
@@ -422,6 +448,7 @@
 		8CFB5B46293756CE009E3C71 /* PostJob */ = {
 			isa = PBXGroup;
 			children = (
+				8CCDEE7A29434C530029421C /* ContractCreated */,
 				8CB6ACEB293F52BD0060C2FB /* ReviewPostJob */,
 				8CA1CCA8293A405C0060834F /* UploadedFile */,
 				8CD796812938F928007E65DC /* Price */,
@@ -432,6 +459,23 @@
 			path = PostJob;
 			sourceTree = "<group>";
 		};
+		C3A699B68E53AAF5AEF5D78E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C763606624C3602A94D2795 /* Pods-TestSenseChain.debug.xcconfig */,
+				A39E99B344F3622BFEEC5613 /* Pods-TestSenseChain.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DC8DEA2412CE06664B9AAE4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1548F539E1F9379351BE95CE /* Pods_TestSenseChain.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -439,9 +483,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C0BA96B292CCC9A004F8368 /* Build configuration list for PBXNativeTarget "TestSenseChain" */;
 			buildPhases = (
+				93FA198AFBC114B5AB6F2F61 /* [CP] Check Pods Manifest.lock */,
 				8C0BA953292CCC98004F8368 /* Sources */,
 				8C0BA954292CCC98004F8368 /* Frameworks */,
 				8C0BA955292CCC98004F8368 /* Resources */,
+				BD7860168FAD1E04C6633AE1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -512,10 +558,53 @@
 				8C266483292E10D3000780F6 /* Assets.xcassets in Resources */,
 				8CA1CCAA293A407D0060834F /* UploadedFileView.xib in Resources */,
 				8CD7967329389817007E65DC /* BusinessTypeTableViewCell.xib in Resources */,
+				8CCDEE7E29434CF40029421C /* ContractCreatedViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		93FA198AFBC114B5AB6F2F61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestSenseChain-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD7860168FAD1E04C6633AE1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestSenseChain/Pods-TestSenseChain-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestSenseChain/Pods-TestSenseChain-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestSenseChain/Pods-TestSenseChain-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8C0BA953292CCC98004F8368 /* Sources */ = {
@@ -524,6 +613,7 @@
 			files = (
 				8CFC204C292E631D00ADE663 /* PasswordToggle.swift in Sources */,
 				8C9F8770292FB936001BED1D /* WalletModel.swift in Sources */,
+				8CCDEE792943251B0029421C /* BusinessTypeSelectionPresenter.swift in Sources */,
 				8C2664AC292E1108000780F6 /* AuthPresenter.swift in Sources */,
 				8CFB5B4329374F0F009E3C71 /* ContractsPresenter.swift in Sources */,
 				8CD796782938C543007E65DC /* DatePickerLabel.swift in Sources */,
@@ -552,6 +642,7 @@
 				8CE9EAAC2930ABC90031DF91 /* BottomTableViewCell.swift in Sources */,
 				8C2664A9292E1108000780F6 /* AppContext.swift in Sources */,
 				8CCEC5C82934972F00E898A5 /* JobContractsHeaderView.swift in Sources */,
+				8CCDEE7D29434CF40029421C /* ContractCreatedViewController.swift in Sources */,
 				8CE9EAA82930AB680031DF91 /* BalanceAccountTableViewCell.swift in Sources */,
 				8C9F8762292F801C001BED1D /* NetworkManager.swift in Sources */,
 				8C2664AD292E1108000780F6 /* SignInViewController.swift in Sources */,
@@ -565,10 +656,11 @@
 				8CD7967F2938D0B3007E65DC /* TextField+Ext.swift in Sources */,
 				8CCEC5D22934AABD00E898A5 /* WalletHeaderView.swift in Sources */,
 				8C9F8772292FBA9D001BED1D /* WalletPresenter.swift in Sources */,
-				8CD796762938AB3F007E65DC /* BusinessTypeSelection.swift in Sources */,
+				8CAC353E2942203500348A7A /* MultipartFormDataRequest.swift in Sources */,
 				8CB6ACEE293F52E30060C2FB /* ReviewPostJobViewController.swift in Sources */,
 				8CE71FFD293DD1F700DA5DA4 /* FileUploader.swift in Sources */,
 				8C2664AE292E1108000780F6 /* ResponseAuthModel.swift in Sources */,
+				8CAC353A2941FCD500348A7A /* AttachmentModels.swift in Sources */,
 				8C9F8767292F931B001BED1D /* MainTabBarController.swift in Sources */,
 				8C26647F292E10D3000780F6 /* ViewController.swift in Sources */,
 				8C2664AF292E1108000780F6 /* User.swift in Sources */,
@@ -715,6 +807,7 @@
 		};
 		8C0BA96C292CCC9A004F8368 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C763606624C3602A94D2795 /* Pods-TestSenseChain.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -749,6 +842,7 @@
 		};
 		8C0BA96D292CCC9A004F8368 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A39E99B344F3622BFEEC5613 /* Pods-TestSenseChain.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

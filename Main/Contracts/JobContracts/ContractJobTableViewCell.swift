@@ -28,7 +28,7 @@ class ContractJobTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setViews(contract: ContractJobModel) {
+    func setViews(contract: GetContractsJobItem) {
         nameLbl.text = contract.name
         createdAtLbl.text = contract.created_at?.toDate()?.timeAgoDisplay()
         if let hours = contract.hours?.removeZerosFromEnd() {
@@ -41,7 +41,7 @@ class ContractJobTableViewCell: UITableViewCell {
             mutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.systemGray2, range: NSRange(location: balance.count + 1, length: 2))
             balanceLbl.attributedText = mutableString
         }
-        employerLbl.text = contract.employer_user_username
+        employerLbl.text = contract.employer?.username
         
         
         
@@ -49,7 +49,7 @@ class ContractJobTableViewCell: UITableViewCell {
             datesLbl.text = "\(startDate) - \(endDate)"
         }
         descriptionLbl.text = contract.description
-        categoryLbl.text = contract.field_of_job
+        categoryLbl.text = contract.type
     }
     
 }

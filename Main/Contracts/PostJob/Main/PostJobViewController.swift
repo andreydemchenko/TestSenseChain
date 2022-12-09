@@ -15,10 +15,10 @@ class PostJobViewController: UIViewController {
     
     @IBOutlet private weak var contractNameTxtField: UITextField!
     @IBOutlet private weak var chosenBusinessTypeLbl: UILabel!
-    @IBOutlet private weak var descriptionTxtField: UITextField!
+    @IBOutlet private weak var descriptionTxtView: UITextView!
     @IBOutlet private weak var businessTypeStackView: UIStackView!
     @IBOutlet private weak var startDateStackView: UIStackView!
-    @IBOutlet private weak var pickerStartDateLbl: UILabel!
+    @IBOutlet private weak var startDateTxtField: UITextField!
     @IBOutlet private weak var addDocumentsStackView: UIStackView!
     @IBOutlet private weak var addDocumentsView: UIView!
     @IBOutlet private weak var addDocumentsLbl: UILabel!
@@ -26,7 +26,7 @@ class PostJobViewController: UIViewController {
     @IBOutlet private weak var addFilesView: UIView!
     @IBOutlet private weak var addFilesLbl: UILabel!
     @IBOutlet private weak var deadlineStackView: UIStackView!
-    @IBOutlet private weak var pickerDeadlineLbl: UILabel!
+    @IBOutlet private weak var deadlineDateTxtField: UITextField!
     @IBOutlet private weak var jobHoursSymbolLbl: UILabel!
     @IBOutlet private weak var priceSymbolLbl: UILabel!
     @IBOutlet private weak var jobHoursStackView: UIStackView!
@@ -38,10 +38,14 @@ class PostJobViewController: UIViewController {
     
     var presenter: PostJobPresenter!
     
+    private var descriptionPlaceholderLbl: UILabel!
+    
     private var selectedBusinessTypeIndexPath: IndexPath?
     private var jobHours: Double?
     private var price: Double?
-    private var businessTypeSelection: BusinesTypeSelection?
+    private var comission: Double?
+    private var inputPricePageNumber: Int?
+    private var businessType: String?
     private let startDatePicker = UIDatePicker()
     private let deadlineDatePicker = UIDatePicker()
     private var startDate: Date?
@@ -49,7 +53,7 @@ class PostJobViewController: UIViewController {
     private var documentsModels = [UploadedFileModel]()
     private var filesModels = [UploadedFileModel]()
     private var isAddDocuments = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,34 +72,86 @@ class PostJobViewController: UIViewController {
         addDocumentsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addDocumentsViewClicked)))
         addFilesView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addFilesViewClicked)))
         
-        if #available(iOS 13.4, *) {
-            startDatePicker.preferredDatePickerStyle = .wheels
-            deadlineDatePicker.preferredDatePickerStyle = .wheels
-        }
-        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     func configureView() {
         title = "Create a contract"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        startDateTxtField.borderStyle = .none
+        deadlineDateTxtField.borderStyle = .none
+        setDatePickers()
         contractNameTxtField.borderStyle = .none
         contractNameTxtField.placeholder = "Contract name"
         contractNameTxtField.attributedPlaceholder = contractNameTxtField.changePlaceholderToStandart
         contractNameTxtField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-        descriptionTxtField.borderStyle = .none
-        descriptionTxtField.placeholder = "Description"
-        descriptionTxtField.attributedPlaceholder = descriptionTxtField.changePlaceholderToStandart
-        descriptionTxtField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-        
+        setDescriptionPlaceholder()
+        descriptionTxtView.delegate = self
+    }
+    
+    private func setDescriptionPlaceholder() {
+        descriptionPlaceholderLbl = UILabel()
+        descriptionPlaceholderLbl.text = "Description"
+        descriptionPlaceholderLbl.font = UIFont.systemFont(ofSize: 16)
+        descriptionPlaceholderLbl.sizeToFit()
+        descriptionTxtView.addSubview(descriptionPlaceholderLbl)
+        descriptionPlaceholderLbl.frame.origin = CGPoint(x: 5, y: 8)
+        descriptionPlaceholderLbl.textColor = UIColor(red: 0.78, green: 0.78, blue: 0.80, alpha: 1.0)
+    }
+    
+    private func setDatePickers() {
         let formatter = DateFormatter()
         formatter.dateFormat = "d MMM yyyy"
         let date = formatter.string(from: Date())
-        pickerStartDateLbl.text = date
-        pickerDeadlineLbl.text = date
+        startDateTxtField.text = date
+        deadlineDateTxtField.text = date
+        startDate = Date()
+        deadlineDate = Date()
         
+        if #available(iOS 13.4, *) {
+            startDatePicker.preferredDatePickerStyle = .wheels
+            deadlineDatePicker.preferredDatePickerStyle = .wheels
+        }
+        
+        startDatePicker.datePickerMode = .date
+        deadlineDatePicker.datePickerMode = .date
+        
+        let toolbarStartDate = UIToolbar()
+        toolbarStartDate.sizeToFit()
+        
+        let doneButtonStartDate = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneStartDatePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbarStartDate.setItems([spaceButton, doneButtonStartDate], animated: false)
+        
+        startDateTxtField.inputAccessoryView = toolbarStartDate
+        startDateTxtField.inputView = startDatePicker
+        
+        let toolbarDeadline = UIToolbar()
+        toolbarDeadline.sizeToFit()
+    
+        let doneButtonDeadline = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDeadlineDatePicker))
+        toolbarDeadline.setItems([spaceButton, doneButtonDeadline], animated: false)
+        
+        deadlineDateTxtField.inputAccessoryView = toolbarDeadline
+        deadlineDateTxtField.inputView = deadlineDatePicker
+    }
+    
+    @objc
+    private func doneStartDatePicker() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMM yyyy"
         startDate = startDatePicker.date
+        startDateTxtField.text = formatter.string(from: startDate!)
+        dismissKeyboard()
+    }
+    
+    @objc
+    private func doneDeadlineDatePicker() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMM yyyy"
         deadlineDate = deadlineDatePicker.date
+        deadlineDateTxtField.text = formatter.string(from: deadlineDate!)
+        dismissKeyboard()
     }
     
     @objc
@@ -105,40 +161,53 @@ class PostJobViewController: UIViewController {
     
     @objc
     private func businessTypeStackViewClicked() {
+        dismissKeyboard()
         let vc = BusinessTypeSelectionViewController(nibName: "BusinessTypeSelectionViewController", bundle: nil)
         vc.selectionDelegate = self
+        vc.presenter = BusinessTypeSelectionPresenter(view: vc, service: appContext.mainService)
         if let selectedBusinessTypeIndexPath {
             vc.selectedIndex = selectedBusinessTypeIndexPath
         }
+        vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc
     private func jobHoursStackViewClicked() {
+        dismissKeyboard()
         let vc = InputJobHoursViewController(nibName: "InputJobHoursViewController", bundle: nil)
         vc.jobHoursDelegate = self
         vc.jobHours = jobHours
+        vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc
     private func priceStackViewClicked() {
+        dismissKeyboard()
         let vc = InputPriceViewController(nibName: "InputPriceViewController", bundle: nil)
         vc.inputPriceDelegate = self
-        if let price {
-            vc.price = "\(price)"
+        if let price, let comission {
+            vc.price = price
+            vc.comission = comission
+            if let inputPricePageNumber {
+                vc.pageNumber = inputPricePageNumber
+            }
         }
+        vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc
     private func addDocumentsViewClicked() {
+        dismissKeyboard()
         isAddDocuments = true
         madeActionSheetAlert()
     }
     
     @objc
     private func addFilesViewClicked() {
+        dismissKeyboard()
         isAddDocuments = false
         madeActionSheetAlert()
     }
@@ -194,21 +263,24 @@ class PostJobViewController: UIViewController {
         cancelAction.setValue(UIColor.orange, forKey: "titleTextColor")
         actionSheetController.addAction(cancelAction)
 
+        actionSheetController.popoverPresentationController?.sourceRect = view.bounds
+        actionSheetController.popoverPresentationController?.sourceView = view
         self.present(actionSheetController, animated: true, completion: nil)
     }
 
     private func createUploadedItem(_ model: UploadedFileModel) {
         let item = Bundle.main.loadNibNamed("UploadedFileView", owner: self, options: nil)?.first as? UploadedFileView
         if let item {
-            item.setViews(model: model)
             item.uploadedFileDelegate = self
             if isAddDocuments {
+                item.setViews(model: model, isDocument: true, isEditable: true)
                 documentsModels.append(model)
                 addDocumentsStackView.removeArrangedSubview(addDocumentsView)
                 addDocumentsStackView.addArrangedSubview(item)
                 addDocumentsStackView.addArrangedSubview(addDocumentsView)
                 checkIfDocumentsStackViewIsEmpty()
             } else {
+                item.setViews(model: model, isDocument: false, isEditable: true)
                 filesModels.append(model)
                 addFilesStackView.removeArrangedSubview(addFilesView)
                 addFilesStackView.addArrangedSubview(item)
@@ -263,20 +335,20 @@ extension PostJobViewController: PostJobProtocol {
         contractNameTxtField.text
     }
     
-    var description: String? {
-        descriptionTxtField.text
+    var businessTypeValue: String? {
+        businessType
     }
     
-    var businessType: BusinesTypeSelection? {
-        businessTypeSelection
+    var descriptionValue: String? {
+        descriptionTxtView.text
     }
     
     var startDateValue: Date? {
-        startDate
+        startDatePicker.date
     }
     
     var deadlineValue: Date? {
-        deadlineDate
+        deadlineDatePicker.date
     }
     
     var documentsItems: [UploadedFileModel] {
@@ -295,6 +367,14 @@ extension PostJobViewController: PostJobProtocol {
         price
     }
     
+    var accountTypeIndex: Int? {
+        inputPricePageNumber
+    }
+    
+    var comissionValue: Double? {
+        comission
+    }
+    
     var isBtnNextEnabled: Bool {
         get {
             nextBtn.isEnabled
@@ -305,8 +385,8 @@ extension PostJobViewController: PostJobProtocol {
                 nextBtn.backgroundColor = .orange
                 nextBtn.setTitleColor(.white, for: .normal)
             } else {
-                nextBtn.backgroundColor = UIColor(red: 255.0/255.0, green: 129.0/255.0, blue: 13.0/255.0, alpha: 1.0)
-                nextBtn.setTitleColor(.systemGray, for: .normal)
+                nextBtn.backgroundColor = UIColor(red: 102.0/255.0, green: 52.0/255.0, blue: 5.0/255.0, alpha: 1.0)
+                nextBtn.setTitleColor(UIColor(red: 142.0/255.0, green: 142.0/255.0, blue: 147.0/255.0, alpha: 1.0), for: .normal)
             }
         }
     }
@@ -315,9 +395,10 @@ extension PostJobViewController: PostJobProtocol {
         switch to {
         case let .next(model):
             let vc = ReviewPostJobViewController(nibName: "ReviewPostJobViewController", bundle: nil)
-            vc.presenter = ReviewPostJobPresenter(view: vc, model: model)
+            vc.presenter = ReviewPostJobPresenter(view: vc, model: model, service: appContext.mainService)
+            vc.hidesBottomBarWhenPushed = true
+            vc.modalPresentationStyle = .fullScreen
             navigationController?.pushViewController(vc, animated: true)
-            
         case .bussinessType:
             break
         case .uploadDocuments:
@@ -329,22 +410,33 @@ extension PostJobViewController: PostJobProtocol {
     
 }
 
+extension PostJobViewController: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        descriptionPlaceholderLbl.isHidden = !textView.text.isEmpty
+        presenter.checkFields()
+    }
+    
+}
+
 extension PostJobViewController: BusinessTypeSelectionProtocol {
     
-    func itemClick(indexPath: IndexPath) {
+    func itemClick(type: String, indexPath: IndexPath) {
         selectedBusinessTypeIndexPath = indexPath
-        let businessType = BusinesTypeSelection.allCases[indexPath.row]
-        let name = businessType.rawValue
-        chosenBusinessTypeLbl.text = name
+        chosenBusinessTypeLbl.text = type
+        businessType = type
         presenter.checkFields()
-        businessTypeSelection = businessType
     }
     
 }
 
 extension PostJobViewController: JobHoursProtocol {
     
-    func sendTime(time: Double) {
+    func sendTime(hours: Int, minutes: Int) {
+        if hours != 0 || minutes != 0 {
+            presenter.setTime(hours: hours, minutes: minutes)
+        }
+        let time = (Double(hours) + (Double(minutes) / 60.0)).rounded(toPlaces: 2)
         if time != 0 {
             jobHoursLbl.textColor = .white
             jobHoursLbl.text = "\(time)"
@@ -360,15 +452,20 @@ extension PostJobViewController: JobHoursProtocol {
 
 extension PostJobViewController: InputPriceToMainProtocol {
     
-    func sendPrice(price: Double?) {
+    func sendPrice(price: Double?, comission: Double?, pageNumber: Int?) {
         if let price, price != 0 {
             priceLbl.text = "\(price)"
             priceLbl.textColor = .white
             self.price = price
-            
-            let comission = price * 0.05
-            comissionLbl.text = "\(comission.removeZerosFromEnd()) sc comission"
-            comissionLbl.isHidden = false
+            if let comission, comission != 0 {
+                self.comission = comission
+                comissionLbl.text = "\(comission) sc comission"
+                comissionLbl.isHidden = false
+            }
+            if let pageNumber {
+                print("page == \(pageNumber)")
+                inputPricePageNumber = pageNumber
+            }
         } else {
             priceLbl.text = "Price"
             priceLbl.textColor = .systemGray
@@ -381,14 +478,28 @@ extension PostJobViewController: InputPriceToMainProtocol {
     
 extension PostJobViewController: UploadedFileProtocol {
     
-    func removeView(view: UploadedFileView) {
-        addDocumentsStackView.removeArrangedSubview(addDocumentsView)
-        addDocumentsStackView.removeArrangedSubview(view)
-        addDocumentsStackView.addArrangedSubview(addDocumentsView)
-        view.removeFromSuperview()
-        
-        checkIfDocumentsStackViewIsEmpty()
-        checkIfFilesStackViewIsEmpty()
+    func removeView(view: UploadedFileView, isDocument: Bool) {
+        if isDocument {
+            let index = documentsModels.firstIndex(where: { $0.id == view.getFileId() })
+            let i = index?.advanced(by: 0) ?? -1
+            print("doc i ==== \(i)")
+            documentsModels.remove(at: i)
+            addDocumentsStackView.removeArrangedSubview(addDocumentsView)
+            addDocumentsStackView.removeArrangedSubview(view)
+            addDocumentsStackView.addArrangedSubview(addDocumentsView)
+            view.removeFromSuperview()
+            checkIfDocumentsStackViewIsEmpty()
+        } else {
+            let index = filesModels.firstIndex(where: { $0.id == view.getFileId() })
+            let i = index?.advanced(by: 0) ?? -1
+            print("file i ==== \(i)")
+            filesModels.remove(at: i)
+            addFilesStackView.removeArrangedSubview(addFilesView)
+            addFilesStackView.removeArrangedSubview(view)
+            addFilesStackView.addArrangedSubview(addFilesView)
+            view.removeFromSuperview()
+            checkIfFilesStackViewIsEmpty()
+        }
         presenter.checkFields()
     }
     
@@ -414,13 +525,16 @@ extension PostJobViewController: PHPickerViewControllerDelegate,         UIAdapt
                         itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.image.identifier) { url, error in
                             if let url {
                                 strFileSize = url.getFileSize
-                                
-                                print("image url = \(url)")
-                                
-                                let model = UploadedFileModel(icoImage: UIImage(named: "image_ico")!, fileName: name, fileSize: strFileSize, url: url)
-                                
-                                DispatchQueue.main.async {
-                                    self.createUploadedItem(model)
+                                if let nsdata = NSData(contentsOf: url) {
+                                    let data = Data(referencing: nsdata)
+                                    
+                                    print("image url = \(url)  type = \(url.lastPathComponent)")
+                                    
+                                    let model = UploadedFileModel(data: data, icoImage: UIImage(named: "image_ico")!, fileName: name, fileSize: strFileSize, url: url)
+                                    
+                                    DispatchQueue.main.async {
+                                        self.createUploadedItem(model)
+                                    }
                                 }
                             } else if let error {
                                 print("An error occurred with loading image: \(error.localizedDescription)")
@@ -429,31 +543,34 @@ extension PostJobViewController: PHPickerViewControllerDelegate,         UIAdapt
                     } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.movie.identifier) {
                         itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.movie.identifier) { url, error in
                             if let url = url {
-                                let innerGroup = DispatchGroup()
-                                innerGroup.enter()
-                                let options = PHVideoRequestOptions()
-                                options.version = .original
-                                
-                                PHImageManager.default().requestAVAsset(forVideo: asset, options: options) { avAsset, _, _ in
-                                    if let urlAsset = avAsset as? AVURLAsset {
-                                        if let resourceValues = try? urlAsset.url.resourceValues(forKeys: [.fileSizeKey]),
-                                           let fileSize = resourceValues.fileSize {
-                                            
-                                            let formatter = ByteCountFormatter()
-                                            formatter.countStyle = .file
-                                            
-                                            strFileSize = formatter.string(fromByteCount: Int64(fileSize))
-                                            innerGroup.leave()
+                                if let nsdata = NSData(contentsOf: url) {
+                                    let data = Data(referencing: nsdata)
+                                    let innerGroup = DispatchGroup()
+                                    innerGroup.enter()
+                                    let options = PHVideoRequestOptions()
+                                    options.version = .original
+                                    
+                                    PHImageManager.default().requestAVAsset(forVideo: asset, options: options) { avAsset, _, _ in
+                                        if let urlAsset = avAsset as? AVURLAsset {
+                                            if let resourceValues = try? urlAsset.url.resourceValues(forKeys: [.fileSizeKey]),
+                                               let fileSize = resourceValues.fileSize {
+                                                
+                                                let formatter = ByteCountFormatter()
+                                                formatter.countStyle = .file
+                                                
+                                                strFileSize = formatter.string(fromByteCount: Int64(fileSize))
+                                                innerGroup.leave()
+                                            }
                                         }
                                     }
-                                }
-                                
-                                print("video url \(url)")
-                                
-                                innerGroup.notify(queue: .main) {
-                                    let model = UploadedFileModel(icoImage: UIImage(named: "image_ico")!, fileName: name, fileSize: strFileSize, url: url)
-
-                                    self.createUploadedItem(model)
+                                    
+                                    print("video url \(url)")
+                                    
+                                    innerGroup.notify(queue: .main) {
+                                        let model = UploadedFileModel(data: data, icoImage: UIImage(named: "image_ico")!, fileName: name, fileSize: strFileSize, url: url)
+                                        
+                                        self.createUploadedItem(model)
+                                    }
                                 }
                             } else if let error {
                                 print("An error occurred with loading video: \(error.localizedDescription)")
@@ -474,10 +591,13 @@ extension PostJobViewController: UIDocumentPickerDelegate, UINavigationControlle
             return
         }
         for url in urls {
-            let filename = url.lastPathComponent
-            let filesize = url.getFileSize
-            let model = UploadedFileModel(icoImage: UIImage(named: "file_ico")!, fileName: filename, fileSize: filesize, url: url)
-            createUploadedItem(model)
+            if let nsdata = NSData(contentsOf: url) {
+                let data = Data(referencing: nsdata)
+                let filename = url.lastPathComponent
+                let filesize = url.getFileSize
+                let model = UploadedFileModel(data: data, icoImage: UIImage(named: "file_ico")!, fileName: filename, fileSize: filesize, url: url)
+                createUploadedItem(model)
+            }
         }
     }
 

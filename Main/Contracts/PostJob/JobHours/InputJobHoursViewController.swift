@@ -8,7 +8,7 @@
 import UIKit
 
 protocol JobHoursProtocol: AnyObject {
-    func sendTime(time: Double)
+    func sendTime(hours: Int, minutes: Int)
 }
 
 class InputJobHoursViewController: UIViewController {
@@ -20,6 +20,7 @@ class InputJobHoursViewController: UIViewController {
     @IBOutlet private weak var minutesTxtField: UITextField!
     @IBOutlet private weak var hoursLabel: UILabel!
     @IBOutlet private weak var minutesLabel: UILabel!
+    @IBOutlet private weak var enterBtn: UIButton!
     
     private lazy var minutesPickerView: UIPickerView = {
         let picker = UIPickerView()
@@ -83,6 +84,19 @@ class InputJobHoursViewController: UIViewController {
         hoursLabel.textColor = .systemGray
         minutesLabel.textColor = .orange
     }
+    
+    @IBAction
+    private func enterTimeClicked(_ sender: Any) {
+        let hours = Int(hoursTxtField.text ?? "0") ?? 0
+        let minutes = Int(minutesTxtField.text ?? "0") ?? 0
+        if let delegateObget = jobHoursDelegate {
+            delegateObget.sendTime(hours: hours, minutes: minutes)
+            DispatchQueue.main.async {
+                self.mainStackView.removeArrangedSubview(self.minutesPickerView)
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
 }
 
 extension InputJobHoursViewController: UITextFieldDelegate {
@@ -111,15 +125,5 @@ extension InputJobHoursViewController: UIPickerViewDelegate, UIPickerViewDataSou
         minutesTxtField.text = minutesArray[row]
         minutesLabel.textColor = .systemGray
         pickerView.isHidden = true
-        let hours = Double(hoursTxtField.text ?? "0") ?? 0
-        let minutes = (Double(minutesArray[row]) ?? 0) / 60.0
-        let time = (hours + minutes).rounded(toPlaces: 2)
-        if let delegateObget = jobHoursDelegate {
-            delegateObget.sendTime(time: time)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.mainStackView.removeArrangedSubview(self.minutesPickerView)
-                self.navigationController?.popViewController(animated: true)
-            }
-        }
     }
 }

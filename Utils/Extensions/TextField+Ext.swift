@@ -13,7 +13,7 @@ extension UITextField {
     var changePlaceholderToStandart: NSAttributedString {
         return NSAttributedString(
             string: self.placeholder ?? "",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0.78, green: 0.78, blue: 0.80, alpha: 1.0),
                          NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)]
         )
     }

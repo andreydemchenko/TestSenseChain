@@ -94,6 +94,7 @@
                 <outlet property="imageView" destination="k2g-RH-KQx" id="gwX-Qy-kk2"/>
                 <outlet property="nameLbl" destination="bfj-YB-Oo0" id="O5t-Dx-Zs9"/>
                 <outlet property="removeBtn" destination="kUd-aJ-QI9" id="DRv-yK-MCD"/>
+                <outlet property="removeStackView" destination="e9C-DZ-noE" id="MH2-13-7lb"/>
                 <outlet property="stackView" destination="ViI-Zu-zHP" id="28m-zP-hkh"/>
             </connections>
             <point key="canvasLocation" x="16.923076923076923" y="-286.84834123222748"/>

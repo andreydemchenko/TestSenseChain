@@ -7,19 +7,38 @@
 
 import Foundation
 
-struct ResponseContractsModel: Codable {
-    var data: GetContractJobItem?
+struct ResponseJobComission: Codable {
+    var data: ResponseJobComissionData?
     var error: ErrorResponseModel?
 }
 
-struct GetContractJobItem: Codable {
-    var contracts: [ContractJobModel]
+struct ResponseJobComissionData: Codable {
+    var amount: Double
+    var comission: Double
+}
+
+struct ContractJobTypeResponse: Codable {
+    var data: ContractJobTypeRes?
+    var error: ErrorResponseModel?
+}
+
+struct ContractJobTypeRes: Codable {
+    var types: [String]
+}
+
+struct GetContractsJobResponse: Codable {
+    var data: GetContractsJobRes?
+    var error: ErrorResponseModel?
+}
+
+struct GetContractsJobRes: Codable {
+    var contracts: [GetContractsJobItem]
     var role: String
     var status: String
     var total: Int
 }
 
-struct ContractJobModel: Codable {
+struct GetContractsJobItem: Codable {
     var amount: Double?
     var amount_early: Double?
     var candidates: Int?
@@ -28,28 +47,81 @@ struct ContractJobModel: Codable {
     var created_at: String?
     var deadline: String?
     var description: String?
-    var employee_user_hash: String?
-    var employee_user_username: String?
-    var employer_user_hash: String?
-    var employer_user_username: String?
-    var field_of_job: String?
+    var disputed: Bool?
+    var employee: Employee?
+    var employer: Employer?
     var hash: String?
     var hours: Double?
+    var is_waiting_vote_employer: Bool?
     var name: String?
     var signed_at: String?
     var start_date: String?
+    var type: String?
     var until_end: Double?
     var updated_at: String?
 }
 
+struct Employee: Codable {
+    var avatar_link: String
+    var hash: String
+    var rate: Int
+    var username: String
+}
+
+struct Employer: Codable {
+    var avatar_link: String
+    var hash: String
+    var rate: Int
+    var username: String
+}
+
 struct CreateContractJobModel {
     var name: String
-    var businessType: BusinesTypeSelection
+    var businessType: String
     var description: String
     var startDate: Date
     var deadline: Date
     var documents: [UploadedFileModel]
     var files: [UploadedFileModel]
-    var jobHours: Double
+    var hours: Int
+    var minutes: Int
+    var accountType: String
     var price: Double
+    var comission: Double
+}
+
+struct CreateContractJobResponse: Codable {
+    var data: CreateContractJobReq?
+    var error: ErrorResponseModel?
+}
+
+struct CreateContractJobReq: Codable {
+    var account_type: String
+    var amount: Double
+    var deadline: String
+    var description: String
+    var document_hashes: [String]
+    var file_hashes: [String]
+    var hours: Int
+    var minutes: Int
+    var name: String
+    var start_date: String
+    var type: String
+}
+
+struct CreateContractJobRes: Codable {
+    var account_type: String
+    var amount: Double
+    var created_at: String
+    var deadline: String
+    var description: String
+    var document_hashes: [String]
+    var file_hashes: [String]
+    var hash: String
+    var hours: Int
+    var minutes: Int
+    var name: String
+    var start_date: String
+    var status: String
+    var type: String
 }

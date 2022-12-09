@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputJobHoursViewController" customModule="TestSenseChain" customModuleProvider="target">
             <connections>
+                <outlet property="enterBtn" destination="7iD-d0-nTJ" id="wFk-u1-xtM"/>
                 <outlet property="hoursLabel" destination="DIc-Y4-xS0" id="a6O-ab-8eb"/>
                 <outlet property="hoursStackView" destination="F0i-yG-dBl" id="bH2-tP-i2F"/>
                 <outlet property="hoursTxtField" destination="24a-oJ-1Fk" id="Hsg-rZ-mdI"/>
@@ -26,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yJL-W4-crh">
-                    <rect key="frame" x="8" y="55" width="374" height="82"/>
+                    <rect key="frame" x="8" y="55" width="374" height="141"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qzk-il-Fnr">
                             <rect key="frame" x="12" y="12" width="350" height="58"/>
@@ -91,6 +92,24 @@
                                 </stackView>
                             </subviews>
                         </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iD-d0-nTJ">
+                            <rect key="frame" x="12" y="90" width="350" height="39"/>
+                            <color key="backgroundColor" red="0.97761756180000003" green="0.49473541980000002" blue="0.051190428439999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Enter time">
+                                <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                <directionalEdgeInsets key="contentInsets" top="8" leading="0.0" bottom="8" trailing="0.0"/>
+                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="enterTimeClicked:" destination="-1" eventType="touchUpInside" id="3WN-JC-7fc"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <edgeInsets key="layoutMargins" top="12" left="12" bottom="12" right="12"/>
                 </stackView>

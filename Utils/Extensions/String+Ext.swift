@@ -23,7 +23,15 @@ extension String {
          let date = dateFormatter.date(from: self)
 
          return date
-
      }
     
+    var toDouble: Double {
+        return (self as NSString).doubleValue
+    }
+    
+    var isDoubleNumber: Bool {
+        return self.range(
+            of: "^-?\\d+(?:.\\d+)?$",
+            options: .regularExpression) != nil
+    }
 }
