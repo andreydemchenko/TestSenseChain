@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7EA00D84-9FA1-40FC-BE65-14C6A03EFF98"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "455DF7D0-9791-41C2-84AC-9B93C03FB497"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Business Logic/AuthService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "testQuery(accessToken:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "455DF7D0-9791-41C2-84AC-9B93C03FB497 - 71ed8e16f041626c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestSenseChain.AuthService.testQuery(accessToken: Swift.String, completion: (Swift.Result&lt;TestSenseChain.GetTemplatesModel, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TestSenseChain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Business%20Logic/AuthService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "1228">
+               </Location>
+               <Location
+                  uuid = "455DF7D0-9791-41C2-84AC-9B93C03FB497 - e03995b7224882da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;TestSenseChain.GetTemplatesModel, Swift.Error&gt;) -&gt; () in TestSenseChain.AuthService.testQuery(accessToken: Swift.String, completion: (Swift.Result&lt;TestSenseChain.GetTemplatesModel, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TestSenseChain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Business%20Logic/AuthService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "196">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DA2C550-BB5E-4775-A40D-8029524AC6FA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Business Logic/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "query(request:modelType:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B030A7D9-981F-46F8-BA98-40C8407D8D64"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Business Logic/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "query(request:modelType:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B030A7D9-981F-46F8-BA98-40C8407D8D64 - 978f8b0089320a3f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TestSenseChain.NetworkManager.query&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(request: Foundation.URLRequest, modelType: &#x3c4;_0_0.Type, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TestSenseChain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Business%20Logic/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "496">
+               </Location>
+               <Location
+                  uuid = "B030A7D9-981F-46F8-BA98-40C8407D8D64 - 978f8b0089320a3f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TestSenseChain.NetworkManager.query&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(request: Foundation.URLRequest, modelType: &#x3c4;_0_0.Type, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TestSenseChain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Business%20Logic/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "1460">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0AC6B9A8-4A27-4098-9660-E91849B45737"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Main/Contracts/PostJob/ReviewPostJob/ReviewPostJobPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "createContractBtnTapped()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE0C32B4-D46B-4EBE-8A3D-EBE5E36FC819"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Main/Contracts/PostJob/Main/PostJobPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "didTapNextBtn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8EFC43E1-F299-4348-8CFE-7EA1EAE2EFDF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Main/Contracts/PostJob/ReviewPostJob/ReviewPostJobPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "createContract()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8EFC43E1-F299-4348-8CFE-7EA1EAE2EFDF - b4cc2915b8c9502c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestSenseChain.ReviewPostJobPresenter.createContract() -&gt; ()"
+                  moduleName = "TestSenseChain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Main/Contracts/PostJob/ReviewPostJob/ReviewPostJobPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "1772">
+               </Location>
+               <Location
+                  uuid = "8EFC43E1-F299-4348-8CFE-7EA1EAE2EFDF - 78c98defb4caae7e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.Result&lt;TestSenseChain.CreateContractJobResponse&gt;) -&gt; () in TestSenseChain.ReviewPostJobPresenter.createContract() -&gt; ()"
+                  moduleName = "TestSenseChain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Main/Contracts/PostJob/ReviewPostJob/ReviewPostJobPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED82E7F4-0E81-459C-8E2B-3649DE4EC189"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Business Logic/MainService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "createJobContract(accessToken:model:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
