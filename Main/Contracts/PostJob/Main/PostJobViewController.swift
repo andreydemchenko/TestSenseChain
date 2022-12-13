@@ -38,7 +38,8 @@ class PostJobViewController: UIViewController {
     @IBOutlet weak private var errorNameLbl: UILabel!
     @IBOutlet weak private var errorTypeLbl: UILabel!
     @IBOutlet weak private var errorDescriptionLbl: UILabel!
-    
+    @IBOutlet weak private var errorTimeLbl: UILabel!
+    @IBOutlet weak private var errorPriceLbl: UILabel!
     
     var presenter: PostJobPresenter!
     
@@ -161,7 +162,8 @@ class PostJobViewController: UIViewController {
     
     @objc
     private func nameTxtFieldDidChange() {
-        presenter.checkValidation()
+        presenter.checkName()
+        presenter.checkFields()
     }
     
     @objc
@@ -175,6 +177,7 @@ class PostJobViewController: UIViewController {
         }
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
+        presenter.checkType()
     }
     
     @objc
@@ -185,6 +188,7 @@ class PostJobViewController: UIViewController {
         vc.jobHours = jobHours
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
+        presenter.checkTime()
     }
     
     @objc
@@ -201,6 +205,7 @@ class PostJobViewController: UIViewController {
         }
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
+        presenter.checkPrice()
     }
     
     @objc
@@ -428,6 +433,28 @@ extension PostJobViewController: PostJobProtocol {
         }
     }
     
+    var errorTime: String? {
+        get {
+            errorTimeLbl.text
+        }
+        set {
+            errorTimeLbl.text = newValue
+            let isError = newValue != nil
+            errorTimeLbl.isHidden = !isError
+        }
+    }
+    
+    var errorPrice: String? {
+        get {
+            errorPriceLbl.text
+        }
+        set {
+            errorPriceLbl.text = newValue
+            let isError = newValue != nil
+            errorPriceLbl.isHidden = !isError
+        }
+    }
+    
     func move(to: PostJobNavigation) {
         switch to {
         case let .next(model):
@@ -451,7 +478,8 @@ extension PostJobViewController: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         descriptionPlaceholderLbl.isHidden = !textView.text.isEmpty
-        presenter.checkValidation()
+        presenter.checkDescription()
+        presenter.checkFields()
     }
     
 }
@@ -462,7 +490,8 @@ extension PostJobViewController: BusinessTypeSelectionProtocol {
         selectedBusinessTypeIndexPath = indexPath
         chosenBusinessTypeLbl.text = type
         businessType = type
-        presenter.checkValidation()
+        presenter.checkType()
+        presenter.checkFields()
     }
     
 }
@@ -482,6 +511,7 @@ extension PostJobViewController: JobHoursProtocol {
             jobHoursLbl.textColor = .systemGray
             jobHoursLbl.text = "Job hours"
         }
+        presenter.checkTime()
         presenter.checkFields()
     }
     
@@ -507,6 +537,7 @@ extension PostJobViewController: InputPriceToMainProtocol {
             priceLbl.textColor = .systemGray
             comissionLbl.isHidden = true
         }
+        presenter.checkPrice()
         presenter.checkFields()
     }
     

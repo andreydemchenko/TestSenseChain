@@ -29,6 +29,8 @@ protocol PostJobProtocol: AnyObject {
     var errorName: String? { get set }
     var errorType: String? { get set }
     var errorDescription: String? { get set }
+    var errorTime: String? { get set }
+    var errorPrice: String? { get set }
     
     func move(to: PostJobNavigation)
 }
@@ -47,18 +49,11 @@ class PostJobPresenter {
     }
     
     func didTapNextBtn() {
-        if let view {
-            if view.errorName == nil {
-                print("name error is nil")
-            }
-            if view.errorType == nil {
-                print("type error is nil")
-            }
-            if view.errorDescription == nil {
-                print("desc error is nil")
-            }
-        }
-        checkValidation()
+        checkName()
+        checkType()
+        checkDescription()
+        checkTime()
+        checkPrice()
         if checkIfAllFieldAreFilled() {
             if hours == nil {
                 hours = 0
@@ -106,7 +101,7 @@ class PostJobPresenter {
         }
     }
     
-    func checkValidation() {
+    func checkName() {
         if view?.name == nil {
             view?.errorName = "Enter name"
         } else {
@@ -120,11 +115,17 @@ class PostJobPresenter {
                 }
             }
         }
+    }
+    
+    func checkType() {
         if view?.businessTypeValue == nil {
             view?.errorType = "Chose type"
         } else {
             view?.errorType = nil
         }
+    }
+    
+    func checkDescription() {
         if view?.descriptionValue == nil {
             view?.errorDescription = "Enter description"
         } else {
@@ -138,7 +139,28 @@ class PostJobPresenter {
                 }
             }
         }
-        checkFields()
+    }
+    
+    func checkTime() {
+        if hours == nil, minutes == nil {
+            view?.errorTime = "Enter time"
+        } else {
+            view?.errorTime = nil
+        }
+    }
+    
+    func checkPrice() {
+        if view?.priceValue == nil {
+            view?.errorPrice = "Enter price"
+        } else {
+            if let price = view?.priceValue {
+                if price == 0 {
+                    view?.errorPrice = "Enter price"
+                } else {
+                    view?.errorPrice = nil
+                }
+            }
+        }
     }
     
     private func checkIfAllFieldAreFilled() -> Bool {
@@ -150,7 +172,9 @@ class PostJobPresenter {
                view.priceValue != nil,
                view.errorName == nil,
                view.errorType == nil,
-               view.errorDescription == nil {
+               view.errorDescription == nil,
+               view.errorTime == nil,
+               view.errorPrice == nil {
                 return true
             }
         }

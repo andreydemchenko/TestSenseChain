@@ -22,7 +22,6 @@ class InputPricePresenter {
     
     weak var view: InputPriceProtocol?
     private let service: MainService
-    private let accessToken = appContext.keychain.readAccessToken()
     
     private var searchTimer: Timer?
     
@@ -32,7 +31,7 @@ class InputPricePresenter {
     }
     
     func getWalletData() {
-        service.getWalletData(accessToken: accessToken) { [weak self] res in
+        service.getWalletData() { [weak self] res in
             switch res {
             case let .success(model):
                 if let data = model.data {
@@ -101,7 +100,7 @@ class InputPricePresenter {
 
     private func getComission() {
         let price = (view?.priceField ?? "0").toDouble
-        service.getComissionByPrice(accessToken: accessToken, amount: price) { [weak self] res in
+        service.getComissionByPrice(amount: price) { [weak self] res in
             switch res {
             case let .success(model):
                 if let comission = model.data?.comission {

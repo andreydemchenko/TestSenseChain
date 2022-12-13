@@ -23,10 +23,9 @@ class JobContractsPresenter {
     }
     
     func getContracts() {
-        let accessToken = appContext.keychain.readAccessToken()
         let status = UserContractStatus.pending.rawValue
         let role = UserContractRole.employer.rawValue
-        service.getJobContracts(accessToken: accessToken, status: status, role: role, offset: 0) { [weak self] res in
+        service.getJobContracts(status: status, role: role, offset: 0) { [weak self] res in
             switch res {
             case let .success(data):
                 self?.view?.getContractsAmount(count: data.data?.total ?? 0)

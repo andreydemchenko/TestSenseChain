@@ -10,30 +10,35 @@ import Foundation
 
 protocol MainServiceProtocol: AnyObject {
     
-    func getWalletData(accessToken: String, completion: @escaping (Result<WalletModel>) -> Void)
-    func getJobContracts(accessToken: String, status: String, role: String, offset: Int, completion: @escaping (Result<GetContractsJobResponse>) -> Void)
-    func getJobTypes(accessToken: String, completion: @escaping (Result<ContractJobTypeResponse>) -> Void)
-    func getComissionByPrice(accessToken: String, amount: Double, completion: @escaping (Result<ResponseJobComission>) -> Void)
-    func uploadAttachment(accessToken: String, model: AttachmentUploadReq, completion: @escaping (Result<AttachmentUploadResponse>) -> Void)
-    func createJobContract(accessToken: String, model: CreateContractJobReq, completion: @escaping (Result<CreateContractJobResponse>) -> Void)
+    func getWalletData(completion: @escaping (Result<WalletModel>) -> Void)
+    func getJobContracts(status: String, role: String, offset: Int, completion: @escaping (Result<GetContractsJobResponse>) -> Void)
+    func getJobTypes(completion: @escaping (Result<ContractJobTypeResponse>) -> Void)
+    func getComissionByPrice(amount: Double, completion: @escaping (Result<ResponseJobComission>) -> Void)
+    func uploadAttachment(model: AttachmentUploadReq, completion: @escaping (Result<AttachmentUploadResponse>) -> Void)
+    func createJobContract(model: CreateContractJobReq, completion: @escaping (Result<CreateContractJobResponse>) -> Void)
     
 }
 
 class MainService: MainServiceProtocol {
     
+    private let accessToken = appContext.keychain.readAccessToken()
+    
     let urlError = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Invalid url"])
     
     private let manager = NetworkManager()
     
-    func getWalletData(accessToken: String, completion: @escaping (Result<WalletModel>) -> Void) {
+    private func applyRequest(request: inout URLRequest) {
+        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+    }
+    
+    func getWalletData(completion: @escaping (Result<WalletModel>) -> Void) {
         let urlWallet = URL(string: "https://sense-chain.devzz.ru/api/wallet")
         guard let requestUrl = urlWallet else { return completion(.failure(urlError)) }
         
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "GET"
-        
-        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        applyRequest(request: &request)
         
         manager.query(request: request, modelType: WalletModel.self) { res in
             switch res {
@@ -45,15 +50,13 @@ class MainService: MainServiceProtocol {
         }
     }
     
-    func getJobContracts(accessToken: String, status: String, role: String, offset: Int, completion: @escaping (Result<GetContractsJobResponse>) -> Void) {
+    func getJobContracts(status: String, role: String, offset: Int, completion: @escaping (Result<GetContractsJobResponse>) -> Void) {
         let urlJobContracts = URL(string: "https://sense-chain.devzz.ru/api/user/contracts/job/\(status)/\(role)/offset/\(offset)")
         guard let requestUrl = urlJobContracts else { return completion(.failure(urlError)) }
         
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "GET"
-        
-        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        applyRequest(request: &request)
         
         manager.query(request: request, modelType: GetContractsJobResponse.self) { res in
             switch res {
@@ -65,16 +68,14 @@ class MainService: MainServiceProtocol {
         }
     }
     
-    func getJobTypes(accessToken: String, completion: @escaping (Result<ContractJobTypeResponse>) -> Void) {
+    func getJobTypes(completion: @escaping (Result<ContractJobTypeResponse>) -> Void) {
         let urlJobTypes = URL(string: "https://sense-chain.devzz.ru/api/contract/job/types")
         
         guard let requestUrl = urlJobTypes else { return completion(.failure(urlError)) }
         
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "GET"
-        
-        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        applyRequest(request: &request)
         
         manager.query(request: request, modelType: ContractJobTypeResponse.self) { res in
             switch res {
@@ -86,7 +87,7 @@ class MainService: MainServiceProtocol {
         }
     }
     
-    func getComissionByPrice(accessToken: String, amount: Double, completion: @escaping (Result<ResponseJobComission>) -> Void) {
+    func getComissionByPrice(amount: Double, completion: @escaping (Result<ResponseJobComission>) -> Void) {
         
         let urlJobComission = URL(string: "https://sense-chain.devzz.ru/api/contract/job/comission?amount=\(amount)")
         
@@ -94,9 +95,7 @@ class MainService: MainServiceProtocol {
         
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "GET"
-        
-        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        applyRequest(request: &request)
         
         manager.query(request: request, modelType: ResponseJobComission.self) { res in
             switch res {
@@ -108,11 +107,11 @@ class MainService: MainServiceProtocol {
         }
     }
     
-    func uploadAttachment(accessToken: String, model: AttachmentUploadReq, completion: @escaping (Result<AttachmentUploadResponse>) -> Void) {
+    func uploadAttachment(model: AttachmentUploadReq, completion: @escaping (Result<AttachmentUploadResponse>) -> Void) {
         
         let urlAttachment = URL(string: "https://sense-chain.devzz.ru/api/attachment")
         
-        guard let requestUrl = urlAttachment else { return completion(.failure(urlError)) }
+        guard let url = urlAttachment else { return completion(.failure(urlError)) }
         
         let headers: Alamofire.HTTPHeaders = [
             "Authorization" : "Bearer \(accessToken)",
@@ -131,7 +130,7 @@ class MainService: MainServiceProtocol {
                 multipartFormData.append(model.file, withName: "file", fileName: model.name, mimeType: model.mimeType)
             },
             usingThreshold: .max,
-            to: requestUrl,
+            to: url,
             method: .post,
             headers: headers,
             encodingCompletion: { (encodingResult) in
@@ -160,15 +159,14 @@ class MainService: MainServiceProtocol {
         
     }
     
-    func createJobContract(accessToken: String, model: CreateContractJobReq, completion: @escaping (Result<CreateContractJobResponse>) -> Void) {
+    func createJobContract(model: CreateContractJobReq, completion: @escaping (Result<CreateContractJobResponse>) -> Void) {
         let urlPostJobContract = URL(string: "https://sense-chain.devzz.ru/api/contract/job")
         guard let requestUrl = urlPostJobContract else { return completion(.failure(urlError)) }
         
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "POST"
-        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        applyRequest(request: &request)
         
         do {
             let jsonData = try JSONEncoder().encode(model)

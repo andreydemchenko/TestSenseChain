@@ -137,7 +137,7 @@ class InputPriceViewController: UIViewController {
             wholePriceView.layoutIfNeeded()
         }
     }
-
+ 
     @objc
     private func keyboardWillHide(notification: NSNotification) {
         if wholePriceView.frame.origin.y != wholePriceFrame.y {

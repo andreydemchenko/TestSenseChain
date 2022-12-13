@@ -97,13 +97,13 @@ struct CreateContractJobResponse: Codable {
 
 struct CreateContractJobReq: Codable {
     var account_type: String
-    var amount: Double
+    var amount: String
     var deadline: String
     var description: String
     var document_hashes: [String]
     var file_hashes: [String]
-    var hours: Int
-    var minutes: Int
+    var hours: String
+    var minutes: String
     var name: String
     var start_date: String
     var type: String

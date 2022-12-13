@@ -13,7 +13,9 @@ class ReviewPostJobViewController: UIViewController {
     @IBOutlet private weak var businessTypeLbl: UILabel!
     @IBOutlet private weak var descriptionLbl: UILabel!
     @IBOutlet private weak var executionDatesLbl: UILabel!
+    @IBOutlet private weak var fullDocumentsStackView: UIStackView!
     @IBOutlet private weak var documentsStackView: UIStackView!
+    @IBOutlet private weak var fullFilesStackView: UIStackView!
     @IBOutlet private weak var filesStackView: UIStackView!
     @IBOutlet private weak var jobHoursLbl: UILabel!
     @IBOutlet private weak var priceLbl: UILabel!
@@ -78,11 +80,19 @@ extension ReviewPostJobViewController: ReviewPostJobProtocol {
         executionDatesLbl.text = "\(startDate) - \(deadline)"
         documentsStackView.removeArrangedSubview(exampleDocumentStackView)
         filesStackView.removeArrangedSubview(exampleFileStackView)
-        model.documents.forEach {
-            createUploadedItem($0, isAddDocument: true)
+        if model.documents.isEmpty {
+            fullDocumentsStackView.isHidden = true
+        } else {
+            model.documents.forEach {
+                createUploadedItem($0, isAddDocument: true)
+            }
         }
-        model.files.forEach {
-            createUploadedItem($0, isAddDocument: false)
+        if model.files.isEmpty {
+            fullFilesStackView.isHidden = true
+        } else {
+            model.files.forEach {
+                createUploadedItem($0, isAddDocument: false)
+            }
         }
         let time = (Double(model.hours) + (Double(model.minutes) / 60.0)).rounded(toPlaces: 2)
         jobHoursLbl.attributedText = createAttributedText(text: "\(time)", addSymbols: "h")

@@ -18,7 +18,6 @@ class ReviewPostJobPresenter {
     weak var view: ReviewPostJobProtocol?
     private var model: CreateContractJobModel?
     private let service: MainServiceProtocol
-    private let accessToken = appContext.keychain.readAccessToken()
     private var documentHashes: [String] = []
     private var fileHashes: [String] = []
     
@@ -40,7 +39,7 @@ class ReviewPostJobPresenter {
             for uploadFile in model.documents {
                 group.enter()
                 let attachment = AttachmentUploadReq(name: uploadFile.fileName, section: "contract", file: uploadFile.data, mimeType: uploadFile.url.mimeType())
-                service.uploadAttachment(accessToken: accessToken, model: attachment) { [weak self] res in
+                service.uploadAttachment(model: attachment) { [weak self] res in
                     switch res {
                     case let .success(attachmentRes):
                         if let hash = attachmentRes.data?.hash {
@@ -55,7 +54,7 @@ class ReviewPostJobPresenter {
             for uploadFile in model.files {
                 group.enter()
                 let attachment = AttachmentUploadReq(name: uploadFile.fileName, section: "contract", file: uploadFile.data, mimeType: uploadFile.url.mimeType())
-                service.uploadAttachment(accessToken: accessToken, model: attachment) { [weak self] res in
+                service.uploadAttachment(model: attachment) { [weak self] res in
                     switch res {
                     case let .success(attachmentRes):
                         if let hash = attachmentRes.data?.hash {
@@ -78,18 +77,18 @@ class ReviewPostJobPresenter {
             let group = DispatchGroup()
             group.enter()
             let contractReq = CreateContractJobReq(account_type: model.accountType,
-                                                   amount: model.price,
+                                                   amount: "\(model.price)",
                                                    deadline: model.deadline.formattedDateString,
                                                    description: model.description,
                                                    document_hashes: documentHashes,
                                                    file_hashes: fileHashes,
-                                                   hours: model.hours,
-                                                   minutes: model.minutes,
+                                                   hours: "\(model.hours)",
+                                                   minutes: "\(model.minutes)",
                                                    name: model.name,
                                                    start_date: model.startDate.formattedDateString,
                                                    type: model.businessType)
             print("model == \(contractReq)")
-            service.createJobContract(accessToken: accessToken, model: contractReq) { [weak self] res in
+            service.createJobContract(model: contractReq) { [weak self] res in
                 switch res {
                 case let .success(response):
                     if response.data != nil {

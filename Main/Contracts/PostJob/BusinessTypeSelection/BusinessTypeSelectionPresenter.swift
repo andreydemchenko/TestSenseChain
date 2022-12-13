@@ -23,8 +23,7 @@ class BusinessTypeSelectionPresenter {
     }
     
     func getData() {
-        let accessToken = appContext.keychain.readAccessToken()
-        service.getJobTypes(accessToken: accessToken) { [weak self] res in
+        service.getJobTypes() { [weak self] res in
             switch res {
             case let .success(response):
                 if let data = response.data {
