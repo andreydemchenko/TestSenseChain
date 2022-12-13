@@ -9,20 +9,38 @@ import Foundation
 import UIKit
 
 struct WalletModel: Codable {
-    var data: DataWalletModel?
+    var data: WalletBalanceRes?
     var error: ErrorResponseModel?
 }
 
-struct DataWalletModel: Codable {
-    var checking_balance: Double?
-    var discount: Double?
-    var frozen_balance: Double?
-    var granted_loan_balance: Double?
+struct WalletBalanceRes: Codable {
+    var checking_balance: String?
+    var discount: String?
+    var frozen_balance: String?
+    var granted_loan_balance: String?
     var hash: String?
     var level: String?
-    var loan_balance: Double?
-    var operating_balance: Double?
-    var saving_balance: Double?
+    var loan_balance: String?
+    var operating_balance: String?
+    var overdue_contract_loan: OverdueContractLoanDetails?
+    var saving_balance: String?
+    var status: String?
+    var user_status: String?
+}
+
+struct OverdueContractLoanDetails: Codable {
+    var amount_refund_loan_account: String?
+    var amount_refund_other_accounts: String?
+    var hash: String?
+    var lender: LenderModel?
+    var name: String?
+}
+
+struct LenderModel: Codable {
+    var avatar_link: String?
+    var hash: String?
+    var rate: Int?
+    var username: String?
 }
 
 struct SectionWallet {

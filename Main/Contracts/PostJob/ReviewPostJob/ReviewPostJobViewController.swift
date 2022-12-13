@@ -40,7 +40,8 @@ class ReviewPostJobViewController: UIViewController {
         title = "Create a contrat"
     }
 
-    @IBAction func createContractBtnClicked(_ sender: Any) {
+    @IBAction
+    private func createContractBtnClicked(_ sender: Any) {
         self.createSpinnerView(spinner)
         presenter?.createContractBtnTapped()
     }

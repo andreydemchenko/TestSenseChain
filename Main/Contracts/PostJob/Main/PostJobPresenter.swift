@@ -26,6 +26,9 @@ protocol PostJobProtocol: AnyObject {
     var priceValue: Double? { get }
     var comissionValue: Double? { get }
     var isBtnNextEnabled: Bool { get set }
+    var errorName: String? { get set }
+    var errorType: String? { get set }
+    var errorDescription: String? { get set }
     
     func move(to: PostJobNavigation)
 }
@@ -44,15 +47,24 @@ class PostJobPresenter {
     }
     
     func didTapNextBtn() {
+        if let view {
+            if view.errorName == nil {
+                print("name error is nil")
+            }
+            if view.errorType == nil {
+                print("type error is nil")
+            }
+            if view.errorDescription == nil {
+                print("desc error is nil")
+            }
+        }
+        checkValidation()
         if checkIfAllFieldAreFilled() {
             if hours == nil {
                 hours = 0
             }
             if minutes == nil {
                 minutes = 0
-            }
-            if  let accountTypeIndex = view?.accountTypeIndex {
-                print("type == \(WalletType.allCases[accountTypeIndex].rawValue)")
             }
             if let view, let name = view.name,
                let businessType = view.businessTypeValue,
@@ -76,7 +88,6 @@ class PostJobPresenter {
                                                    accountType: accountType,
                                                    price: price,
                                                    comission: comission)
-                view.isBtnNextEnabled = true
                 view.move(to: .next(model: model))
             }
         }
@@ -95,17 +106,53 @@ class PostJobPresenter {
         }
     }
     
+    func checkValidation() {
+        if view?.name == nil {
+            view?.errorName = "Enter name"
+        } else {
+            if let name = view?.name {
+                if name.isEmpty {
+                    view?.errorName = "Enter name"
+                } else if !name.isValidContractName {
+                    view?.errorName = "Incorrect name"
+                } else {
+                    view?.errorName = nil
+                }
+            }
+        }
+        if view?.businessTypeValue == nil {
+            view?.errorType = "Chose type"
+        } else {
+            view?.errorType = nil
+        }
+        if view?.descriptionValue == nil {
+            view?.errorDescription = "Enter description"
+        } else {
+            if let desc = view?.descriptionValue {
+                if desc.isEmpty {
+                    view?.errorDescription = "Enter description"
+                } else if !desc.isValidContractDescription {
+                    view?.errorDescription = "Incorrect description"
+                } else {
+                    view?.errorDescription = nil
+                }
+            }
+        }
+        checkFields()
+    }
+    
     private func checkIfAllFieldAreFilled() -> Bool {
-        if let view, let name = view.name,
-           view.businessTypeValue != nil,
-           let description = view.descriptionValue,
-           view.startDateValue != nil,
-           view.deadlineValue != nil,
-           hours != nil || minutes != nil,
-           view.priceValue != nil,
-           !name.isEmpty,
-           !description.isEmpty {
-            return true
+        if let view {
+            if view.businessTypeValue != nil,
+               view.startDateValue != nil,
+               view.deadlineValue != nil,
+               hours != nil || minutes != nil,
+               view.priceValue != nil,
+               view.errorName == nil,
+               view.errorType == nil,
+               view.errorDescription == nil {
+                return true
+            }
         }
         return false
     }

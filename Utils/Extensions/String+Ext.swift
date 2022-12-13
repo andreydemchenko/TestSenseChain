@@ -10,10 +10,18 @@ import Foundation
 extension String {
     
     var isValidEmail: Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
-        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", Utils.email)
         return emailPred.evaluate(with: self)
+    }
+    
+    var isValidContractName: Bool {
+        let namePred = NSPredicate(format: "SELF MATCHES %@", Utils.contractName)
+        return namePred.evaluate(with: self)
+    }
+    
+    var isValidContractDescription: Bool {
+        let descPred = NSPredicate(format: "SELF MATCHES %@", Utils.contractDesc)
+        return descPred.evaluate(with: self)
     }
     
     func toDate(withFormat format: String = "yyyy-MM-dd'T'HH:mm:ss.SSSZ") -> Date? {

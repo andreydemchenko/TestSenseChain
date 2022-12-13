@@ -79,6 +79,7 @@
             <objects>
                 <navigationController id="iZw-2q-Ss3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Contracts" image="default_contracts_item" id="qkH-EM-hEE">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="4"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qgE-NI-wbY">

@@ -22,6 +22,7 @@ class InputPriceViewController: UIViewController {
     @IBOutlet private weak var wholePriceView: UIView!
     @IBOutlet private weak var slideView: UIView!
     @IBOutlet private weak var errorLbl: UILabel!
+    @IBOutlet private weak var wholePriceViewBottomConstraint: NSLayoutConstraint!
     
     var price: Double?
     var comission: Double?
@@ -30,7 +31,9 @@ class InputPriceViewController: UIViewController {
     private var balances: [WalletModelCell] = []
     private var slides: [BalanceAccountView] = []
     private var wholePriceFrame = CGPoint(x: 0, y: 0)
-    private var balance: Double = 0
+    private var balance: Double = 10
+    
+    private var keyboardSizeHeight: CGFloat = 0.0
     
     weak var inputPriceDelegate: InputPriceToMainProtocol?
     
@@ -87,13 +90,10 @@ class InputPriceViewController: UIViewController {
     }
     
     private func setupSlideScrollView() {
-        
         balance = balances[pageNumber].balance ?? 0
         pageControl.currentPage = pageNumber
         pageControl.numberOfPages = slides.count
         view.bringSubviewToFront(pageControl)
-        
-        scrollView.frame.size = CGSize(width: slideView.frame.width, height: slideView.frame.height)
         scrollView.isPagingEnabled = true
         
         for i in 0 ..< slides.count {
@@ -110,6 +110,7 @@ class InputPriceViewController: UIViewController {
         balance = balances[pageNumber].balance ?? 0
         let x = CGFloat(pageNumber) * slideView.frame.size.width
         scrollView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
+        presenter.priceChanged()
     }
     
     @IBAction
@@ -131,14 +132,17 @@ class InputPriceViewController: UIViewController {
     @objc
     private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            wholePriceView.frame.origin.y -= keyboardSize.height
+            keyboardSizeHeight = keyboardSize.height
+            wholePriceViewBottomConstraint.constant += keyboardSizeHeight
+            wholePriceView.layoutIfNeeded()
         }
     }
 
     @objc
     private func keyboardWillHide(notification: NSNotification) {
         if wholePriceView.frame.origin.y != wholePriceFrame.y {
-            wholePriceView.frame.origin.y = wholePriceFrame.y
+            wholePriceViewBottomConstraint.constant -= keyboardSizeHeight
+            wholePriceView.layoutIfNeeded()
         }
     }
 
@@ -171,6 +175,8 @@ extension InputPriceViewController: InputPriceProtocol {
         set {
             if let newValue {
                 comissionLbl.text = "\(newValue) sc comission"
+            } else {
+                comissionLbl.text = "0 sc comission"
             }
         }
     }
@@ -219,7 +225,6 @@ extension InputPriceViewController: UIScrollViewDelegate {
         let pageNumber = Int(round(scrollView.contentOffset.x / scrollView.frame.size.width))
         pageControl.currentPage = pageNumber
         balance = balances[pageNumber].balance ?? 0
-        print("balance == \(balance)")
     }
     
 }

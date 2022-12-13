@@ -11,7 +11,6 @@ class NetworkManager {
     
     func query<T: Codable>(request: URLRequest, modelType: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
             if let error = error {
                 print("Error took place \(error.localizedDescription)")
                 return completion(.failure(error))

@@ -64,7 +64,6 @@
 		8CD7967F2938D0B3007E65DC /* TextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7967E2938D0B3007E65DC /* TextField+Ext.swift */; };
 		8CD796842938F946007E65DC /* InputPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD796822938F946007E65DC /* InputPriceViewController.swift */; };
 		8CD796852938F946007E65DC /* InputPriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD796832938F946007E65DC /* InputPriceViewController.xib */; };
-		8CE71FFD293DD1F700DA5DA4 /* FileUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE71FFC293DD1F700DA5DA4 /* FileUploader.swift */; };
 		8CE71FFF293E25AB00DA5DA4 /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE71FFE293E25AB00DA5DA4 /* URL+Ext.swift */; };
 		8CE72002293E3C3F00DA5DA4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE72001293E3C3F00DA5DA4 /* Utils.swift */; };
 		8CE9EAA82930AB680031DF91 /* BalanceAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EAA62930AB680031DF91 /* BalanceAccountTableViewCell.swift */; };
@@ -149,7 +148,6 @@
 		8CD7967E2938D0B3007E65DC /* TextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Ext.swift"; sourceTree = "<group>"; };
 		8CD796822938F946007E65DC /* InputPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPriceViewController.swift; sourceTree = "<group>"; };
 		8CD796832938F946007E65DC /* InputPriceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputPriceViewController.xib; sourceTree = "<group>"; };
-		8CE71FFC293DD1F700DA5DA4 /* FileUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUploader.swift; sourceTree = "<group>"; };
 		8CE71FFE293E25AB00DA5DA4 /* URL+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
 		8CE72000293E2BDD00DA5DA4 /* TestSenseChain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestSenseChain.entitlements; sourceTree = "<group>"; };
 		8CE72001293E3C3F00DA5DA4 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -298,7 +296,6 @@
 				8C9F8761292F801C001BED1D /* NetworkManager.swift */,
 				8C9F876D292FB892001BED1D /* MainService.swift */,
 				8CCEC5D72934EA0A00E898A5 /* KeychainWrapper.swift */,
-				8CE71FFC293DD1F700DA5DA4 /* FileUploader.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -658,7 +655,6 @@
 				8C9F8772292FBA9D001BED1D /* WalletPresenter.swift in Sources */,
 				8CAC353E2942203500348A7A /* MultipartFormDataRequest.swift in Sources */,
 				8CB6ACEE293F52E30060C2FB /* ReviewPostJobViewController.swift in Sources */,
-				8CE71FFD293DD1F700DA5DA4 /* FileUploader.swift in Sources */,
 				8C2664AE292E1108000780F6 /* ResponseAuthModel.swift in Sources */,
 				8CAC353A2941FCD500348A7A /* AttachmentModels.swift in Sources */,
 				8C9F8767292F931B001BED1D /* MainTabBarController.swift in Sources */,

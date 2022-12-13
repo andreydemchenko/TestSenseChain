@@ -67,6 +67,7 @@ class InputJobHoursViewController: UIViewController {
     
     @objc
     private func dismissKeyboard() {
+        minutesPickerView.isHidden = true
         hoursLabel.textColor = .systemGray
         minutesLabel.textColor = .systemGray
         view.endEditing(true)
@@ -92,7 +93,6 @@ class InputJobHoursViewController: UIViewController {
         if let delegateObget = jobHoursDelegate {
             delegateObget.sendTime(hours: hours, minutes: minutes)
             DispatchQueue.main.async {
-                self.mainStackView.removeArrangedSubview(self.minutesPickerView)
                 self.navigationController?.popViewController(animated: true)
             }
         }

@@ -13,8 +13,8 @@ struct ResponseJobComission: Codable {
 }
 
 struct ResponseJobComissionData: Codable {
-    var amount: Double
-    var comission: Double
+    var amount: String
+    var comission: String
 }
 
 struct ContractJobTypeResponse: Codable {
@@ -62,17 +62,17 @@ struct GetContractsJobItem: Codable {
 }
 
 struct Employee: Codable {
-    var avatar_link: String
-    var hash: String
-    var rate: Int
-    var username: String
+    var avatar_link: String?
+    var hash: String?
+    var rate: Int?
+    var username: String?
 }
 
 struct Employer: Codable {
-    var avatar_link: String
-    var hash: String
-    var rate: Int
-    var username: String
+    var avatar_link: String?
+    var hash: String?
+    var rate: Int?
+    var username: String?
 }
 
 struct CreateContractJobModel {

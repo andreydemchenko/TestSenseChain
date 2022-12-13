@@ -32,18 +32,16 @@ class ContractJobTableViewCell: UITableViewCell {
         nameLbl.text = contract.name
         createdAtLbl.text = contract.created_at?.toDate()?.timeAgoDisplay()
         if let hours = contract.hours?.removeZerosFromEnd() {
-            var mutableString = NSMutableAttributedString(string: "\(hours) h", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])
+            let mutableString = NSMutableAttributedString(string: "\(hours) h", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])
             mutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.systemGray2, range: NSRange(location: hours.count + 1, length: 1))
             hoursLbl.attributedText = mutableString
         }
         if let balance = contract.amount?.removeZerosFromEnd() {
-            var mutableString = NSMutableAttributedString(string: "\(balance) sc", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])
+            let mutableString = NSMutableAttributedString(string: "\(balance) sc", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])
             mutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.systemGray2, range: NSRange(location: balance.count + 1, length: 2))
             balanceLbl.attributedText = mutableString
         }
         employerLbl.text = contract.employer?.username
-        
-        
         
         if let startDate = contract.start_date, let endDate = contract.until_end {
             datesLbl.text = "\(startDate) - \(endDate)"

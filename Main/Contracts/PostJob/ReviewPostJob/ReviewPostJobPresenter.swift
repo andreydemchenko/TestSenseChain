@@ -49,7 +49,6 @@ class ReviewPostJobPresenter {
                         group.leave()
                     case let .failure(error):
                         print("An error occurred with uploading attachment: \(error.localizedDescription)")
-                        group.leave()
                     }
                 }
             }
@@ -65,7 +64,6 @@ class ReviewPostJobPresenter {
                         group.leave()
                     case let .failure(error):
                         print("An error occurred with uploading attachment: \(error.localizedDescription)")
-                        group.leave()
                     }
                 }
             }
@@ -94,8 +92,7 @@ class ReviewPostJobPresenter {
             service.createJobContract(accessToken: accessToken, model: contractReq) { [weak self] res in
                 switch res {
                 case let .success(response):
-                    if let data = response.data {
-                        print("data ===== \(data)")
+                    if response.data != nil {
                         self?.view?.contractCreated()
                     }
                     if let error = response.error {

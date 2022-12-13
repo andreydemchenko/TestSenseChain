@@ -24,12 +24,14 @@ class JobContractsPresenter {
     
     func getContracts() {
         let accessToken = appContext.keychain.readAccessToken()
-        service.getJobContracts(accessToken: accessToken) { [weak self] res in
+        let status = UserContractStatus.pending.rawValue
+        let role = UserContractRole.employer.rawValue
+        service.getJobContracts(accessToken: accessToken, status: status, role: role, offset: 0) { [weak self] res in
             switch res {
             case let .success(data):
                 self?.view?.getContractsAmount(count: data.data?.total ?? 0)
-                if let contracts = data.data?.contracts {
-                    self?.view?.presentResult(contracts)
+                if let data = data.data {
+                    self?.view?.presentResult(data.contracts)
                 } else {
                     if let error = data.error {
                         print("Error: \(error.text)")

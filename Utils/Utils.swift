@@ -9,6 +9,16 @@ import Foundation
 
 class Utils {
     
+    static let hash = "^[a-z0-9]{64}$"
+    static let email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+    static let username = "^[A-z0-9]{5,20}$"
+    static let fullName = "^[A-Z][A-z'.\\s]{1,24}$"
+    static let transferMessage = "^.{2,100}$"
+    static let contractName = "^.{2,100}$"
+    static let contractDesc = "^.{2,200}$"
+    static let templateNameContract = "^[\\sA-z0-9=!?\"',:;\\.-]{1,60}$"
+    static let amount = "^[0-9]{1,1000}\\.?[0-9]{0,6}$"
+    
     static let docsTypes = ["public.text",
                               "com.apple.iwork.pages.pages",
                               "public.data",
@@ -317,4 +327,12 @@ extension String {
 
 enum WalletType: String, CaseIterable {
     case checking = "checking", saving = "saving", loan = "loan", grantedLoan = "granted_loan", frozen = "frozen"
+}
+
+enum UserContractStatus: String, CaseIterable {
+    case pending = "pending", active = "active", closed = "closed"
+}
+
+enum UserContractRole: String, CaseIterable {
+    case employee = "employee", employer = "employer"
 }

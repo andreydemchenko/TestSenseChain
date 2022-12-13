@@ -35,6 +35,10 @@ class PostJobViewController: UIViewController {
     @IBOutlet private weak var priceLbl: UILabel!
     @IBOutlet private weak var comissionLbl: UILabel!
     @IBOutlet private weak var nextBtn: UIButton!
+    @IBOutlet weak private var errorNameLbl: UILabel!
+    @IBOutlet weak private var errorTypeLbl: UILabel!
+    @IBOutlet weak private var errorDescriptionLbl: UILabel!
+    
     
     var presenter: PostJobPresenter!
     
@@ -71,6 +75,7 @@ class PostJobViewController: UIViewController {
         priceStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(priceStackViewClicked)))
         addDocumentsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addDocumentsViewClicked)))
         addFilesView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addFilesViewClicked)))
+        nextBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(nextBtnClicked)))
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
@@ -84,7 +89,7 @@ class PostJobViewController: UIViewController {
         contractNameTxtField.borderStyle = .none
         contractNameTxtField.placeholder = "Contract name"
         contractNameTxtField.attributedPlaceholder = contractNameTxtField.changePlaceholderToStandart
-        contractNameTxtField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        contractNameTxtField.addTarget(self, action: #selector(nameTxtFieldDidChange), for: .editingChanged)
         setDescriptionPlaceholder()
         descriptionTxtView.delegate = self
     }
@@ -155,8 +160,8 @@ class PostJobViewController: UIViewController {
     }
     
     @objc
-    private func textFieldDidChange() {
-        presenter.checkFields()
+    private func nameTxtFieldDidChange() {
+        presenter.checkValidation()
     }
     
     @objc
@@ -317,8 +322,8 @@ class PostJobViewController: UIViewController {
         }
     }
     
-    @IBAction
-    private func btnNextClick(_ sender: Any) {
+    @objc
+    private func nextBtnClicked() {
         presenter.didTapNextBtn()
     }
     
@@ -330,7 +335,7 @@ class PostJobViewController: UIViewController {
 }
 
 extension PostJobViewController: PostJobProtocol {
-    
+
     var name: String? {
         contractNameTxtField.text
     }
@@ -377,17 +382,49 @@ extension PostJobViewController: PostJobProtocol {
     
     var isBtnNextEnabled: Bool {
         get {
-            nextBtn.isEnabled
+            false
         }
         set {
-            nextBtn.isEnabled = newValue
             if newValue {
-                nextBtn.backgroundColor = .orange
+                nextBtn.backgroundColor = UIColor(red: 249.0/255.0, green: 126.0/255.0, blue: 13.0/255.0, alpha: 1.0)
                 nextBtn.setTitleColor(.white, for: .normal)
             } else {
                 nextBtn.backgroundColor = UIColor(red: 102.0/255.0, green: 52.0/255.0, blue: 5.0/255.0, alpha: 1.0)
-                nextBtn.setTitleColor(UIColor(red: 142.0/255.0, green: 142.0/255.0, blue: 147.0/255.0, alpha: 1.0), for: .normal)
+                nextBtn.setTitleColor(UIColor(red: 86.0/255.0, green: 86.0/255.0, blue: 86.0/255.0, alpha: 1.0), for: .normal)
             }
+        }
+    }
+    
+    var errorName: String? {
+        get {
+            errorNameLbl.text
+        }
+        set {
+            errorNameLbl.text = newValue
+            let isError = newValue != nil
+            errorNameLbl.isHidden = !isError
+        }
+    }
+    
+    var errorType: String? {
+        get {
+            errorTypeLbl.text
+        }
+        set {
+            errorTypeLbl.text = newValue
+            let isError = newValue != nil
+            errorTypeLbl.isHidden = !isError
+        }
+    }
+    
+    var errorDescription: String? {
+        get {
+            errorDescriptionLbl.text
+        }
+        set {
+            errorDescriptionLbl.text = newValue
+            let isError = newValue != nil
+            errorDescriptionLbl.isHidden = !isError
         }
     }
     
@@ -414,7 +451,7 @@ extension PostJobViewController: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         descriptionPlaceholderLbl.isHidden = !textView.text.isEmpty
-        presenter.checkFields()
+        presenter.checkValidation()
     }
     
 }
@@ -425,7 +462,7 @@ extension PostJobViewController: BusinessTypeSelectionProtocol {
         selectedBusinessTypeIndexPath = indexPath
         chosenBusinessTypeLbl.text = type
         businessType = type
-        presenter.checkFields()
+        presenter.checkValidation()
     }
     
 }
@@ -463,7 +500,6 @@ extension PostJobViewController: InputPriceToMainProtocol {
                 comissionLbl.isHidden = false
             }
             if let pageNumber {
-                print("page == \(pageNumber)")
                 inputPricePageNumber = pageNumber
             }
         } else {
@@ -482,7 +518,6 @@ extension PostJobViewController: UploadedFileProtocol {
         if isDocument {
             let index = documentsModels.firstIndex(where: { $0.id == view.getFileId() })
             let i = index?.advanced(by: 0) ?? -1
-            print("doc i ==== \(i)")
             documentsModels.remove(at: i)
             addDocumentsStackView.removeArrangedSubview(addDocumentsView)
             addDocumentsStackView.removeArrangedSubview(view)
@@ -492,7 +527,6 @@ extension PostJobViewController: UploadedFileProtocol {
         } else {
             let index = filesModels.firstIndex(where: { $0.id == view.getFileId() })
             let i = index?.advanced(by: 0) ?? -1
-            print("file i ==== \(i)")
             filesModels.remove(at: i)
             addFilesStackView.removeArrangedSubview(addFilesView)
             addFilesStackView.removeArrangedSubview(view)
@@ -522,7 +556,7 @@ extension PostJobViewController: PHPickerViewControllerDelegate,         UIAdapt
                 if let asset = result.firstObject {
                     
                     if itemProvider.hasItemConformingToTypeIdentifier(UTType.image.identifier) {
-                        itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.image.identifier) { url, error in
+                        itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.image.identifier) { [weak self] url, error in
                             if let url {
                                 strFileSize = url.getFileSize
                                 if let nsdata = NSData(contentsOf: url) {
@@ -533,7 +567,7 @@ extension PostJobViewController: PHPickerViewControllerDelegate,         UIAdapt
                                     let model = UploadedFileModel(data: data, icoImage: UIImage(named: "image_ico")!, fileName: name, fileSize: strFileSize, url: url)
                                     
                                     DispatchQueue.main.async {
-                                        self.createUploadedItem(model)
+                                        self?.createUploadedItem(model)
                                     }
                                 }
                             } else if let error {
@@ -541,7 +575,7 @@ extension PostJobViewController: PHPickerViewControllerDelegate,         UIAdapt
                             }
                         }
                     } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.movie.identifier) {
-                        itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.movie.identifier) { url, error in
+                        itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.movie.identifier) { [weak self] url, error in
                             if let url = url {
                                 if let nsdata = NSData(contentsOf: url) {
                                     let data = Data(referencing: nsdata)
@@ -569,7 +603,7 @@ extension PostJobViewController: PHPickerViewControllerDelegate,         UIAdapt
                                     innerGroup.notify(queue: .main) {
                                         let model = UploadedFileModel(data: data, icoImage: UIImage(named: "image_ico")!, fileName: name, fileSize: strFileSize, url: url)
                                         
-                                        self.createUploadedItem(model)
+                                        self?.createUploadedItem(model)
                                     }
                                 }
                             } else if let error {

@@ -11,7 +11,7 @@ import Foundation
 protocol MainServiceProtocol: AnyObject {
     
     func getWalletData(accessToken: String, completion: @escaping (Result<WalletModel>) -> Void)
-    func getJobContracts(accessToken: String, completion: @escaping (Result<GetContractsJobResponse>) -> Void)
+    func getJobContracts(accessToken: String, status: String, role: String, offset: Int, completion: @escaping (Result<GetContractsJobResponse>) -> Void)
     func getJobTypes(accessToken: String, completion: @escaping (Result<ContractJobTypeResponse>) -> Void)
     func getComissionByPrice(accessToken: String, amount: Double, completion: @escaping (Result<ResponseJobComission>) -> Void)
     func uploadAttachment(accessToken: String, model: AttachmentUploadReq, completion: @escaping (Result<AttachmentUploadResponse>) -> Void)
@@ -45,32 +45,23 @@ class MainService: MainServiceProtocol {
         }
     }
     
-    func getJobContracts(accessToken: String, completion: @escaping (Result<GetContractsJobResponse>) -> Void) {
-        let urlJobContracts = URLComponents(string: "https://sense-chain.devzz.ru/api/user/contracts/job")
-        guard var requestUrl = urlJobContracts else { return completion(.failure(urlError)) }
+    func getJobContracts(accessToken: String, status: String, role: String, offset: Int, completion: @escaping (Result<GetContractsJobResponse>) -> Void) {
+        let urlJobContracts = URL(string: "https://sense-chain.devzz.ru/api/user/contracts/job/\(status)/\(role)/offset/\(offset)")
+        guard let requestUrl = urlJobContracts else { return completion(.failure(urlError)) }
         
-        requestUrl.queryItems = [
-            URLQueryItem(name: "status", value: "pending"),
-            URLQueryItem(name: "role", value: "employee"),
-            URLQueryItem(name: "offset", value: "0")
-        ]
-        if let url = requestUrl.url {
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            
-            request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-            request.setValue("application/json", forHTTPHeaderField: "Accept")
-            
-            manager.query(request: request, modelType: GetContractsJobResponse.self) { res in
-                switch res {
-                case let .success(model):
-                    completion(.success(model))
-                case let .failure(error):
-                    completion(.failure(error))
-                }
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = "GET"
+        
+        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        manager.query(request: request, modelType: GetContractsJobResponse.self) { res in
+            switch res {
+            case let .success(model):
+                completion(.success(model))
+            case let .failure(error):
+                completion(.failure(error))
             }
-        } else {
-            completion(.failure(urlError))
         }
     }
     

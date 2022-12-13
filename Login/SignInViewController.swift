@@ -23,6 +23,8 @@ class SignInViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         passwordTxtField.enablePasswordToggle()
+        emailTxtField.attributedPlaceholder = emailTxtField.changePlaceholderToStandart
+        passwordTxtField.attributedPlaceholder = passwordTxtField.changePlaceholderToStandart
     }
     
     @objc

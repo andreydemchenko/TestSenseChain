@@ -44,9 +44,9 @@ class InputPricePresenter {
         }
     }
     
-    private func prepareData(data: DataWalletModel) {
-        let checkingBalance = WalletModelCell(image: UIImage(named: "cheking_account_ico")!, text: "Checking account", balance: data.checking_balance)
-        let loanBalance = WalletModelCell(image: UIImage(named: "loan_account_ico")!, text: "Loan account", balance: data.loan_balance)
+    private func prepareData(data: WalletBalanceRes) {
+        let checkingBalance = WalletModelCell(image: UIImage(named: "cheking_account_ico")!, text: "Checking account", balance: data.checking_balance?.toDouble)
+        let loanBalance = WalletModelCell(image: UIImage(named: "loan_account_ico")!, text: "Loan account", balance: data.loan_balance?.toDouble)
         
         var dataSource = [WalletModelCell]()
         dataSource.append(checkingBalance)
@@ -57,7 +57,7 @@ class InputPricePresenter {
     }
     
     func priceChanged() {
-        if let priceField = view?.priceField {
+        if let priceField = view?.priceField, priceField.first != "0", !priceField.isEmpty {
             if priceField == ".0" {
                 view?.priceField = nil
                 view?.errorField = nil
@@ -70,26 +70,35 @@ class InputPricePresenter {
                 if priceField.isDoubleNumber {
                     let price = (view?.priceField ?? "0").toDouble
                     if let balance = view?.balanceValue, price <= balance {
-                        view?.errorField = nil
-                        searchTimer?.invalidate()
-                        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
-                            self.getComission()
-                        })
-                    }
-                    else {
+                        if price >= 10 {
+                            view?.errorField = nil
+                            searchTimer?.invalidate()
+                            searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+                                self.getComission()
+                            })
+                        } else {
+                            view?.errorField = "Min price is 10 sc"
+                            view?.comissionField = "0"
+                            view?.wholePrice = "0"
+                        }
+                    } else {
                         view?.errorField = "The entered price exceeds the balance!"
+                        view?.comissionField = "0"
+                        view?.wholePrice = "0"
                     }
                 } else {
                     view?.errorField = "Incorrect price!"
+                    view?.comissionField = "0"
+                    view?.wholePrice = "0"
                 }
             }
         } else {
             view?.errorField = nil
-            view?.comissionField = nil
+            view?.comissionField = "0"
             view?.wholePrice = "0"
         }
     }
-    
+
     private func getComission() {
         let price = (view?.priceField ?? "0").toDouble
         service.getComissionByPrice(accessToken: accessToken, amount: price) { [weak self] res in
@@ -97,8 +106,8 @@ class InputPricePresenter {
             case let .success(model):
                 if let comission = model.data?.comission {
                     DispatchQueue.main.async {
-                        self?.view?.comissionField = "\(comission)"
-                        self?.view?.wholePrice = "\(price + comission)"
+                        self?.view?.comissionField = comission
+                        self?.view?.wholePrice = "\(price + comission.toDouble)"
                     }
                 }
             case let .failure(error):
@@ -113,7 +122,6 @@ class InputPricePresenter {
             let strComission = comissionField.components(separatedBy: " ").first ?? "0"
             let price = strPrice.toDouble
             let comission = strComission.toDouble
-            print("field == \(priceField) price == \(price)")
             view?.goToPostContract(price: price, comission: comission)
         }
     }

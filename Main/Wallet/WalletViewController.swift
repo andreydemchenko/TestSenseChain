@@ -13,7 +13,7 @@ class WalletViewController: UIViewController {
     
     var presenter: WalletPresenter!
     private var balances: [SectionWallet] = []
-    private var dataWallet: DataWalletModel?
+    private var dataWallet: WalletBalanceRes?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ class WalletViewController: UIViewController {
 
 extension WalletViewController: WalletProtocol {
     
-    func presentWalletData(model: DataWalletModel, data: [SectionWallet]) {
+    func presentWalletData(model: WalletBalanceRes, data: [SectionWallet]) {
         balances = data
         dataWallet = model
         tableView.reloadData()
@@ -89,7 +89,7 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
             guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "WalletHeaderView") as? WalletHeaderView else {
                 return nil
             }
-            headerView.setViews(balance: dataWallet?.checking_balance, discount: dataWallet?.discount)
+            headerView.setViews(balance: dataWallet?.checking_balance?.toDouble, discount: dataWallet?.discount?.toDouble)
             return headerView
         }
         return nil
