@@ -9,6 +9,7 @@ import UIKit
 
 protocol InputPriceToMainProtocol: AnyObject {
     func sendPrice(price: Double?, comission: Double?, pageNumber: Int?)
+    func checkPrice()
 }
 
 class InputPriceViewController: UIViewController {
@@ -31,7 +32,7 @@ class InputPriceViewController: UIViewController {
     private var balances: [WalletModelCell] = []
     private var slides: [BalanceAccountView] = []
     private var wholePriceFrame = CGPoint(x: 0, y: 0)
-    private var balance: Double = 10
+    private var balance: Double = 0
     
     private var keyboardSizeHeight: CGFloat = 0.0
     
@@ -143,6 +144,13 @@ class InputPriceViewController: UIViewController {
         if wholePriceView.frame.origin.y != wholePriceFrame.y {
             wholePriceViewBottomConstraint.constant -= keyboardSizeHeight
             wholePriceView.layoutIfNeeded()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let delegateObget = inputPriceDelegate {
+            delegateObget.checkPrice()
         }
     }
 

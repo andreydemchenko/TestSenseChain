@@ -99,15 +99,17 @@ class InputPricePresenter {
     }
 
     private func getComission() {
-        let price = (view?.priceField ?? "0").toDouble
+        let price = (view?.priceField ?? "0")
         service.getComissionByPrice(amount: price) { [weak self] res in
             switch res {
             case let .success(model):
                 if let comission = model.data?.comission {
                     DispatchQueue.main.async {
                         self?.view?.comissionField = comission
-                        self?.view?.wholePrice = "\(price + comission.toDouble)"
+                        self?.view?.wholePrice = "\(price.toDouble + comission.toDouble)"
                     }
+                } else if let error = model.error {
+                    print("An error occurred with getting comission: \(error.text)")
                 }
             case let .failure(error):
                 print(error.localizedDescription)

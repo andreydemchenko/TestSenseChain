@@ -9,6 +9,7 @@ import UIKit
 
 protocol JobHoursProtocol: AnyObject {
     func sendTime(hours: Int, minutes: Int)
+    func checkTime()
 }
 
 class InputJobHoursViewController: UIViewController {
@@ -84,6 +85,7 @@ class InputJobHoursViewController: UIViewController {
         mainStackView.addArrangedSubview(minutesPickerView)
         hoursLabel.textColor = .systemGray
         minutesLabel.textColor = .orange
+        view.endEditing(true)
     }
     
     @IBAction
@@ -95,6 +97,13 @@ class InputJobHoursViewController: UIViewController {
             DispatchQueue.main.async {
                 self.navigationController?.popViewController(animated: true)
             }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let delegateObget = jobHoursDelegate {
+            delegateObget.checkTime()
         }
     }
 }

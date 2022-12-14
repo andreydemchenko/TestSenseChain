@@ -91,6 +91,7 @@ class PostJobViewController: UIViewController {
         contractNameTxtField.borderStyle = .none
         contractNameTxtField.placeholder = "Contract name"
         contractNameTxtField.attributedPlaceholder = contractNameTxtField.changePlaceholderToStandart
+        contractNameTxtField.addTarget(self, action: #selector(nameTxtFieldDidChange), for: .editingChanged)
         setDescriptionPlaceholder()
         descriptionTxtView.delegate = self
     }
@@ -103,6 +104,11 @@ class PostJobViewController: UIViewController {
         descriptionTxtView.addSubview(descriptionPlaceholderLbl)
         descriptionPlaceholderLbl.frame.origin = CGPoint(x: 5, y: 8)
         descriptionPlaceholderLbl.textColor = UIColor(red: 0.78, green: 0.78, blue: 0.80, alpha: 1.0)
+    }
+    
+    @objc
+    private func nameTxtFieldDidChange() {
+        presenter.checkName()
     }
     
     private func setDatePickers() {
@@ -171,9 +177,6 @@ class PostJobViewController: UIViewController {
         }
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.presenter.checkType()
-        }
     }
     
     @objc
@@ -184,9 +187,6 @@ class PostJobViewController: UIViewController {
         vc.jobHours = jobHours
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.presenter.checkTime()
-        }
     }
     
     @objc
@@ -203,9 +203,6 @@ class PostJobViewController: UIViewController {
         }
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.presenter.checkPrice()
-        }
     }
     
     @objc
@@ -478,6 +475,7 @@ extension PostJobViewController: UITextViewDelegate, UITextFieldDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         descriptionPlaceholderLbl.isHidden = !textView.text.isEmpty
+        presenter.checkDescription()
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -494,6 +492,10 @@ extension PostJobViewController: UITextViewDelegate, UITextFieldDelegate {
 
 extension PostJobViewController: BusinessTypeSelectionProtocol {
     
+    func checkType() {
+        presenter.checkType()
+    }
+    
     func itemClick(type: String, indexPath: IndexPath) {
         selectedBusinessTypeIndexPath = indexPath
         chosenBusinessTypeLbl.text = type
@@ -505,6 +507,10 @@ extension PostJobViewController: BusinessTypeSelectionProtocol {
 }
 
 extension PostJobViewController: JobHoursProtocol {
+    
+    func checkTime() {
+        presenter.checkTime()
+    }
     
     func sendTime(hours: Int, minutes: Int) {
         if hours != 0 || minutes != 0 {
@@ -526,6 +532,10 @@ extension PostJobViewController: JobHoursProtocol {
 }
 
 extension PostJobViewController: InputPriceToMainProtocol {
+    
+    func checkPrice() {
+        presenter.checkPrice()
+    }
     
     func sendPrice(price: Double?, comission: Double?, pageNumber: Int?) {
         if let price, price != 0 {

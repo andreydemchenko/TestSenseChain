@@ -11,15 +11,17 @@ class BottomTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var nameLbl: UILabel?
     @IBOutlet private weak var imageBottom: UIImageView?
+    @IBOutlet private weak var bottomSeparatorView: UIView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func setViews(model: WalletModelCell) {
+    func setViews(model: WalletModelCell, isLast: Bool) {
         nameLbl?.text = model.text
         imageBottom?.image = model.image
+        bottomSeparatorView?.isHidden = isLast
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

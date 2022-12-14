@@ -34,7 +34,7 @@ class WalletViewController: UIViewController {
         titleNameLbl.font = .boldSystemFont(ofSize: 20)
         let titleWalletLbl = UILabel()
         titleWalletLbl.text = "6a55c567624683e...64d9a16b1b4a61c94e"
-        titleWalletLbl.textColor = .gray
+        titleWalletLbl.textColor = UIColor(red: 235.0/255.0, green: 235.0/255.0, blue: 245.0/255.0, alpha: 0.72)
         titleWalletLbl.font = .systemFont(ofSize: 12)
         
         let vStack = UIStackView(arrangedSubviews: [titleNameLbl, titleWalletLbl])
@@ -79,7 +79,9 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "WalletBottomCell") as? BottomTableViewCell else {
                 fatalError("Could not dequeue cell of type BottomTableViewCell")
             }
-            cell.setViews(model: balances[indexPath.section].data[indexPath.row])
+            let row = indexPath.row
+            let isLast = indexPath.section + row - 1 == balances.count
+            cell.setViews(model: balances[indexPath.section].data[row], isLast: isLast)
             return cell
         }
     }

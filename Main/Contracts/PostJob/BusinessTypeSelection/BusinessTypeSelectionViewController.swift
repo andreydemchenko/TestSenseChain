@@ -9,6 +9,7 @@ import UIKit
 
 protocol BusinessTypeSelectionProtocol: AnyObject {
     func itemClick(type: String, indexPath: IndexPath)
+    func checkType()
 }
 
 class BusinessTypeSelectionViewController: UIViewController {
@@ -40,6 +41,13 @@ class BusinessTypeSelectionViewController: UIViewController {
         tableView.register(UINib(nibName: "BusinessTypeTableViewCell", bundle: nil), forCellReuseIdentifier: "BusinessTypeCell")
         searchBar.delegate = self
         filteredData = dataSource
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let delegateObget = selectionDelegate {
+            delegateObget.checkType()
+        }
     }
 
 }
