@@ -49,6 +49,10 @@ class ContractJobTableViewCell: UITableViewCell {
         }
         descriptionLbl.text = contract.description
         categoryLbl.text = contract.type
+        
+        if contract.employer == nil {
+            emploeyrStackView.isHidden = true
+        }
     }
     
 }

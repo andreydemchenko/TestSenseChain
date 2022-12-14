@@ -45,6 +45,7 @@ extension JobContractsViewController: JobContractsProtocol {
     
     
     func presentResult(_ result: [GetContractsJobItem]) {
+        print(result)
         contracts = result
         DispatchQueue.main.async {
             self.contractsTableView.reloadData()
