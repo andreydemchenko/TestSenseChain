@@ -84,13 +84,13 @@ class PostJobViewController: UIViewController {
     func configureView() {
         title = "Create a contract"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        contractNameTxtField.delegate = self
         startDateTxtField.borderStyle = .none
         deadlineDateTxtField.borderStyle = .none
         setDatePickers()
         contractNameTxtField.borderStyle = .none
         contractNameTxtField.placeholder = "Contract name"
         contractNameTxtField.attributedPlaceholder = contractNameTxtField.changePlaceholderToStandart
-        contractNameTxtField.addTarget(self, action: #selector(nameTxtFieldDidChange), for: .editingChanged)
         setDescriptionPlaceholder()
         descriptionTxtView.delegate = self
     }
@@ -161,12 +161,6 @@ class PostJobViewController: UIViewController {
     }
     
     @objc
-    private func nameTxtFieldDidChange() {
-        presenter.checkName()
-        presenter.checkFields()
-    }
-    
-    @objc
     private func businessTypeStackViewClicked() {
         dismissKeyboard()
         let vc = BusinessTypeSelectionViewController(nibName: "BusinessTypeSelectionViewController", bundle: nil)
@@ -177,7 +171,9 @@ class PostJobViewController: UIViewController {
         }
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
-        presenter.checkType()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.presenter.checkType()
+        }
     }
     
     @objc
@@ -188,7 +184,9 @@ class PostJobViewController: UIViewController {
         vc.jobHours = jobHours
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
-        presenter.checkTime()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.presenter.checkTime()
+        }
     }
     
     @objc
@@ -205,7 +203,9 @@ class PostJobViewController: UIViewController {
         }
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
-        presenter.checkPrice()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.presenter.checkPrice()
+        }
     }
     
     @objc
@@ -474,11 +474,19 @@ extension PostJobViewController: PostJobProtocol {
     
 }
 
-extension PostJobViewController: UITextViewDelegate {
+extension PostJobViewController: UITextViewDelegate, UITextFieldDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         descriptionPlaceholderLbl.isHidden = !textView.text.isEmpty
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
         presenter.checkDescription()
+        presenter.checkFields()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        presenter.checkName()
         presenter.checkFields()
     }
     

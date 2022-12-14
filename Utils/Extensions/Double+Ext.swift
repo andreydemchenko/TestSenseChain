@@ -14,7 +14,8 @@ extension Double {
         let number = NSNumber(value: self)
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 16
-        return String(formatter.string(from: number) ?? "")
+        let str = String(formatter.string(from: number) ?? "")
+        return str.replacingOccurrences(of: ",", with: ".")
     }
     
     func rounded(toPlaces places: Int) -> Double {
