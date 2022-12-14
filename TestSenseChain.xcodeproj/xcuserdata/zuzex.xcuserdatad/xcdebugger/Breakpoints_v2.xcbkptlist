@@ -304,8 +304,8 @@
             filePath = "Main/Contracts/PostJob/Price/InputPriceViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "showWalletData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -672,8 +672,8 @@
             filePath = "Main/Contracts/PostJob/Price/InputPriceViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "setupSlideScrollView()"
             landmarkType = "7">
          </BreakpointContent>

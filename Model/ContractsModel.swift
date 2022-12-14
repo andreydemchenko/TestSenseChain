@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct ResponseJobComission: Codable {
-    var data: ResponseJobComissionData?
+struct ResponseJobCommission: Codable {
+    var data: ResponseJobCommissionData?
     var error: ErrorResponseModel?
 }
 
-struct ResponseJobComissionData: Codable {
+struct ResponseJobCommissionData: Codable {
     var amount: String
-    var comission: String
+    var commission: String
 }
 
 struct ContractJobTypeResponse: Codable {
@@ -87,7 +87,7 @@ struct CreateContractJobModel {
     var minutes: Int
     var accountType: String
     var price: Double
-    var comission: Double
+    var commission: Double
 }
 
 struct CreateContractJobResponse: Codable {

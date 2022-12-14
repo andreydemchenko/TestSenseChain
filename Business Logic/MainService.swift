@@ -13,7 +13,7 @@ protocol MainServiceProtocol: AnyObject {
     func getWalletData(completion: @escaping (Result<WalletModel>) -> Void)
     func getJobContracts(status: String, role: String, offset: Int, completion: @escaping (Result<GetContractsJobResponse>) -> Void)
     func getJobTypes(completion: @escaping (Result<ContractJobTypeResponse>) -> Void)
-    func getComissionByPrice(amount: String, completion: @escaping (Result<ResponseJobComission>) -> Void)
+    func getCommissionByPrice(amount: String, completion: @escaping (Result<ResponseJobCommission>) -> Void)
     func uploadAttachment(model: AttachmentUploadReq, completion: @escaping (Result<AttachmentUploadResponse>) -> Void)
     func createJobContract(model: CreateContractJobReq, completion: @escaping (Result<CreateContractJobResponse>) -> Void)
     
@@ -87,11 +87,11 @@ class MainService: MainServiceProtocol {
         }
     }
     
-    func getComissionByPrice(amount: String, completion: @escaping (Result<ResponseJobComission>) -> Void) {
+    func getCommissionByPrice(amount: String, completion: @escaping (Result<ResponseJobCommission>) -> Void) {
         
-        let urlJobComission = "https://sense-chain.devzz.ru/api/contract/job/comission"
+        let urlJobCommission = "https://sense-chain.devzz.ru/api/contract/job/commission"
         
-        var components = URLComponents(string: urlJobComission)
+        var components = URLComponents(string: urlJobCommission)
         guard var components = components else { return completion(.failure(urlError)) }
           
         components.queryItems = [
@@ -104,7 +104,7 @@ class MainService: MainServiceProtocol {
         request.httpMethod = "GET"
         applyRequest(request: &request)
         
-        manager.query(request: request, modelType: ResponseJobComission.self) { res in
+        manager.query(request: request, modelType: ResponseJobCommission.self) { res in
             switch res {
             case let .success(model):
                 completion(.success(model))

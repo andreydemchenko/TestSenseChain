@@ -33,7 +33,7 @@ class PostJobViewController: UIViewController {
     @IBOutlet private weak var jobHoursLbl: UILabel!
     @IBOutlet private weak var priceStackView: UIStackView!
     @IBOutlet private weak var priceLbl: UILabel!
-    @IBOutlet private weak var comissionLbl: UILabel!
+    @IBOutlet private weak var commissionLbl: UILabel!
     @IBOutlet private weak var nextBtn: UIButton!
     @IBOutlet weak private var errorNameLbl: UILabel!
     @IBOutlet weak private var errorTypeLbl: UILabel!
@@ -48,7 +48,7 @@ class PostJobViewController: UIViewController {
     private var selectedBusinessTypeIndexPath: IndexPath?
     private var jobHours: Double?
     private var price: Double?
-    private var comission: Double?
+    private var commission: Double?
     private var inputPricePageNumber: Int?
     private var businessType: String?
     private let startDatePicker = UIDatePicker()
@@ -194,9 +194,9 @@ class PostJobViewController: UIViewController {
         dismissKeyboard()
         let vc = InputPriceViewController(nibName: "InputPriceViewController", bundle: nil)
         vc.inputPriceDelegate = self
-        if let price, let comission {
+        if let price, let commission {
             vc.price = price
-            vc.comission = comission
+            vc.commission = commission
             if let inputPricePageNumber {
                 vc.pageNumber = inputPricePageNumber
             }
@@ -378,8 +378,8 @@ extension PostJobViewController: PostJobProtocol {
         inputPricePageNumber
     }
     
-    var comissionValue: Double? {
-        comission
+    var commissionValue: Double? {
+        commission
     }
     
     var isBtnNextEnabled: Bool {
@@ -537,15 +537,15 @@ extension PostJobViewController: InputPriceToMainProtocol {
         presenter.checkPrice()
     }
     
-    func sendPrice(price: Double?, comission: Double?, pageNumber: Int?) {
+    func sendPrice(price: Double?, commission: Double?, pageNumber: Int?) {
         if let price, price != 0 {
             priceLbl.text = "\(price)"
             priceLbl.textColor = .white
             self.price = price
-            if let comission, comission != 0 {
-                self.comission = comission
-                comissionLbl.text = "\(comission) sc comission"
-                comissionLbl.isHidden = false
+            if let commission, commission != 0 {
+                self.commission = commission
+                commissionLbl.text = "\(commission) sc comission"
+                commissionLbl.isHidden = false
             }
             if let pageNumber {
                 inputPricePageNumber = pageNumber
@@ -553,7 +553,7 @@ extension PostJobViewController: InputPriceToMainProtocol {
         } else {
             priceLbl.text = "Price"
             priceLbl.textColor = .systemGray
-            comissionLbl.isHidden = true
+            commissionLbl.isHidden = true
         }
         presenter.checkPrice()
         presenter.checkFields()

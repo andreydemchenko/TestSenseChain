@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReviewPostJobViewController" customModule="TestSenseChain" customModuleProvider="target">
             <connections>
-                <outlet property="allPriceWithComissionLbl" destination="j81-ao-8xG" id="aHD-2z-jFI"/>
+                <outlet property="allPriceWithCommissionLbl" destination="j81-ao-8xG" id="aHD-2z-jFI"/>
                 <outlet property="businessTypeLbl" destination="C71-8N-c0y" id="P9k-z7-YSr"/>
                 <outlet property="descriptionLbl" destination="Oeg-wa-hVM" id="pGy-Cl-rxB"/>
                 <outlet property="documentsStackView" destination="pYk-yW-feF" id="fDG-5D-wYy"/>
@@ -281,7 +281,7 @@
                                                 <constraint firstAttribute="height" constant="1" id="6bh-q6-nSb"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will pay: 336 sc including comission" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j81-ao-8xG">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will pay: 336 sc including commission" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j81-ao-8xG">
                                             <rect key="frame" x="16" y="183" width="358" height="14.333333333333343"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.96078431369999995" alpha="0.71999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
@@ -312,7 +312,7 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Create contract">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <directionalEdgeInsets key="contentInsets" top="12" leading="0.0" bottom="12" trailing="0.0"/>
                                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
