@@ -91,7 +91,6 @@ class PostJobViewController: UIViewController {
         contractNameTxtField.borderStyle = .none
         contractNameTxtField.placeholder = "Contract name"
         contractNameTxtField.attributedPlaceholder = contractNameTxtField.changePlaceholderToStandart
-        contractNameTxtField.addTarget(self, action: #selector(nameTxtFieldDidChange), for: .editingChanged)
         setDescriptionPlaceholder()
         descriptionTxtView.delegate = self
     }
@@ -104,11 +103,6 @@ class PostJobViewController: UIViewController {
         descriptionTxtView.addSubview(descriptionPlaceholderLbl)
         descriptionPlaceholderLbl.frame.origin = CGPoint(x: 5, y: 8)
         descriptionPlaceholderLbl.textColor = UIColor(red: 0.78, green: 0.78, blue: 0.80, alpha: 1.0)
-    }
-    
-    @objc
-    private func nameTxtFieldDidChange() {
-        presenter.checkName()
     }
     
     private func setDatePickers() {
@@ -475,7 +469,6 @@ extension PostJobViewController: UITextViewDelegate, UITextFieldDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         descriptionPlaceholderLbl.isHidden = !textView.text.isEmpty
-        presenter.checkDescription()
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {

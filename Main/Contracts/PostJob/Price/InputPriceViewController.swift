@@ -116,7 +116,7 @@ class InputPriceViewController: UIViewController {
         balance = balances[pageNumber].balance ?? 0
         let x = CGFloat(pageNumber) * slideView.frame.size.width
         scrollView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
-        presenter.checkPrice()
+        presenter.checkPrice(isNewPage: true)
     }
     
     @IBAction
@@ -233,7 +233,7 @@ extension InputPriceViewController: UIScrollViewDelegate {
         let pageNumber = Int(round(scrollView.contentOffset.x / scrollView.frame.size.width))
         pageControl.currentPage = pageNumber
         balance = balances[pageNumber].balance ?? 0
-        presenter.checkPrice()
+        presenter.checkPrice(isNewPage: true)
     }
     
 }
@@ -241,7 +241,7 @@ extension InputPriceViewController: UIScrollViewDelegate {
 extension InputPriceViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        presenter.checkPrice()
+        presenter.checkPrice(isNewPage: false)
     }
     
 }

@@ -55,7 +55,7 @@ class InputPricePresenter {
         }
     }
     
-    func checkPrice() {
+    func checkPrice(isNewPage: Bool) {
         if let priceField = view?.priceField, priceField.first != "0", !priceField.isEmpty {
             if priceField == ".0" {
                 view?.priceField = nil
@@ -88,9 +88,11 @@ class InputPricePresenter {
                 }
             }
         } else {
-            view?.errorField = "Enter price"
             view?.commissionField = "0"
             view?.wholePrice = "0"
+            if !isNewPage {
+                view?.errorField = "Enter price"
+            }
         }
     }
     
@@ -101,8 +103,8 @@ class InputPricePresenter {
                 if price >= 10 {
                     view?.errorField = nil
                     searchTimer?.invalidate()
-                    searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
-                        self.getComission()
+                    searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
+                        self?.getComission()
                     })
                 }
             }
