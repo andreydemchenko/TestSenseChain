@@ -7,5 +7,7 @@ target 'TestSenseChain' do
 
   # Pods for TestSenseChain
   pod 'Alamofire', '~> 4.9.1'
+  pod 'Firebase/Core'
+  pod 'FirebaseAnalytics', '8.8.0'
 
 end

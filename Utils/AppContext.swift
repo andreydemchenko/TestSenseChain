@@ -15,4 +15,5 @@ class AppContext {
     lazy var authentication = AuthService()
     lazy var mainService = MainService()
     lazy var keychain = KeychainWrapper()
+    lazy var analytics = FirebaseAnalyticsManager()
 }

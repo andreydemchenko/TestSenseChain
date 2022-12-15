@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		72A0DD8FFE7813E8751BA40D /* Pods_TestSenseChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1548F539E1F9379351BE95CE /* Pods_TestSenseChain.framework */; };
+		8C143044294B3BCD00B9105C /* FirebaseAnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C143043294B3BCD00B9105C /* FirebaseAnalyticsManager.swift */; };
 		8C26647D292E10D3000780F6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8C266473292E10D3000780F6 /* README.md */; };
 		8C26647F292E10D3000780F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C266475292E10D3000780F6 /* ViewController.swift */; };
 		8C266483292E10D3000780F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C266479292E10D3000780F6 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		8C2664AF292E1108000780F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C26649E292E1108000780F6 /* User.swift */; };
 		8C2664B0292E1108000780F6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2664A0292E1108000780F6 /* AuthService.swift */; };
 		8C2664B3292E3403000780F6 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2664B2292E3403000780F6 /* SpinnerViewController.swift */; };
+		8C2F12C2294B222F00CC5994 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C2F12C1294B222F00CC5994 /* GoogleService-Info.plist */; };
 		8C9F8760292F69F4001BED1D /* GetTemplatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F875F292F69F4001BED1D /* GetTemplatesModel.swift */; };
 		8C9F8762292F801C001BED1D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F8761292F801C001BED1D /* NetworkManager.swift */; };
 		8C9F8765292F92BE001BED1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C9F8764292F92BE001BED1D /* Main.storyboard */; };
@@ -90,6 +92,7 @@
 		1548F539E1F9379351BE95CE /* Pods_TestSenseChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestSenseChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C763606624C3602A94D2795 /* Pods-TestSenseChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSenseChain.debug.xcconfig"; path = "Target Support Files/Pods-TestSenseChain/Pods-TestSenseChain.debug.xcconfig"; sourceTree = "<group>"; };
 		8C0BA957292CCC98004F8368 /* TestSenseChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSenseChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C143043294B3BCD00B9105C /* FirebaseAnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsManager.swift; sourceTree = "<group>"; };
 		8C266472292E10D2000780F6 /* TestSenseChain-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestSenseChain-Bridging-Header.h"; sourceTree = "<group>"; };
 		8C266473292E10D3000780F6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8C266475292E10D3000780F6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		8C26649E292E1108000780F6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8C2664A0292E1108000780F6 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		8C2664B2292E3403000780F6 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		8C2F12C1294B222F00CC5994 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C9F875F292F69F4001BED1D /* GetTemplatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTemplatesModel.swift; sourceTree = "<group>"; };
 		8C9F8761292F801C001BED1D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8C9F8764292F92BE001BED1D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 				8C26649F292E1108000780F6 /* Business Logic */,
 				8C266497292E1108000780F6 /* Login */,
 				8C26649C292E1108000780F6 /* Model */,
+				8C2F12C1294B222F00CC5994 /* GoogleService-Info.plist */,
 				8C26648E292E1108000780F6 /* Resources */,
 				8C266492292E1108000780F6 /* Utils */,
 				8C266473292E10D3000780F6 /* README.md */,
@@ -296,6 +301,7 @@
 				8C9F8761292F801C001BED1D /* NetworkManager.swift */,
 				8C9F876D292FB892001BED1D /* MainService.swift */,
 				8CCEC5D72934EA0A00E898A5 /* KeychainWrapper.swift */,
+				8C143043294B3BCD00B9105C /* FirebaseAnalyticsManager.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -553,6 +559,7 @@
 				8CCEC5D02934AAAD00E898A5 /* WalletHeaderView.xib in Resources */,
 				8CD7967D2938CE08007E65DC /* InputJobHoursViewController.xib in Resources */,
 				8C266483292E10D3000780F6 /* Assets.xcassets in Resources */,
+				8C2F12C2294B222F00CC5994 /* GoogleService-Info.plist in Resources */,
 				8CA1CCAA293A407D0060834F /* UploadedFileView.xib in Resources */,
 				8CD7967329389817007E65DC /* BusinessTypeTableViewCell.xib in Resources */,
 				8CCDEE7E29434CF40029421C /* ContractCreatedViewController.xib in Resources */,
@@ -662,6 +669,7 @@
 				8C2664AF292E1108000780F6 /* User.swift in Sources */,
 				8CCEC5D42934B5B100E898A5 /* Double+Ext.swift in Sources */,
 				8CA1CCAF293A465D0060834F /* UploadedFileModel.swift in Sources */,
+				8C143044294B3BCD00B9105C /* FirebaseAnalyticsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +749,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -794,6 +803,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				"OTHER_LDFLAGS[arch=*]" = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

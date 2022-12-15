@@ -83,6 +83,7 @@ class PostJobPresenter {
                                                    accountType: accountType,
                                                    price: price,
                                                    commission: commission)
+                appContext.analytics.reviewJobContractClicked(contract: model)
                 view.move(to: .next(model: model))
             }
         }
