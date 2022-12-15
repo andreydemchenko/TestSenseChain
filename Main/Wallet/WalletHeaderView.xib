@@ -16,13 +16,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Total balance in SenseCoins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITx-7S-mqm">
-                    <rect key="frame" x="16" y="58.999999999999993" width="169.66666666666666" height="15.666666666666664"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" red="0.55680012700000003" green="0.55648958680000005" blue="0.57725906370000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="16" y="59.000000000000007" width="158.66666666666666" height="14.333333333333336"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.96078431369999995" alpha="0.71999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3D-FU-9XU">
-                    <rect key="frame" x="187.66666666666666" y="59" width="36" height="20"/>
+                    <rect key="frame" x="176.66666666666666" y="59" width="36" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="ls2-va-iIB"/>
                     </constraints>
@@ -32,27 +32,30 @@
                     </buttonConfiguration>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="1%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFl-5g-nM9">
-                    <rect key="frame" x="323.66666666666669" y="82" width="26.333333333333314" height="24"/>
+                    <rect key="frame" x="323.66666666666669" y="80.666666666666671" width="26.333333333333314" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" systemColor="systemGreenColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="2123.22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scX-Vu-Xzt">
-                    <rect key="frame" x="16" y="76.666666666666671" width="142" height="39.333333333333329"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="212223.22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="scX-Vu-Xzt">
+                    <rect key="frame" x="16" y="75.333333333333329" width="187" height="40.666666666666671"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="nbQ-t7-SVW"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARY-pJ-dX5">
-                    <rect key="frame" x="296" y="58.999999999999993" width="54" height="15.666666666666664"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" red="0.55680012700000003" green="0.55648958680000005" blue="0.57725906370000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="299.66666666666669" y="59.000000000000007" width="50.333333333333314" height="14.333333333333336"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.96078431369999995" alpha="0.71999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="sc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3G3-xA-oeH">
-                    <rect key="frame" x="166" y="89.666666666666686" width="17.666666666666657" height="28.666666666666686"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.55680012700000003" green="0.55648958680000005" blue="0.57725906370000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="205" y="88.333333333333329" width="16" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.96078431369999995" alpha="0.71999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -66,7 +69,7 @@
                 <constraint firstItem="p3D-FU-9XU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="C5J-7E-rlo"/>
                 <constraint firstItem="scX-Vu-Xzt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="FtY-We-ZPj"/>
                 <constraint firstItem="ARY-pJ-dX5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="Iqa-80-UMp"/>
-                <constraint firstItem="3G3-xA-oeH" firstAttribute="leading" secondItem="scX-Vu-Xzt" secondAttribute="trailing" constant="8" id="Qio-PK-SSF"/>
+                <constraint firstItem="3G3-xA-oeH" firstAttribute="leading" secondItem="scX-Vu-Xzt" secondAttribute="trailing" constant="2" id="Qio-PK-SSF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LFl-5g-nM9" secondAttribute="trailing" constant="30" id="S0s-VJ-rsk"/>
                 <constraint firstAttribute="bottom" secondItem="scX-Vu-Xzt" secondAttribute="bottom" constant="24" id="UsI-Dg-ZgF"/>
                 <constraint firstItem="ITx-7S-mqm" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="Zbx-bw-J8s"/>

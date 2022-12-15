@@ -9,6 +9,7 @@ import UIKit
 
 protocol JobHoursProtocol: AnyObject {
     func sendTime(hours: Int, minutes: Int)
+    func checkTime()
 }
 
 class InputJobHoursViewController: UIViewController {
@@ -21,6 +22,8 @@ class InputJobHoursViewController: UIViewController {
     @IBOutlet private weak var hoursLabel: UILabel!
     @IBOutlet private weak var minutesLabel: UILabel!
     @IBOutlet private weak var enterBtn: UIButton!
+    
+    private let grayColor = UIColor(red: 235.0/255.0, green: 235.0/255.0, blue: 245.0/255.0, alpha: 0.72)
     
     private lazy var minutesPickerView: UIPickerView = {
         let picker = UIPickerView()
@@ -44,7 +47,7 @@ class InputJobHoursViewController: UIViewController {
         hoursTxtField.attributedPlaceholder = hoursTxtField.changePlaceholderToStandart
         hoursTxtField.borderStyle = .none
         minutesTxtField.placeholder = "00"
-        hoursTxtField.attributedPlaceholder = hoursTxtField.changePlaceholderToStandart
+        minutesTxtField.attributedPlaceholder = minutesTxtField.changePlaceholderToStandart
         minutesTxtField.borderStyle = .none
         
         minutesPickerView.dataSource = self
@@ -68,22 +71,24 @@ class InputJobHoursViewController: UIViewController {
     @objc
     private func dismissKeyboard() {
         minutesPickerView.isHidden = true
-        hoursLabel.textColor = .systemGray
-        minutesLabel.textColor = .systemGray
+        hoursLabel.textColor = grayColor
+        minutesLabel.textColor = grayColor
         view.endEditing(true)
     }
     
     @IBAction
     private func touchedHoursTxtFiled(_ sender: Any) {
+        minutesPickerView.isHidden = true
         hoursLabel.textColor = .orange
-        minutesLabel.textColor = .systemGray
+        minutesLabel.textColor = grayColor
     }
     
     @IBAction
     private func touchedMinutesTxtField(_ sender: Any) {
         mainStackView.addArrangedSubview(minutesPickerView)
-        hoursLabel.textColor = .systemGray
+        hoursLabel.textColor = grayColor
         minutesLabel.textColor = .orange
+        view.endEditing(true)
     }
     
     @IBAction
@@ -95,6 +100,13 @@ class InputJobHoursViewController: UIViewController {
             DispatchQueue.main.async {
                 self.navigationController?.popViewController(animated: true)
             }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let delegateObget = jobHoursDelegate {
+            delegateObget.checkTime()
         }
     }
 }

@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct ResponseJobComission: Codable {
-    var data: ResponseJobComissionData?
+struct ResponseJobCommission: Codable {
+    var data: ResponseJobCommissionData?
     var error: ErrorResponseModel?
 }
 
-struct ResponseJobComissionData: Codable {
+struct ResponseJobCommissionData: Codable {
     var amount: String
-    var comission: String
+    var commission: String
 }
 
 struct ContractJobTypeResponse: Codable {
@@ -39,8 +39,8 @@ struct GetContractsJobRes: Codable {
 }
 
 struct GetContractsJobItem: Codable {
-    var amount: Double?
-    var amount_early: Double?
+    var amount: String?
+    var amount_early: String?
     var candidates: Int?
     var cause_close: String?
     var closed_at: String?
@@ -51,13 +51,13 @@ struct GetContractsJobItem: Codable {
     var employee: Employee?
     var employer: Employer?
     var hash: String?
-    var hours: Double?
+    var hours: String?
     var is_waiting_vote_employer: Bool?
     var name: String?
     var signed_at: String?
     var start_date: String?
     var type: String?
-    var until_end: Double?
+    var until_end: String?
     var updated_at: String?
 }
 
@@ -87,7 +87,7 @@ struct CreateContractJobModel {
     var minutes: Int
     var accountType: String
     var price: Double
-    var comission: Double
+    var commission: Double
 }
 
 struct CreateContractJobResponse: Codable {

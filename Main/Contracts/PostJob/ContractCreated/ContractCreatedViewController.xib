@@ -26,6 +26,7 @@
                     <color key="backgroundColor" red="0.97761756180000003" green="0.49473541980000002" blue="0.051190428439999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Back to contracts">
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                         <directionalEdgeInsets key="contentInsets" top="12" leading="0.0" bottom="12" trailing="0.0"/>
                         <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </buttonConfiguration>
@@ -39,7 +40,7 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIf-Wf-02P">
-                    <rect key="frame" x="74.333333333333329" y="185.66666666666666" width="241.33333333333343" height="18"/>
+                    <rect key="frame" x="74.333333333333329" y="185.66666666666666" width="241.33333333333337" height="18"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can find it in " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yc-1t-X2R">
                             <rect key="frame" x="0.0" y="0.0" width="117" height="18"/>

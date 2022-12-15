@@ -19,7 +19,7 @@ class ReviewPostJobViewController: UIViewController {
     @IBOutlet private weak var filesStackView: UIStackView!
     @IBOutlet private weak var jobHoursLbl: UILabel!
     @IBOutlet private weak var priceLbl: UILabel!
-    @IBOutlet private weak var allPriceWithComissionLbl: UILabel!
+    @IBOutlet private weak var allPriceWithCommissionLbl: UILabel!
     @IBOutlet private weak var exampleFileStackView: UIStackView!
     @IBOutlet private weak var exampleDocumentStackView: UIStackView!
     
@@ -97,7 +97,7 @@ extension ReviewPostJobViewController: ReviewPostJobProtocol {
         let time = (Double(model.hours) + (Double(model.minutes) / 60.0)).rounded(toPlaces: 2)
         jobHoursLbl.attributedText = createAttributedText(text: "\(time)", addSymbols: "h")
         priceLbl.attributedText = createAttributedText(text: "\(model.price)", addSymbols: "sc")
-        allPriceWithComissionLbl.text = "You will pay \(model.price + model.comission) sc including comission"
+        allPriceWithCommissionLbl.text = "You will pay \(model.price + model.commission) sc including commission"
     }
     
     func contractCreated() {

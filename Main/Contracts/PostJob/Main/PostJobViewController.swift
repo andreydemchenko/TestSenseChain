@@ -33,7 +33,7 @@ class PostJobViewController: UIViewController {
     @IBOutlet private weak var jobHoursLbl: UILabel!
     @IBOutlet private weak var priceStackView: UIStackView!
     @IBOutlet private weak var priceLbl: UILabel!
-    @IBOutlet private weak var comissionLbl: UILabel!
+    @IBOutlet private weak var commissionLbl: UILabel!
     @IBOutlet private weak var nextBtn: UIButton!
     @IBOutlet weak private var errorNameLbl: UILabel!
     @IBOutlet weak private var errorTypeLbl: UILabel!
@@ -48,7 +48,7 @@ class PostJobViewController: UIViewController {
     private var selectedBusinessTypeIndexPath: IndexPath?
     private var jobHours: Double?
     private var price: Double?
-    private var comission: Double?
+    private var commission: Double?
     private var inputPricePageNumber: Int?
     private var businessType: String?
     private let startDatePicker = UIDatePicker()
@@ -84,6 +84,7 @@ class PostJobViewController: UIViewController {
     func configureView() {
         title = "Create a contract"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        contractNameTxtField.delegate = self
         startDateTxtField.borderStyle = .none
         deadlineDateTxtField.borderStyle = .none
         setDatePickers()
@@ -105,12 +106,14 @@ class PostJobViewController: UIViewController {
         descriptionPlaceholderLbl.textColor = UIColor(red: 0.78, green: 0.78, blue: 0.80, alpha: 1.0)
     }
     
+    @objc
+    private func nameTxtFieldDidChange() {
+        presenter.checkCurrentName()
+    }
+    
     private func setDatePickers() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "d MMM yyyy"
-        let date = formatter.string(from: Date())
-        startDateTxtField.text = date
-        deadlineDateTxtField.text = date
+        startDateTxtField.text = Date().toString
+        deadlineDateTxtField.text = Date().toString
         startDate = Date()
         deadlineDate = Date()
         
@@ -161,12 +164,6 @@ class PostJobViewController: UIViewController {
     }
     
     @objc
-    private func nameTxtFieldDidChange() {
-        presenter.checkName()
-        presenter.checkFields()
-    }
-    
-    @objc
     private func businessTypeStackViewClicked() {
         dismissKeyboard()
         let vc = BusinessTypeSelectionViewController(nibName: "BusinessTypeSelectionViewController", bundle: nil)
@@ -177,7 +174,6 @@ class PostJobViewController: UIViewController {
         }
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
-        presenter.checkType()
     }
     
     @objc
@@ -188,7 +184,6 @@ class PostJobViewController: UIViewController {
         vc.jobHours = jobHours
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
-        presenter.checkTime()
     }
     
     @objc
@@ -196,16 +191,15 @@ class PostJobViewController: UIViewController {
         dismissKeyboard()
         let vc = InputPriceViewController(nibName: "InputPriceViewController", bundle: nil)
         vc.inputPriceDelegate = self
-        if let price, let comission {
+        if let price, let commission {
             vc.price = price
-            vc.comission = comission
+            vc.commission = commission
             if let inputPricePageNumber {
                 vc.pageNumber = inputPricePageNumber
             }
         }
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
-        presenter.checkPrice()
     }
     
     @objc
@@ -381,8 +375,8 @@ extension PostJobViewController: PostJobProtocol {
         inputPricePageNumber
     }
     
-    var comissionValue: Double? {
-        comission
+    var commissionValue: Double? {
+        commission
     }
     
     var isBtnNextEnabled: Bool {
@@ -474,17 +468,30 @@ extension PostJobViewController: PostJobProtocol {
     
 }
 
-extension PostJobViewController: UITextViewDelegate {
+extension PostJobViewController: UITextViewDelegate, UITextFieldDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         descriptionPlaceholderLbl.isHidden = !textView.text.isEmpty
+        presenter.checkCurrentDescription()
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
         presenter.checkDescription()
+        presenter.checkFields()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        presenter.checkName()
         presenter.checkFields()
     }
     
 }
 
 extension PostJobViewController: BusinessTypeSelectionProtocol {
+    
+    func checkType() {
+        presenter.checkType()
+    }
     
     func itemClick(type: String, indexPath: IndexPath) {
         selectedBusinessTypeIndexPath = indexPath
@@ -497,6 +504,10 @@ extension PostJobViewController: BusinessTypeSelectionProtocol {
 }
 
 extension PostJobViewController: JobHoursProtocol {
+    
+    func checkTime() {
+        presenter.checkTime()
+    }
     
     func sendTime(hours: Int, minutes: Int) {
         if hours != 0 || minutes != 0 {
@@ -519,15 +530,19 @@ extension PostJobViewController: JobHoursProtocol {
 
 extension PostJobViewController: InputPriceToMainProtocol {
     
-    func sendPrice(price: Double?, comission: Double?, pageNumber: Int?) {
+    func checkPrice() {
+        presenter.checkPrice()
+    }
+    
+    func sendPrice(price: Double?, commission: Double?, pageNumber: Int?) {
         if let price, price != 0 {
             priceLbl.text = "\(price)"
             priceLbl.textColor = .white
             self.price = price
-            if let comission, comission != 0 {
-                self.comission = comission
-                comissionLbl.text = "\(comission) sc comission"
-                comissionLbl.isHidden = false
+            if let commission, commission != 0 {
+                self.commission = commission
+                commissionLbl.text = "\(commission) sc comission"
+                commissionLbl.isHidden = false
             }
             if let pageNumber {
                 inputPricePageNumber = pageNumber
@@ -535,7 +550,7 @@ extension PostJobViewController: InputPriceToMainProtocol {
         } else {
             priceLbl.text = "Price"
             priceLbl.textColor = .systemGray
-            comissionLbl.isHidden = true
+            commissionLbl.isHidden = true
         }
         presenter.checkPrice()
         presenter.checkFields()

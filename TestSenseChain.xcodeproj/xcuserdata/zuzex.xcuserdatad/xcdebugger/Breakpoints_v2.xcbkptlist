@@ -304,8 +304,8 @@
             filePath = "Main/Contracts/PostJob/Price/InputPriceViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "showWalletData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -320,8 +320,8 @@
             filePath = "Main/Contracts/PostJob/Price/InputPriceViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "priceField"
             landmarkType = "24">
          </BreakpointContent>
@@ -336,8 +336,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "579"
-            endingLineNumber = "579"
+            startingLineNumber = "594"
+            endingLineNumber = "594"
             landmarkName = "picker(_:didFinishPicking:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -352,8 +352,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "589"
-            endingLineNumber = "589"
+            startingLineNumber = "604"
+            endingLineNumber = "604"
             landmarkName = "picker(_:didFinishPicking:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -368,8 +368,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "608"
-            endingLineNumber = "608"
+            startingLineNumber = "623"
+            endingLineNumber = "623"
             landmarkName = "picker(_:didFinishPicking:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -384,8 +384,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "610"
-            endingLineNumber = "610"
+            startingLineNumber = "625"
+            endingLineNumber = "625"
             landmarkName = "picker(_:didFinishPicking:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -400,8 +400,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "634"
-            endingLineNumber = "634"
+            startingLineNumber = "649"
+            endingLineNumber = "649"
             landmarkName = "picker(_:didFinishPicking:)"
             landmarkType = "7">
             <Locations>
@@ -448,8 +448,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "635"
-            endingLineNumber = "635"
+            startingLineNumber = "650"
+            endingLineNumber = "650"
             landmarkName = "picker(_:didFinishPicking:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -464,8 +464,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "461"
-            endingLineNumber = "461"
+            startingLineNumber = "455"
+            endingLineNumber = "455"
             landmarkName = "move(to:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -496,8 +496,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "480"
-            endingLineNumber = "480"
+            startingLineNumber = "474"
+            endingLineNumber = "474"
             landmarkName = "textViewDidChange(_:)"
             landmarkType = "7">
             <Locations>
@@ -656,8 +656,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "setDatePickers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -672,8 +672,8 @@
             filePath = "Main/Contracts/PostJob/Price/InputPriceViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "setupSlideScrollView()"
             landmarkType = "7">
          </BreakpointContent>

@@ -8,7 +8,8 @@
 import UIKit
 
 protocol InputPriceToMainProtocol: AnyObject {
-    func sendPrice(price: Double?, comission: Double?, pageNumber: Int?)
+    func sendPrice(price: Double?, commission: Double?, pageNumber: Int?)
+    func checkPrice()
 }
 
 class InputPriceViewController: UIViewController {
@@ -17,7 +18,7 @@ class InputPriceViewController: UIViewController {
     @IBOutlet private weak var pageControl: UIPageControl!
     @IBOutlet private weak var priceTxtField: UITextField!
     @IBOutlet private weak var scPriceLabel: UILabel!
-    @IBOutlet private weak var comissionLbl: UILabel!
+    @IBOutlet private weak var commissionLbl: UILabel!
     @IBOutlet private weak var wholePriceLbl: UILabel!
     @IBOutlet private weak var wholePriceView: UIView!
     @IBOutlet private weak var slideView: UIView!
@@ -25,13 +26,13 @@ class InputPriceViewController: UIViewController {
     @IBOutlet private weak var wholePriceViewBottomConstraint: NSLayoutConstraint!
     
     var price: Double?
-    var comission: Double?
+    var commission: Double?
     var pageNumber: Int = 0
     var presenter: InputPricePresenter!
     private var balances: [WalletModelCell] = []
     private var slides: [BalanceAccountView] = []
     private var wholePriceFrame = CGPoint(x: 0, y: 0)
-    private var balance: Double = 10
+    private var balance: Double = 0
     
     private var keyboardSizeHeight: CGFloat = 0.0
     
@@ -44,6 +45,7 @@ class InputPriceViewController: UIViewController {
         presenter = InputPricePresenter(view: self, service: appContext.mainService)
         presenter.getWalletData()
         
+        priceTxtField.delegate = self
         priceTxtField.borderStyle = .none
         wholePriceView.layer.cornerRadius = 10
         wholePriceView.layer.borderWidth = 1
@@ -54,10 +56,10 @@ class InputPriceViewController: UIViewController {
         
         priceTxtField.placeholder = "Price"
         priceTxtField.attributedPlaceholder = priceTxtField.changePlaceholderToStandart
-        if let price, let comission  {
+        if let price, let commission  {
             priceTxtField.text = "\(price)"
-            comissionLbl.text = "\(comission) sc comission"
-            wholePriceLbl.text = "\(price + comission) sc"
+            commissionLbl.text = "\(commission) sc comission"
+            wholePriceLbl.text = "\(price + commission) sc"
         }
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -67,6 +69,10 @@ class InputPriceViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         wholePriceView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(priceViewClicked)))
         
+    }
+    @IBAction
+    private func priceTxtFieldChanged(_ sender: Any) {
+        presenter.priceChanged()
     }
     
     @objc
@@ -110,17 +116,12 @@ class InputPriceViewController: UIViewController {
         balance = balances[pageNumber].balance ?? 0
         let x = CGFloat(pageNumber) * slideView.frame.size.width
         scrollView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
-        presenter.priceChanged()
+        presenter.checkPrice(isNewPage: true)
     }
     
     @IBAction
     private func touchedPriceTxtField(_ sender: Any) {
         scPriceLabel.textColor = .orange
-    }
-    
-    @IBAction
-    private func priceTxtFieldChanged(_ sender: Any) {
-        presenter.priceChanged()
     }
     
     @objc
@@ -143,6 +144,13 @@ class InputPriceViewController: UIViewController {
         if wholePriceView.frame.origin.y != wholePriceFrame.y {
             wholePriceViewBottomConstraint.constant -= keyboardSizeHeight
             wholePriceView.layoutIfNeeded()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let delegateObget = inputPriceDelegate {
+            delegateObget.checkPrice()
         }
     }
 
@@ -168,15 +176,15 @@ extension InputPriceViewController: InputPriceProtocol {
         }
     }
     
-    var comissionField: String? {
+    var commissionField: String? {
         get {
-            return comissionLbl.text
+            return commissionLbl.text
         }
         set {
             if let newValue {
-                comissionLbl.text = "\(newValue) sc comission"
+                commissionLbl.text = "\(newValue) sc commission"
             } else {
-                comissionLbl.text = "0 sc comission"
+                commissionLbl.text = "0 sc commission"
             }
         }
     }
@@ -208,9 +216,9 @@ extension InputPriceViewController: InputPriceProtocol {
         showWalletData()
     }
     
-    func goToPostContract(price: Double?, comission: Double?) {
+    func goToPostContract(price: Double?, commission: Double?) {
         if let delegateObget = inputPriceDelegate {
-            delegateObget.sendPrice(price: price, comission: comission, pageNumber: pageNumber)
+            delegateObget.sendPrice(price: price, commission: commission, pageNumber: pageNumber)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.navigationController?.popViewController(animated: true)
             }
@@ -225,6 +233,15 @@ extension InputPriceViewController: UIScrollViewDelegate {
         let pageNumber = Int(round(scrollView.contentOffset.x / scrollView.frame.size.width))
         pageControl.currentPage = pageNumber
         balance = balances[pageNumber].balance ?? 0
+        presenter.checkPrice(isNewPage: true)
+    }
+    
+}
+
+extension InputPriceViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        presenter.checkPrice(isNewPage: false)
     }
     
 }

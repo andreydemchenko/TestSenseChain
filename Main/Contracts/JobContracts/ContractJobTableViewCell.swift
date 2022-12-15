@@ -31,23 +31,28 @@ class ContractJobTableViewCell: UITableViewCell {
     func setViews(contract: GetContractsJobItem) {
         nameLbl.text = contract.name
         createdAtLbl.text = contract.created_at?.toDate()?.timeAgoDisplay()
-        if let hours = contract.hours?.removeZerosFromEnd() {
-            let mutableString = NSMutableAttributedString(string: "\(hours) h", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])
-            mutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.systemGray2, range: NSRange(location: hours.count + 1, length: 1))
+        let grayColor = UIColor(red: 235.0/255.0, green: 235.0/255.0, blue: 245.0/255.0, alpha: 0.72)
+        if let hours = contract.hours?.toDouble.removeZerosFromEnd() {
+            let mutableString = NSMutableAttributedString(string: "\(hours) h", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)])
+            mutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: grayColor, range: NSRange(location: hours.count + 1, length: 1))
             hoursLbl.attributedText = mutableString
         }
-        if let balance = contract.amount?.removeZerosFromEnd() {
-            let mutableString = NSMutableAttributedString(string: "\(balance) sc", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])
-            mutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.systemGray2, range: NSRange(location: balance.count + 1, length: 2))
+        if let balance = contract.amount?.toDouble.removeZerosFromEnd() {
+            let mutableString = NSMutableAttributedString(string: "\(balance) sc", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)])
+            mutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: grayColor, range: NSRange(location: balance.count + 1, length: 2))
             balanceLbl.attributedText = mutableString
         }
         employerLbl.text = contract.employer?.username
         
-        if let startDate = contract.start_date, let endDate = contract.until_end {
-            datesLbl.text = "\(startDate) - \(endDate)"
+        if let startDate = contract.start_date?.toDate(), let endDate = contract.deadline?.toDate() {
+            datesLbl.text = "\(startDate.toString) - \(endDate.toString)"
         }
         descriptionLbl.text = contract.description
         categoryLbl.text = contract.type
+        
+        if contract.employer == nil {
+            emploeyrStackView.isHidden = true
+        }
     }
     
 }

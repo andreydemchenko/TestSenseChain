@@ -24,7 +24,7 @@ protocol PostJobProtocol: AnyObject {
     var filesItems: [UploadedFileModel] { get }
     var accountTypeIndex: Int? { get }
     var priceValue: Double? { get }
-    var comissionValue: Double? { get }
+    var commissionValue: Double? { get }
     var isBtnNextEnabled: Bool { get set }
     var errorName: String? { get set }
     var errorType: String? { get set }
@@ -69,7 +69,7 @@ class PostJobPresenter {
                let hours, let minutes,
                let accountTypeIndex = view.accountTypeIndex,
                let price = view.priceValue,
-               let comission = view.comissionValue {
+               let commission = view.commissionValue {
                 let accountType = WalletType.allCases[accountTypeIndex].rawValue
                 let model = CreateContractJobModel(name: name,
                                                    businessType: businessType,
@@ -82,7 +82,7 @@ class PostJobPresenter {
                                                    minutes: minutes,
                                                    accountType: accountType,
                                                    price: price,
-                                                   comission: comission)
+                                                   commission: commission)
                 view.move(to: .next(model: model))
             }
         }
@@ -101,6 +101,14 @@ class PostJobPresenter {
         }
     }
     
+    func checkCurrentName() {
+        if let name = view?.name {
+           if name.isValidContractName {
+                view?.errorName = nil
+            }
+        }
+    }
+    
     func checkName() {
         if view?.name == nil {
             view?.errorName = "Enter name"
@@ -109,7 +117,7 @@ class PostJobPresenter {
                 if name.isEmpty {
                     view?.errorName = "Enter name"
                 } else if !name.isValidContractName {
-                    view?.errorName = "Incorrect name"
+                    view?.errorName = "Name must have at least 2-200 characters"
                 } else {
                     view?.errorName = nil
                 }
@@ -125,6 +133,14 @@ class PostJobPresenter {
         }
     }
     
+    func checkCurrentDescription() {
+        if let desc = view?.descriptionValue {
+           if desc.isValidContractDescription {
+                view?.errorDescription = nil
+            }
+        }
+    }
+    
     func checkDescription() {
         if view?.descriptionValue == nil {
             view?.errorDescription = "Enter description"
@@ -133,7 +149,7 @@ class PostJobPresenter {
                 if desc.isEmpty {
                     view?.errorDescription = "Enter description"
                 } else if !desc.isValidContractDescription {
-                    view?.errorDescription = "Incorrect description"
+                    view?.errorDescription = "Description must have at least 2-200 characters"
                 } else {
                     view?.errorDescription = nil
                 }

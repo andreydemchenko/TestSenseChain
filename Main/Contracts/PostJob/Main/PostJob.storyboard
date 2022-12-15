@@ -43,19 +43,19 @@
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contract name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fPi-Tb-gMf">
                                                                 <rect key="frame" x="12" y="12" width="342" height="34"/>
-                                                                <color key="backgroundColor" red="0.1803541183" green="0.18016543979999999" blue="0.1926241219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrW-mQ-gfy">
+                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrW-mQ-gfy">
                                                                 <rect key="frame" x="12" y="0.0" width="342" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.1803541183" green="0.18016543979999999" blue="0.1926241219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.094117647058823528" green="0.094117647058823528" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <edgeInsets key="layoutMargins" top="12" left="12" bottom="12" right="12"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -85,7 +85,7 @@
                                                                         <rect key="frame" x="333.66666666666669" y="0.0" width="8.3333333333333144" height="19.333333333333332"/>
                                                                     </imageView>
                                                                 </subviews>
-                                                                <color key="backgroundColor" red="0.1803541183" green="0.18016543979999999" blue="0.1926241219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="4" right="0.0"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -100,7 +100,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.1803541183" green="0.18016543979999999" blue="0.1926241219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <edgeInsets key="layoutMargins" top="12" left="12" bottom="8" right="12"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -113,19 +113,19 @@
                                                         <subviews>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U0K-Sw-RM0">
                                                                 <rect key="frame" x="12" y="12.000000000000028" width="342" height="96"/>
-                                                                <color key="backgroundColor" red="0.1803541183" green="0.18016543979999999" blue="0.1926241219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             </textView>
-                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxT-fi-E7P">
+                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxT-fi-E7P">
                                                                 <rect key="frame" x="12" y="0.0" width="342" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.1803541183" green="0.18016543979999999" blue="0.1926241219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="120" id="Ow2-pP-hpV"/>
                                                         </constraints>
@@ -150,13 +150,13 @@
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5 Aug 2022" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NxU-YZ-F53">
                                                                         <rect key="frame" x="8" y="3" width="117" height="34"/>
-                                                                        <color key="backgroundColor" red="0.23917788270000001" green="0.23899057509999999" blue="0.25145083670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" red="0.1842887104" green="0.18416443469999999" blue="0.1924721003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                     </textField>
                                                                 </subviews>
-                                                                <color key="backgroundColor" red="0.23917788270000001" green="0.23899057509999999" blue="0.25145083670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <edgeInsets key="layoutMargins" top="3" left="8" bottom="3" right="8"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -165,7 +165,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.1803541183" green="0.18016543979999999" blue="0.1926241219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <edgeInsets key="layoutMargins" top="12" left="12" bottom="12" right="12"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -187,13 +187,13 @@
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5 Aug 2022" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAw-sr-AOd">
                                                                         <rect key="frame" x="8" y="3" width="117" height="34"/>
-                                                                        <color key="backgroundColor" red="0.23917788270000001" green="0.23899057509999999" blue="0.25145083670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" red="0.1842887104" green="0.18416443469999999" blue="0.1924721003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                     </textField>
                                                                 </subviews>
-                                                                <color key="backgroundColor" red="0.23917788270000001" green="0.23899057509999999" blue="0.25145083670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <edgeInsets key="layoutMargins" top="3" left="8" bottom="3" right="8"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -202,7 +202,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.1803541183" green="0.18016543979999999" blue="0.1926241219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <edgeInsets key="layoutMargins" top="12" left="12" bottom="12" right="12"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -247,14 +247,14 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="68.333333333333329"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="aXK-U0-K98">
-                                                                        <rect key="frame" x="103.33333333333333" y="12.000000000000004" width="159.33333333333337" height="44.333333333333343"/>
+                                                                        <rect key="frame" x="100.66666666666667" y="12.000000000000004" width="164.66666666666663" height="44.333333333333343"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="plus_ico" translatesAutoresizingMaskIntoConstraints="NO" id="SaD-Ml-Nhr">
                                                                                 <rect key="frame" x="8" y="11.999999999999998" width="19" height="20.333333333333329"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add documents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpi-yc-4Xm">
-                                                                                <rect key="frame" x="31.000000000000021" y="11.999999999999998" width="120.33333333333331" height="20.333333333333329"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <rect key="frame" x="30.999999999999979" y="11.999999999999998" width="125.66666666666669" height="20.333333333333329"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                                 <color key="textColor" red="0.97761756180000003" green="0.49473541980000002" blue="0.051190428439999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
@@ -324,14 +324,14 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="68.333333333333329"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ClT-6M-BMc">
-                                                                        <rect key="frame" x="130.66666666666666" y="12.000000000000004" width="105" height="44.333333333333343"/>
+                                                                        <rect key="frame" x="128.66666666666666" y="12.000000000000004" width="108.66666666666666" height="44.333333333333343"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="plus_ico" translatesAutoresizingMaskIntoConstraints="NO" id="Tmk-Jh-wIW">
                                                                                 <rect key="frame" x="8" y="11.999999999999998" width="19" height="20.333333333333329"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add files" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwE-MY-SBO">
-                                                                                <rect key="frame" x="31" y="11.999999999999998" width="66" height="20.333333333333329"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <rect key="frame" x="31.000000000000007" y="11.999999999999998" width="69.666666666666686" height="20.333333333333329"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                                 <color key="textColor" red="0.97761756180000003" green="0.49473541980000002" blue="0.051190428439999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
@@ -401,7 +401,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" red="0.1803541183" green="0.18016543979999999" blue="0.1926241219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="4" right="0.0"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -416,7 +416,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.1803541183" green="0.18016543979999999" blue="0.1926241219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.094117647058823528" green="0.094117647058823528" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <edgeInsets key="layoutMargins" top="12" left="12" bottom="8" right="12"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -455,7 +455,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" red="0.1803541183" green="0.18016543979999999" blue="0.1926241219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="4" right="0.0"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -470,7 +470,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.1803541183" green="0.18016543979999999" blue="0.1926241219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.094117647060000004" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <edgeInsets key="layoutMargins" top="12" left="12" bottom="8" right="12"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -498,7 +498,7 @@
                                                 <color key="backgroundColor" red="0.40000000000000002" green="0.20392156862745098" blue="0.019607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Next">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <directionalEdgeInsets key="contentInsets" top="12" leading="0.0" bottom="12" trailing="0.0"/>
                                                     <color key="baseForegroundColor" red="0.55680012700000003" green="0.55648958680000005" blue="0.57725906370000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
@@ -544,7 +544,7 @@
                         <outlet property="addFilesView" destination="4r8-xM-ggw" id="Oc5-6I-vrW"/>
                         <outlet property="businessTypeStackView" destination="EMj-vL-pLE" id="ilg-8s-Okg"/>
                         <outlet property="chosenBusinessTypeLbl" destination="7YN-Tf-jdU" id="TJO-J8-OYz"/>
-                        <outlet property="comissionLbl" destination="3fa-Zj-DPb" id="O7d-cU-0zW"/>
+                        <outlet property="commissionLbl" destination="3fa-Zj-DPb" id="O7d-cU-0zW"/>
                         <outlet property="contractNameTxtField" destination="fPi-Tb-gMf" id="Hgz-7N-rvS"/>
                         <outlet property="deadlineDateTxtField" destination="zAw-sr-AOd" id="nJH-ms-0px"/>
                         <outlet property="deadlineStackView" destination="ufv-OT-rxy" id="fy4-qR-7pB"/>
