@@ -44,8 +44,8 @@ class ContractJobTableViewCell: UITableViewCell {
         }
         employerLbl.text = contract.employer?.username
         
-        if let startDate = contract.start_date, let endDate = contract.until_end {
-            datesLbl.text = "\(startDate) - \(endDate)"
+        if let startDate = contract.start_date?.toDate(), let endDate = contract.deadline?.toDate() {
+            datesLbl.text = "\(startDate.toString) - \(endDate.toString)"
         }
         descriptionLbl.text = contract.description
         categoryLbl.text = contract.type

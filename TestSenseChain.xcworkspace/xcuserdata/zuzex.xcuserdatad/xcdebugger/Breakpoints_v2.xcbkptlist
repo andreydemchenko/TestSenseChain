@@ -222,8 +222,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "checkIfAllFieldAreFilled()"
             landmarkType = "7">
          </BreakpointContent>
@@ -254,8 +254,8 @@
             filePath = "Main/Contracts/PostJob/Main/PostJobViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
             landmarkName = "nextBtnClicked()"
             landmarkType = "7">
          </BreakpointContent>
@@ -337,6 +337,54 @@
             endingLineNumber = "244"
             landmarkName = "textFieldDidEndEditing(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "008FA575-B054-4956-A547-5B156DA76F1C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Main/Contracts/JobContracts/ContractJobTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "setViews(contract:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "008FA575-B054-4956-A547-5B156DA76F1C - 1705db0e1ab854ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestSenseChain.ContractJobTableViewCell.setViews(contract: TestSenseChain.GetContractsJobItem) -&gt; ()"
+                  moduleName = "TestSenseChain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Main/Contracts/JobContracts/ContractJobTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "4500">
+               </Location>
+               <Location
+                  uuid = "008FA575-B054-4956-A547-5B156DA76F1C - 1705db0e1ab854ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestSenseChain.ContractJobTableViewCell.setViews(contract: TestSenseChain.GetContractsJobItem) -&gt; ()"
+                  moduleName = "TestSenseChain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zuzex/Desktop/TestSenseChain/TestSenseChain/Main/Contracts/JobContracts/ContractJobTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "4692">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

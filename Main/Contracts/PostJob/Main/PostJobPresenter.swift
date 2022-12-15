@@ -101,6 +101,14 @@ class PostJobPresenter {
         }
     }
     
+    func checkCurrentName() {
+        if let name = view?.name {
+           if name.isValidContractName {
+                view?.errorName = nil
+            }
+        }
+    }
+    
     func checkName() {
         if view?.name == nil {
             view?.errorName = "Enter name"
@@ -109,7 +117,7 @@ class PostJobPresenter {
                 if name.isEmpty {
                     view?.errorName = "Enter name"
                 } else if !name.isValidContractName {
-                    view?.errorName = "Incorrect name"
+                    view?.errorName = "Name must have at least 2-200 characters"
                 } else {
                     view?.errorName = nil
                 }
@@ -125,6 +133,14 @@ class PostJobPresenter {
         }
     }
     
+    func checkCurrentDescription() {
+        if let desc = view?.descriptionValue {
+           if desc.isValidContractDescription {
+                view?.errorDescription = nil
+            }
+        }
+    }
+    
     func checkDescription() {
         if view?.descriptionValue == nil {
             view?.errorDescription = "Enter description"
@@ -133,7 +149,7 @@ class PostJobPresenter {
                 if desc.isEmpty {
                     view?.errorDescription = "Enter description"
                 } else if !desc.isValidContractDescription {
-                    view?.errorDescription = "Incorrect description"
+                    view?.errorDescription = "Description must have at least 2-200 characters"
                 } else {
                     view?.errorDescription = nil
                 }

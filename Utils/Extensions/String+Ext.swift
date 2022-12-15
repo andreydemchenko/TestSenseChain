@@ -24,7 +24,7 @@ extension String {
         return descPred.evaluate(with: self)
     }
     
-    func toDate(withFormat format: String = "yyyy-MM-dd'T'HH:mm:ss.SSSZ") -> Date? {
+    func toDate(withFormat format: String = "yyyy-MM-dd'T'HH:mm:ssZ") -> Date? {
          let dateFormatter = DateFormatter()
          dateFormatter.calendar = Calendar(identifier: .gregorian)
          dateFormatter.dateFormat = format
