@@ -5,6 +5,7 @@
 //  Created by zuzex-62 on 30.11.2022.
 //
 
+import FirebaseAnalytics
 import Foundation
 
 enum ContractsNavigation {
@@ -23,20 +24,25 @@ class ContractsPresenter {
     weak var view: ContractsProtocol?
     let service: AuthServiceProtocol
     
+    private let analytics = appContext.analytics
+    
     init(view: ContractsProtocol, service: AuthServiceProtocol) {
         self.view = view
         self.service = service
     }
     
     func didTapJobContrtacts() {
+        analytics.screenJobContractsClicked()
         view?.move(to: .goToJobContracts)
     }
     
     func didTapPostJob() {
+        analytics.screenPostJobContractClicked()
         view?.move(to: .goToPostJob)
     }
     
     func didTapSignOut() {
+        analytics.screenSignOutClicked()
         service.logout { [weak self] res in
             switch res {
             case .success:
